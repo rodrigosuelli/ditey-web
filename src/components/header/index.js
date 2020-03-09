@@ -8,7 +8,13 @@ function Header() {
             <a className="logo" href="#">
             <span className="logo-brand">ditey</span>
             </a>
-             <ul className="right-nav">
+            <nav>
+                <div className="hamburger">
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                </div>
+             <ul className="nav-links">
                  <li className="nav-item">
                      <a className="nav-link" href="#">comandos</a>
                  </li>
@@ -21,7 +27,8 @@ function Header() {
                  <li className="nav-item">
                      <a className="nav-link" href="#">nosso app</a>
                  </li>
-              </ul>
+             </ul>
+            </nav>
         </header>
     );
 }

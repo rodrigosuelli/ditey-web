@@ -15,8 +15,9 @@ body {
     background: #E9E6E1;
 }
 
-body, button {
+body, button, ul {
     font-family: 'Montserrat', sans-serif;
+    list-style: none;
 }
 
 
@@ -31,10 +32,6 @@ body, button {
     z-index: -1;
     background: url(/static/images/week/background.jpg) right center / cover no-repeat;
 } */
-
-ul {
-    list-style: none;
-}
 
 a {
     text-decoration: none;
