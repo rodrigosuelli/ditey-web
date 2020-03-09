@@ -1,0 +1,10 @@
+aside {
+    padding: 20px;
+    background-color: #6A42F4;
+}
+
+.title, .add-text {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}

@@ -3,11 +3,12 @@ header {
     height: 70px;
     background: #6A42F4;
     color: #fff;
-    padding: 0 100px;
+    padding: 0 140px;
     margin: auto;
     display: flex;
     align-items: center;
     flex-direction: row;
+    box-shadow: 0 4px 20px 0 #474747;
 }
 
 ul.right-nav {
@@ -17,14 +18,14 @@ ul.right-nav {
 }
 
 li.nav-item {
-    margin-left: 18px;
+    margin-left: 19px;
 }
 
 a.nav-link {
     font-size: 17px;
     font-weight: 600;
     text-transform: uppercase;
-    color: #EEEBE8;
+    color: rgb(224, 216, 252);
     position: relative;
     transition: all 150ms linear 0s;
 }
@@ -34,9 +35,10 @@ a.nav-link {
 }
 
 .logo-brand {
-    font-size: 34px;
+    font-size: 36px;
     font-weight: bold;
     color: #fff;
+    text-shadow: 2px 2px 5px #0000006b;
 }
 
 /* Animaçoes */

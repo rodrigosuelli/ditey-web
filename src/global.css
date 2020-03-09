@@ -11,13 +11,14 @@ html, body, #root {
     height: 100vh;
 }
 
+body {
+    background: #E9E6E1;
+}
+
 body, button {
     font-family: 'Montserrat', sans-serif;
 }
 
-body {
-    background: #E9E6E1;
-}
 
 /* .idYASe::before {
     content: "";
