@@ -1,6 +1,7 @@
 header {
     height: 70px;
-    background: #6A42F4;
+    /* background: #6A42F4; */
+    background-image: linear-gradient(to right, #6A42F4, #6A42F4, #4e42f4);
     color: #fff;
     padding: 0 140px;
     display: flex;
@@ -43,7 +44,7 @@ a.nav-link {
 }
 
 /* Media Query */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 890px) {
     ul.nav-links {
         display: none;
     }

@@ -5,8 +5,9 @@ import './styles.css';
 function Sidebar() {
     return(
         <aside>
-            <h3 className="title">Textos salvos:</h3>
-            <h3 className="add-text"> + </h3>
+            <h3 className="title">Textos Salvos:</h3>
+            {/* <h3 className="btn-add"> + </h3> */}
+            <button className="btn-add">+</button>
         </aside>
     );
 }
