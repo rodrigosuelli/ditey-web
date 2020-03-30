@@ -1,6 +1,10 @@
-aside {
+div.bm-menu {
+    background: #6A42F4;
     padding: 10px 0;
-    background-color: #6A42F4;
+    height: 100%;
+}
+
+.bm-item-list {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,6 +15,7 @@ aside {
 }
 
 .title {
+    font-size: 20px;
     letter-spacing: 0.4px;
 }
 
@@ -22,7 +27,7 @@ aside {
     background-color: #6A42F4;
     font-size: 28px;
     line-height: 28px;
-    margin-top: 8px;
+    margin-top: 10px;
     cursor: pointer;
     transition: all ease 150ms;
 }
@@ -31,3 +36,32 @@ aside {
     border: 2px solid #cfcfcf;
     color: #cfcfcf;
 }
+/* aside {
+    grid-area: aside;
+    padding: 10px 0;
+    background-color: #6A42F4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+} */
+
+
+/* .bm-burger-button {
+    position: fixed;
+    width: 30px;
+    height: 20px;
+    left: 36px;
+    top: 29px;
+  } */
+
+/* .bm-burger-bars {
+    background: #fff;
+    border-radius: 1px;
+    box-shadow: 0 0 4px 0 #00000075;
+    height: 3px!important;
+  } 
+ 
+  .bm-overlay {
+    background: none!important;
+  } */

@@ -1,19 +1,23 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import './styles.css'
 
-function Header() {
+function Header(props) {
     return(
         <header>
-            <a className="logo" href="#">
-            <span className="logo-brand">ditey</span>
-            </a>
-            <nav>
-                <div className="hamburger">
-                    <div className="line"></div>
-                    <div className="line"></div>
-                    <div className="line"></div>
+            <div className="left-menu">
+                <div onClick={props.click} className="hamburger">
+                        <div className="line"></div>
+                        <div className="line"></div>
+                        <div className="line"></div>
                 </div>
+                <Link className="logo" to="/">
+                <span className="logo-brand">ditey</span>
+                </Link>
+            </div>
+            <nav>
              <ul className="nav-links">
                  <li className="nav-item">
                      <a className="nav-link" href="#">comandos</a>

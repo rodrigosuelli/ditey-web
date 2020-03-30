@@ -13,9 +13,10 @@ html, body, #root {
 
 body {
     background: #E9E6E1;
+    -webkit-font-smoothing: antialised;
 }
 
-body, button, ul {
+body, button, ul, textarea {
     font-family: 'Montserrat', sans-serif;
     list-style: none;
 }
@@ -35,4 +36,18 @@ body, button, ul {
 
 a {
     text-decoration: none;
+}
+
+textarea {
+    width: 700px;
+    resize: vertical;
+    min-height: 400px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 0;
+    padding: 18px 20px;
+    margin: 15px 0;
+    box-shadow: 0 10px 10px 0 #00000023;
+    line-height: 20px;
 }
