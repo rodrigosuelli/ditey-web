@@ -20,16 +20,16 @@ function Header(props) {
             <nav>
              <ul className="nav-links">
                  <li className="nav-item">
-                     <a className="nav-link" href="#">comandos</a>
+                     <Link className="nav-link" to="#">comandos</Link>
                  </li>
                  <li className="nav-item">
-                     <a className="nav-link" href="#">quem somos</a>
+                     <Link className="nav-link" to="#">quem somos</Link>
                  </li>
                  <li className="nav-item">
-                     <a className="nav-link" href="#">avalie</a>
+                     <Link className="nav-link" to="#">avalie</Link>
                  </li>
                  <li className="nav-item">
-                     <a className="nav-link" href="#">nosso app</a>
+                     <Link className="nav-link" to="#">nosso app</Link>
                  </li>
              </ul>
             </nav>
