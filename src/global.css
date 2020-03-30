@@ -12,7 +12,7 @@ html, body, #root {
 }
 
 body {
-    background: #E9E6E1;
+    background-color: #E9E6E1;
 }
 
 body, button, ul, textarea {
@@ -38,15 +38,19 @@ a {
 }
 
 textarea {
-    width: 700px;
+    width: 730px;
     resize: vertical;
-    min-height: 400px;
+    min-height: 420px;
     border-radius: 8px;
     font-weight: 500;
     font-size: 15px;
     border: 0;
     padding: 18px 20px;
-    margin: 15px 0;
     box-shadow: 0 10px 10px 0 #00000023;
     line-height: 20px;
+    background-color: #F6F6F6;
+}
+
+textarea::placeholder {
+    color: #000000be;
 }

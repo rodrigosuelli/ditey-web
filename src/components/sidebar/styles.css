@@ -36,32 +36,3 @@ div.bm-menu {
     border: 2px solid #cfcfcf;
     color: #cfcfcf;
 }
-/* aside {
-    grid-area: aside;
-    padding: 10px 0;
-    background-color: #6A42F4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-} */
-
-
-/* .bm-burger-button {
-    position: fixed;
-    width: 30px;
-    height: 20px;
-    left: 36px;
-    top: 29px;
-  } */
-
-/* .bm-burger-bars {
-    background: #fff;
-    border-radius: 1px;
-    box-shadow: 0 0 4px 0 #00000075;
-    height: 3px!important;
-  } 
- 
-  .bm-overlay {
-    background: none!important;
-  } */
