@@ -13,7 +13,6 @@ html, body, #root {
 
 body {
     background: #E9E6E1;
-    -webkit-font-smoothing: antialised;
 }
 
 body, button, ul, textarea {

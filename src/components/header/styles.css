@@ -50,7 +50,7 @@ a.nav-link {
     text-shadow: 2px 2px 5px #0000006b;
 }
 
-/* Media Query */
+
 @media screen and (max-width: 890px) {
     ul.nav-links {
         display: none;
@@ -71,7 +71,7 @@ a.nav-link {
     margin-right: 10px;
 }
 
-/* Animaçoes */
+
 a.nav-link:hover {
     color: #fff;
 }
