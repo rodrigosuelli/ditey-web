@@ -4,19 +4,13 @@ import { Link } from 'react-router-dom';
 
 import './styles.css'
 
-function Header(props) {
+function Header() {
     return(
         <header>
-            <div className="left-menu">
-                <div onClick={props.click} className="hamburger">
-                        <div className="line"></div>
-                        <div className="line"></div>
-                        <div className="line"></div>
-                </div>
-                <Link className="logo" to="/">
-                <span className="logo-brand">ditey</span>
-                </Link>
-            </div>
+            <Link className="logo" to="/">
+            <span className="logo-brand">ditey</span>
+            </Link>
+            
             <nav>
              <ul className="nav-links">
                  <li className="nav-item">
@@ -32,6 +26,12 @@ function Header(props) {
                      <Link className="nav-link" to="#">nosso app</Link>
                  </li>
              </ul>
+
+              <div className="hamburger">
+                        <div className="line"></div>
+                        <div className="line"></div>
+                        <div className="line"></div>
+              </div>
             </nav>
         </header>
     );

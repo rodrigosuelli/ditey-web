@@ -48,7 +48,7 @@ textarea {
     padding: 18px 20px;
     box-shadow: 0 10px 10px 0 #00000023;
     line-height: 20px;
-    background-color: #F6F6F6;
+    background-color: #fff;
 }
 
 textarea::placeholder {

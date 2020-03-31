@@ -1,13 +1,11 @@
-div.bm-menu {
-    background: #6A42F4;
+aside {
+    grid-area: aside;
     padding: 10px 0;
-    height: 100%;
-}
-
-.bm-item-list {
+    background-color: #6A42F4;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 .title, .btn-add {

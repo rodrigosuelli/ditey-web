@@ -1,17 +1,14 @@
-.main-container {
+section.content {
     height: calc(100vh - 70px);
-    /* display: grid;
+    display: grid;
     grid-template-rows: auto;
     grid-template-columns: 250px auto;
     grid-column-gap: 30px;
     grid-template-areas: 
-    "aside content"; */
-}
-
-section.content {
-    /* grid-area: content; */
-    max-width: 1120px;
-    margin: 10px auto;
+    "aside content";
+    grid-area: content;
+    /* max-width: 1120px; */
+    /* margin: 10px auto; */
 }
 
 /* TITLE */
