@@ -44,7 +44,7 @@ textarea.text-input {
 }
 
 section.main {
-    margin: 15px 0px;
+    margin: 15px 0 20px 0px;
     display: flex;
     flex-direction: row;
 }
@@ -116,3 +116,95 @@ p.table-item {
     width: 100%;
     margin-bottom: 2px;
 }
+
+div.settings {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 740px;
+}
+
+p.speed-label {
+    color: #FF3366;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.play-icon {
+    margin-right: 5px;
+}
+
+button.speak {
+    background: #FF3366;
+    padding: 10px 12px;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #fff;
+    border-radius: 4px;
+    transition: all ease 150ms;
+}
+
+button.speak:hover {
+    filter: opacity(80%);
+}
+
+
+/** Range Input 
+*Applying base CSS styles*/
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+
+  /* Styling the Thumb */
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #FF3366;
+    cursor: pointer;
+    margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+input[type=range]::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #FF3366;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #FF3366;
+    border-radius: 0px;
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #FF3366;
+  }
+  
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #FF3366;
+    border-radius: 0px;
+  }
+

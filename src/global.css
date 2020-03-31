@@ -20,6 +20,10 @@ body, button, ul, textarea {
     list-style: none;
 }
 
+button {
+    border: 0;
+    cursor: pointer;
+}
 
 /* .idYASe::before {
     content: "";

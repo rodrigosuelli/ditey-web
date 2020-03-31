@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaMicrophoneAlt, FaCheck } from 'react-icons/fa';
+import { FaPlay, FaMicrophoneAlt, FaCheck } from 'react-icons/fa';
 
 import './styles.css';
 
@@ -24,7 +24,6 @@ export default function Main() {
                     <section className="main">
                         <textarea className="text-input" placeholder="Insira seu texto aqui..."></textarea>
 
-
                         <div className="commands-container">
                             <button className="mic">
                             <FaMicrophoneAlt size={64} color="#FF0000"/>    
@@ -43,8 +42,11 @@ export default function Main() {
                     </section>
 
                     <div className="settings">
-                        <label htmlFor="speed">Speed:</label>
-                        <input type="range" name="speed"/>
+                        <div className="ajusts">
+                        <label htmlFor="speed"><p className="speed-label">Speed:</p></label>
+                        <input type="range" min="1" max="10" className="range" name="speed" id="speed"/>
+                        </div>
+                        <button className="speak"><FaPlay className="play-icon" size={21} color="#fff"/> Falar</button>
                     </div>
 
                 </div>
