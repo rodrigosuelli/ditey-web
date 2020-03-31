@@ -11,6 +11,9 @@ section.content {
     /* margin: 10px auto; */
 }
 
+div.content-right{
+    margin: 10px 0;
+}
 /* TITLE */
 h1.slogan {
     font-weight: 600;
