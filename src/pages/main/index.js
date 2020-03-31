@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaPlay, FaMicrophoneAlt, FaCheck } from 'react-icons/fa';
 
 import './styles.css';
@@ -7,6 +7,22 @@ import Header from '../../components/header';
 import Sidebar from '../../components/sidebar';
 
 export default function Main() {
+    const [speed, setSpeed] = useState(1);
+    const [text, setText] = useState('');
+
+    useEffect(() => {
+        if (localStorage.getItem('text1') === null || undefined){
+            return;
+        }
+            setText(localStorage.getItem('text1'));
+    }, []);
+
+
+    async function handleSaveText(e) {
+        setText(e.target.value);
+        localStorage.setItem('text1', e.target.value);
+    }
+
     return(
         <div className="main-container">
             <Header />
@@ -22,7 +38,11 @@ export default function Main() {
                     </h1>
 
                     <section className="main">
-                        <textarea className="text-input" placeholder="Insira seu texto aqui..."></textarea>
+                        <textarea onChange={e => handleSaveText(e)}
+                        value={text}
+                        className="text-input" 
+                        placeholder="Insira seu texto aqui...">
+                        </textarea>
 
                         <div className="commands-container">
                             <button className="mic">
@@ -43,8 +63,17 @@ export default function Main() {
 
                     <div className="settings">
                         <div className="ajusts">
-                        <label htmlFor="speed"><p className="speed-label">Speed:</p></label>
-                        <input type="range" min="1" max="10" className="range" name="speed" id="speed"/>
+                        <label htmlFor="speed">
+                            <p className="speed-label">Speed: {speed}</p>
+                        </label>
+
+                        <input onChange={e => setSpeed(e.target.value)} 
+                        value={speed} 
+                        min="1" max="10" 
+                        type="range"
+                        className="range" 
+                        name="speed" 
+                        id="speed"/>
                         </div>
                         <button className="speak"><FaPlay className="play-icon" size={21} color="#fff"/> Falar</button>
                     </div>

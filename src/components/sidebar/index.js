@@ -7,7 +7,7 @@ function Sidebar() {
         <aside>
             <h3 className="title">Textos Salvos:</h3>
             {/* <h3 className="btn-add"> + </h3> */}
-            <button className="btn-add">+</button>
+            <button title="Adicionar Texto" className="btn-add">+</button>
         </aside>
     );
 }
