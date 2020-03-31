@@ -1,9 +1,12 @@
+div.main-container {
+    position: relative;
+}
+
 section.content {
     height: calc(100vh - 70px);
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 250px auto;
-    grid-column-gap: 30px;
     grid-template-areas: 
     "aside content";
     grid-area: content;
@@ -12,7 +15,9 @@ section.content {
 }
 
 div.content-right{
-    margin: 10px 0;
+    width: 100%;
+    max-width: 1000px;
+    margin: 10px auto;
 }
 /* TITLE */
 h1.slogan {
@@ -37,18 +42,81 @@ h1.slogan {
     color: #00FF00;
 }
 
+textarea.text-input {
+    width: 740px;
+    min-height: 420px;
+}
+
 section.main {
-    margin: 15px 0;
+    margin: 15px 0px;
     display: flex;
     flex-direction: row;
 }
 
-div.commands {
-    margin: 0 20px;
-    width: 250px;
+div.commands-container {
+    margin-left: 40px;
+    width: 230px;
     height: 420px;
     background: #fff;
     border-radius: 8px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     box-shadow: 0 10px 10px 0 #00000023;
-    padding: 18px 20px;
+    padding: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.commands-container button.mic {
+    position: absolute;
+    top: -25px;
+    border: 8px solid #eeeeee;
+    background: #eeeeee;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 5px #00000023;
+    transition: all ease 0.3s;
+}
+
+div.commands-container button.mic:hover {
+    background: #d8d8d8;
+    border: 8px solid #d8d8d8;
+}
+
+p.commands-title {
+    margin-top: 58px;
+    margin-bottom: 22px;
+    color: #04ce04;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 500;
+    width: 100%;
+    padding: 1px;
+}
+
+p.command {
+    width: 100%;
+    text-align: center;
+    color: #8230ce;
+    font-size: 22px;
+    font-weight: 700;
+    border: 1px solid #979797;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: default;
+}
+
+p.table-title {
+    text-align: center;
+    width: 100%;
+    margin: 22px 0 5px 0;
+    font-weight: 500;
+    color: #2c2c2c;
+}
+
+p.table-item {
+    width: 100%;
+    margin-bottom: 2px;
 }

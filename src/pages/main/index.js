@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaMicrophoneAlt, FaCheck } from 'react-icons/fa';
 
 import './styles.css';
 
@@ -21,10 +22,23 @@ export default function Main() {
                     </h1>
 
                     <section className="main">
-                        <textarea placeholder="Insira seu texto aqui..."></textarea>
+                        <textarea className="text-input" placeholder="Insira seu texto aqui..."></textarea>
 
-                        <div className="commands">
-                            <p>Hi!</p>        
+
+                        <div className="commands-container">
+                            <button className="mic">
+                            <FaMicrophoneAlt size={64} color="#FF0000"/>    
+                            </button>
+                            <p className="commands-title">Clique no ícone ou pressione space...</p>  
+                            <p style={{color: '#2c2c2c'}}>você disse:</p>
+                            <p className="command">ditey iniciar</p>
+                            <p className="table-title">Comandos:</p>
+                            <div className="command-list">
+                            <p className="table-item"><FaCheck color="#757575"/> ditey iniciar</p>    
+                            <p className="table-item"><FaCheck color="#757575"/> ditey status</p>    
+                            <p className="table-item"><FaCheck color="#757575"/> ditey pausar</p>    
+                            <p className="table-item"><FaCheck color="#757575"/> ditey parar</p>    
+                            </div>
                         </div>
                     </section>
 

@@ -38,9 +38,7 @@ a {
 }
 
 textarea {
-    width: 730px;
     resize: vertical;
-    min-height: 420px;
     border-radius: 8px;
     font-weight: 500;
     font-size: 15px;
