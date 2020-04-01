@@ -1,6 +1,6 @@
 aside {
     grid-area: aside;
-    padding: 10px 0;
+    padding: 10px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +25,7 @@ aside {
     background-color: #6A42F4;
     font-size: 28px;
     line-height: 28px;
-    margin-top: 10px;
+    margin: 10px 0 15px 0;
     cursor: pointer;
     transition: all ease 150ms;
 }
@@ -33,4 +33,42 @@ aside {
 .btn-add:hover {
     border: 2px solid #cfcfcf;
     color: #cfcfcf;
+}
+
+div.text-container {
+    width: 100%;
+    height: 125px;
+    border: 2px solid #4285F4;
+    border-radius: 15px;
+    padding: 18px 15px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+div.text {
+    width: 100%;
+    font-size: 15px;
+}
+
+p.text-preview {
+    white-space: nowrap;
+    overflow: hidden;  
+    text-overflow: ellipsis;
+}
+
+button.trash {
+    background: transparent;
+}
+
+.trash-icon {
+    color: #757575;
+    transition: all 150ms;
+}
+
+button.trash:hover .trash-icon {
+    color: #4285F4;
 }

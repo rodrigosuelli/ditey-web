@@ -1,4 +1,4 @@
-section.content {
+div.content {
     height: calc(100vh - 70px);
     display: grid;
     grid-template-rows: auto;
@@ -117,12 +117,16 @@ p.table-item {
     margin-bottom: 2px;
 }
 
-div.settings {
+section.settings {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 740px;
+}
+
+div.ajusts {
+    width: 150px;
 }
 
 p.speed-label {

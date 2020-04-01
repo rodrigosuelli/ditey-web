@@ -26,9 +26,8 @@ export default function Main() {
     return(
         <div className="main-container">
             <Header />
-            <section className="content">
-                <Sidebar />
-
+            <div className="content">
+                <Sidebar text={text} />
                 <div className="content-right">
                     <h1 className="slogan">
                         O <span className="ditey">ditey</span> dita qualquer coisa
@@ -61,10 +60,10 @@ export default function Main() {
                         </div>
                     </section>
 
-                    <div className="settings">
+                    <section className="settings">
                         <div className="ajusts">
                         <label htmlFor="speed">
-                            <p className="speed-label">Speed: {speed}</p>
+                            <p className="speed-label">Velocidade: {speed}</p>
                         </label>
 
                         <input onChange={e => setSpeed(e.target.value)} 
@@ -76,10 +75,10 @@ export default function Main() {
                         id="speed"/>
                         </div>
                         <button className="speak"><FaPlay className="play-icon" size={21} color="#fff"/> Falar</button>
-                    </div>
+                    </section>
 
                 </div>
-            </section>
+            </div>
         </div>
         );
     }
