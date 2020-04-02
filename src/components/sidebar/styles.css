@@ -39,7 +39,7 @@ div.text-container {
     width: 100%;
     height: 125px;
     border: 2px solid #4285F4;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 18px 15px;
     background: #fff;
     display: flex;
@@ -64,11 +64,34 @@ button.trash {
     background: transparent;
 }
 
+button.trash:hover .trash-icon {
+    color: #4285F4;
+}
+
+button.trash-disable {
+    display: none;
+}
 .trash-icon {
     color: #757575;
     transition: all 150ms;
 }
 
-button.trash:hover .trash-icon {
-    color: #4285F4;
+
+/* REACT-TRANSITION-GROUP */
+/* .animated-enter {
+    opacity: 0;
 }
+
+.animated-enter-active {
+opacity: 1;
+transition: opacity 300ms;
+}
+
+.animated-exit {
+opacity: 1;
+}
+
+.animated-exit-active {
+opacity: 0;
+transition: opacity 300ms;
+} */
