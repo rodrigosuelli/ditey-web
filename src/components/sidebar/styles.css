@@ -38,20 +38,27 @@ aside {
 div.text-container {
     width: 100%;
     height: 125px;
-    border: 2px solid #4285F4;
+    border: 2px solid #707070;
     border-radius: 20px;
-    padding: 18px 15px;
     background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
     margin-bottom: 15px;
+    position: relative;
+}
+
+div.text-container.active {
+    border: 2px solid #4285F4;
 }
 
 div.text {
     width: 100%;
     font-size: 15px;
+    flex: 1;
+    cursor: pointer;
+    padding: 18px 15px 84px;
+}
+
+div.text.active {
+    cursor: default;
 }
 
 p.text-preview {
@@ -61,6 +68,9 @@ p.text-preview {
 }
 
 button.trash {
+    position: absolute;
+    left: 15px;
+    bottom: 18px;
     background: transparent;
 }
 

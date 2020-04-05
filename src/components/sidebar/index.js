@@ -6,44 +6,46 @@ import './styles.css';
 export default function Sidebar(props) {
     
 
-    function loadedTexts(index, Btnclass) {
+    function loadedTexts(index, btnClass, divClass) {
         return(
-            <div key={index} className="text-container">
-                <div className="text">
-                    {showText()}
+            <div key={index} 
+            className={`text-container ${divClass}`}
+            >
+                <div onClick={() => props.onChangeActiveText(index)} 
+                className={`text ${divClass}`}
+                >
+                    {showText(index)}
                 </div>
                     
-                <button onClick={() => props.onTextDelete(index)} className={Btnclass}>
+                <button onClick={() => props.onTextDelete(index)} className={btnClass}>
                 <FiTrash2 className="trash-icon" size={20} />
                 </button>
             </div>            
         );
     }
 
-    function showText() {
-        if (props.text === '') {
+    function showText(i) {
+        if (props.texts[i] === '') {
             return <p className="text-preview">Insira seu texto aqui...</p>
         }
-        return <p className="text-preview">{props.text}</p>
+        return <p className="text-preview">{props.texts[i]}</p>
     };
 
 
     return(
         <aside>
             <h3 className="title">Textos Salvos:</h3>
-            <button onClick={() => {
-                props.onTextAdd();
-            }} 
+            <button onClick={() => props.onTextAdd()} 
             title="Adicionar Texto" 
             className="btn-add"
             >
                 +
             </button>
             {props.texts.map((item, index) => {
-                var Btnclass = '';
-                index === props.activeText ? Btnclass = 'trash-disable' : Btnclass = 'trash';
+                var btnClass = index === props.activeText ? 'trash-disable' : 'trash';
+                var divClass = index === props.activeText ? 'active' : '';
 
-                return loadedTexts(index, Btnclass);
+                return loadedTexts(index, btnClass, divClass);
             })
          }
         </aside>
