@@ -7,90 +7,45 @@ import Header from '../../components/header';
 import Sidebar from '../../components/sidebar';
 
 export default function Main() {
-    const [speed, setSpeed] = useState(1);
     const [texts, setTexts] = useState(['']);
     const [activeTextIndex, setActiveTextIndex] = useState(0);
+
     const [storageTexts, setStorageTexts] = useState('text0');
-    const [added, setAdded] = useState(false);
-    const [deleted, setDeleted] = useState(false);
-    const [changeActiveText, setChangeActiveText] = useState(false);
+    
+    const [speed, setSpeed] = useState(1);
+ 
+    const [firstLoad, setFirstLoad] = useState(true);
+    useEffect(() => {
+        if (firstLoad === false) return;
+
+        if (localStorage.getItem('texts') === null)
+        return localStorage.setItem('texts', storageTexts);
+
+        const getTexts = localStorage.getItem('texts');
+        setStorageTexts(getTexts);
+
+        const replaceTexts = getTexts.split(',');
+        setTexts(replaceTexts.map((item, index) => {
+            return localStorage.getItem(item);
+        }));
+
+        setFirstLoad(false);
+    }, [firstLoad, storageTexts]);
 
     useEffect(() => {
-        if (localStorage.getItem('texts') === null || undefined)
-            return localStorage.setItem('texts', storageTexts);
+        localStorage.clear();
+        const newStorageTexts = texts.map((item, index) => {
+            localStorage.setItem(`text${index}`, `${item}`);
+            return `text${index}`;
+        });
 
-        if (added === true) {
-            setStorageTexts(`${storageTexts},text${texts.length - 1}`);
+        localStorage.setItem('texts', newStorageTexts);
 
-            setAdded(false);
-        }
-
-        if (deleted === true) {
-            if (changeActiveText === true){
-                setActiveTextIndex(activeTextIndex - 1);
-                setChangeActiveText(false);
-            }
-
-            const newStorageTexts = texts.map((item, index) => {
-                return `text${index}`;
-            });
-
-            setStorageTexts(newStorageTexts.join(','));
-            setDeleted(false);
-        }
-        
-        localStorage.setItem('texts', storageTexts);
-        // if (Added === false)
-        //     return setStorageTexts(localStorage.getItem('texts'));
-
-        // if (Deleted === true) {
-        //     setStorageTexts('text0');
-        //     console.log(storageTexts);
-        //     return localStorage.setItem('texts', storageTexts);
-        // }
-        // if (Deleted === true) {
-            
-        //         updateStorageTexts();
-            
-        //     console.log(storageTexts);
-        //     return setDeleted(false);
-        // }
-
-        // if (Deleted === true) {
-        // console.log(storageTexts);
-
-        //         return setStorageTexts(`${storageTexts},text${texts.lenght - 1}`);
-        // }
-        // console.log(storageTexts);
-
-
-        // localStorage.setItem('texts', `${storageTexts}`);
-
-        //------------------------------------------------------------------------------------------
-
-        // setStorageTexts(`${storageTexts},text${texts.lenght - 1}`);
-        // return localStorage.setItem('texts', storageTexts);
-        // const newTexts = texts.map((item, index) => {
-        // if (localStorage.getItem(`text${index}`) === null || undefined) {
-        //     return item;
-        // }
-        
-        // if (texts[index] === localStorage.getItem(`text${index}`)) {
-        //     return item;
-        // }
-
-        // if (index === texts.indexOf(item)) {
-        //     return localStorage.getItem(`text${index}`);
-        // }
-
-        // return item;
-        // });
-        
-    }, [texts, added, storageTexts, deleted, activeTextIndex, changeActiveText]);
+        setStorageTexts(newStorageTexts.join(',')); 
+    }, [storageTexts, texts]);
 
     function handleShowTexts(){
         console.log(texts, storageTexts);
-        console.log(activeTextIndex);
     }
 
     function handleChangeActiveText(i) {
@@ -100,7 +55,6 @@ export default function Main() {
     function handleSaveText(e) {
         setTexts(texts.map((item, index) => {
             if (index === activeTextIndex) {
-                localStorage.setItem(`text${activeTextIndex}`, e.target.value);
                 return e.target.value;
             }
             return item;
@@ -109,24 +63,18 @@ export default function Main() {
 
     function handleDeleteText(i) {
         if (activeTextIndex === i) return;
-
-        if (i < activeTextIndex)
-        setChangeActiveText(true)
+        if (i < activeTextIndex) setActiveTextIndex(activeTextIndex - 1);
 
         localStorage.removeItem(`text${i}`);
 
         setTexts(texts.filter((item, index) => {
             return index !== i;
         }));
-
-        setDeleted(true);
     }
 
-    function handleAddText() {;
+    function handleAddText() {
         if (texts.length >= 5) return;
-        
         setTexts(texts.concat(''));
-        setAdded(true);
     }
 
     return(
@@ -194,11 +142,3 @@ export default function Main() {
         </div>
         );
     }
-
-    /*
-    ["A", "b", "c", "d"]
-    *0* 1 2
-
-    ["B", "c"]
-    *0* 1
-    */
