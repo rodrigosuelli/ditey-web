@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaPlay, FaMicrophoneAlt, FaCheck } from 'react-icons/fa';
+import { FaPlay, FaStop, FaMicrophoneAlt, FaCheck } from 'react-icons/fa';
 
 import './styles.css';
 
@@ -8,11 +8,8 @@ import Sidebar from '../../components/sidebar';
 
 export default function Main() {
     const [texts, setTexts] = useState(['']);
-    const [activeTextIndex, setActiveTextIndex] = useState(0);
-
     const [storageTexts, setStorageTexts] = useState('text0');
-    
-    const [speed, setSpeed] = useState(1);
+    const [activeTextIndex, setActiveTextIndex] = useState(0);
  
     const [firstLoad, setFirstLoad] = useState(true);
     useEffect(() => {
@@ -44,8 +41,95 @@ export default function Main() {
         setStorageTexts(newStorageTexts.join(',')); 
     }, [storageTexts, texts]);
 
-    function handleShowTexts(){
-        console.log(texts, storageTexts);
+    const [speed, setSpeed] = useState(1);
+    const [speakAction, setSpeakAction] = useState('Falar');
+    function handleSpeak() {
+        var myTimeout;
+            function myTimer() {
+                window.speechSynthesis.pause();
+                window.speechSynthesis.resume();
+                console.log('hi')
+                myTimeout = setTimeout(myTimer, 10000);
+            }
+
+            myTimeout = setTimeout(myTimer, 10000);
+            var utt = new SpeechSynthesisUtterance(texts[activeTextIndex]);
+
+            utt.volume = 1;
+            utt.rate = speed;
+            utt.lang = 'pt-BR';
+            
+            utt.onend = () => {
+                clearTimeout(myTimeout);
+                window.speechSynthesis.cancel()
+                setSpeakAction('Falar');
+            };
+
+            utt.onpause = () => {
+                clearTimeout(myTimeout);
+            }
+
+            utt.onresume = () => {
+                myTimeout = setTimeout(myTimer, 10000);
+            }
+            window.speechSynthesis.speak(utt);
+            setSpeakAction('Pausar');
+            console.log(utt);
+    }
+
+    function handlePause() {
+        if (window.speechSynthesis.paused) {
+            window.speechSynthesis.resume();
+            return setSpeakAction('Pausar');
+        }
+        window.speechSynthesis.pause();
+        setSpeakAction('Retomar');
+    } 
+
+    const [micStatus, setMicStatus] = useState('Clique no ícone ou pressione space...');
+    const [command, setCommand] = useState('iniciar');
+    function handleHear() {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+
+        recognition.onstart = () => {
+            setMicStatus('Estou ouvindo...');
+        };
+
+        recognition.onresult = (event) => {
+            console.log(event);
+            const current = event.resultIndex;
+            const transcript = event.results[current][0].transcript;
+
+            setMicStatus('Clique no ícone ou pressione space...');
+            setCommand(transcript);
+            readMessage(transcript);
+        };
+
+        recognition.start();
+    }
+
+    function readMessage(message) {
+        if (message.includes('iniciar')) {
+            if (speechSynthesis.speaking === true)
+            return alert('Ops! Já tem um texto sendo lido!');
+            handleSpeak();
+        }
+        if (message.includes('pausar')) {
+            if (speechSynthesis.speaking === true && speechSynthesis.paused === true)
+            return alert('Ops! A leitura já está pausada!');
+            handlePause();
+        }
+        if (message.includes('retomar')) {
+            if (speechSynthesis.speaking === true && speechSynthesis.paused === false)
+            return alert('Ops! A leitura não está pausada!');
+            handlePause();
+        }
+        if (message.includes('parar')) {
+            if (speechSynthesis.speaking === false)
+            return alert('Ops! A leitura já está pausada!');
+            window.speechSynthesis.cancel();
+        }
     }
 
     function handleChangeActiveText(i) {
@@ -104,18 +188,18 @@ export default function Main() {
                         </textarea>
 
                         <div className="commands-container">
-                            <button className="mic">
+                            <button onClick={handleHear} className="mic">
                             <FaMicrophoneAlt size={64} color="#FF0000"/>    
                             </button>
-                            <p className="commands-title">Clique no ícone ou pressione space...</p>  
+                            <p className="commands-title">{micStatus}</p>  
                             <p style={{color: '#2c2c2c'}}>você disse:</p>
-                            <p className="command">ditey iniciar</p>
+                            <p className="command">{command}</p>
                             <p className="table-title">Comandos:</p>
                             <div className="command-list">
-                                <p className="table-item"><FaCheck color="#757575"/> ditey iniciar</p>    
-                                <p className="table-item"><FaCheck color="#757575"/> ditey status</p>    
-                                <p className="table-item"><FaCheck color="#757575"/> ditey pausar</p>    
-                                <p className="table-item"><FaCheck color="#757575"/> ditey parar</p>    
+                                <p className="table-item"><FaCheck color="#757575"/> iniciar</p>        
+                                <p className="table-item"><FaCheck color="#757575"/> pausar</p> 
+                                <p className="table-item"><FaCheck color="#757575"/> retomar</p>    
+                                <p className="table-item"><FaCheck color="#757575"/> parar</p>    
                             </div>
                         </div>
                     </section>
@@ -126,7 +210,7 @@ export default function Main() {
                                 <p className="speed-label">Velocidade: {speed}</p>
                             </label>
 
-                            <input onChange={e => setSpeed(e.target.value)} 
+                            <input onChange={e => setSpeed(e.target.value)}
                             value={speed} 
                             min="1" max="10" 
                             type="range"
@@ -134,7 +218,26 @@ export default function Main() {
                             name="speed" 
                             id="speed"/>
                         </div>
-                        <button onClick={handleShowTexts} className="speak"><FaPlay className="play-icon" size={21} color="#fff"/> Falar</button>
+
+                        <div className="actions">
+                            <button 
+                            onClick={speakAction === 'Falar' ? handleSpeak : speakAction === 'Pausar' ? handlePause : handlePause} 
+                            className="speak">
+                            <FaPlay 
+                            className="play-icon" 
+                            size={21} 
+                            color="#fff"
+                            /> {speakAction}
+                            </button>
+                            <button 
+                            onClick={() => window.speechSynthesis.cancel()} 
+                            className="speak">
+                            <FaStop
+                            size={21}
+                            color="#fff"
+                            />
+                            </button>
+                        </div>
                     </section>
 
                 </div>

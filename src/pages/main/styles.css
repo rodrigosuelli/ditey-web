@@ -102,19 +102,24 @@ p.command {
     border-radius: 5px;
     padding: 3px;
     cursor: default;
+    white-space: nowrap;
+    overflow: hidden;  
+    text-overflow: ellipsis;
 }
 
 p.table-title {
     text-align: center;
     width: 100%;
     margin: 22px 0 5px 0;
-    font-weight: 500;
-    color: #2c2c2c;
+    font-weight: 600;
+    color: #3d3d3d;
 }
 
 p.table-item {
     width: 100%;
     margin-bottom: 2px;
+    font-weight: 500;
+    color: #3d3d3d;
 }
 
 section.settings {
@@ -142,6 +147,7 @@ p.speed-label {
 
 button.speak {
     background: #FF3366;
+    margin-left: 10px;
     padding: 10px 12px;
     font-size: 22px;
     font-weight: 500;
@@ -152,7 +158,7 @@ button.speak {
 }
 
 button.speak:hover {
-    filter: opacity(80%);
+    filter: opacity(75%);
 }
 
 
