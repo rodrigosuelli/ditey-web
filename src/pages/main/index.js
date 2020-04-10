@@ -48,7 +48,6 @@ export default function Main() {
             function myTimer() {
                 window.speechSynthesis.pause();
                 window.speechSynthesis.resume();
-                console.log('hi')
                 myTimeout = setTimeout(myTimer, 10000);
             }
 
@@ -74,7 +73,6 @@ export default function Main() {
             }
             window.speechSynthesis.speak(utt);
             setSpeakAction('Pausar');
-            console.log(utt);
     }
 
     function handlePause() {
@@ -97,7 +95,6 @@ export default function Main() {
         };
 
         recognition.onresult = (event) => {
-            console.log(event);
             const current = event.resultIndex;
             const transcript = event.results[current][0].transcript;
 
