@@ -103,7 +103,7 @@ p.command {
     padding: 3px;
     cursor: default;
     white-space: nowrap;
-    overflow: hidden;  
+    overflow: hidden;
     text-overflow: ellipsis;
 }
 
@@ -138,6 +138,7 @@ p.speed-label {
     color: #FF3366;
     font-size: 20px;
     font-weight: 600;
+    white-space: nowrap;
     margin-bottom: 2px;
 }
 

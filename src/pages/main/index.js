@@ -209,8 +209,9 @@ export default function Main() {
 
                             <input onChange={e => setSpeed(e.target.value)}
                             value={speed} 
-                            min="1" max="10" 
+                            min="0.1" max="5" 
                             type="range"
+                            step="0.1"
                             className="range" 
                             name="speed" 
                             id="speed"/>
