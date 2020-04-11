@@ -2,7 +2,7 @@ div.content {
     height: calc(100vh - 70px);
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 250px auto;
+    grid-template-columns: minmax(250px, 280px) auto;
     grid-template-areas: 
     "aside content";
     grid-area: content;
@@ -11,8 +11,8 @@ div.content {
 }
 
 div.content-right{
-    width: 100%;
-    max-width: 1000px;
+    width: 90%;
+    max-width: 1180px;
     margin: 10px auto;
 }
 /* TITLE */
@@ -38,15 +38,16 @@ h1.slogan {
     color: #00FF00;
 }
 
-textarea.text-input {
-    width: 740px;
-    min-height: 420px;
-}
-
 section.main {
     margin: 15px 0 20px 0px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+
+textarea.text-input {
+    width: 740px;
+    min-height: 420px;
 }
 
 div.commands-container {
@@ -60,6 +61,13 @@ div.commands-container {
     box-shadow: 0 10px 10px 0 #00000023;
     padding: 16px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.mic-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,14 +90,16 @@ div.commands-container button.mic:hover {
 }
 
 p.commands-title {
-    margin-top: 58px;
-    margin-bottom: 22px;
+    margin-top: 59px;
+    margin-bottom: 23px;
     color: #04ce04;
     text-align: center;
-    border-radius: 5px;
     font-weight: 500;
     width: 100%;
-    padding: 1px;
+}
+
+div.spoken-command-container {
+    width: 100%;
 }
 
 p.command {
@@ -107,27 +117,33 @@ p.command {
     text-overflow: ellipsis;
 }
 
-p.table-title {
-    text-align: center;
+div.command-list {
     width: 100%;
-    margin: 22px 0 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p.table-title {
+    width: 100%;
+    text-align: center;
+    margin: 22px 0 10px 0;
     font-weight: 600;
     color: #3d3d3d;
 }
 
 p.table-item {
-    width: 100%;
     margin-bottom: 2px;
     font-weight: 500;
     color: #3d3d3d;
 }
 
 section.settings {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 740px;
+    width: 73%;
+    max-width: 840px;
 }
 
 div.ajusts {
@@ -143,7 +159,7 @@ p.speed-label {
 }
 
 .play-icon {
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 button.speak {
@@ -219,3 +235,148 @@ input[type=range]::-webkit-slider-runnable-track {
     border-radius: 0px;
   }
 
+  /* media queries */
+  @media only screen and (min-width: 1367px) {
+    div.content-right {
+          margin: 20px auto;
+    }
+
+    h1.slogan {
+        font-size: 50px
+    }
+
+    textarea.text-input {
+        width: 840px;
+        min-height: 520px;
+    }
+
+    div.commands-container {
+        width: 250px;
+        height: 520px;
+    }
+
+    p.commands-title {
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    p.command {
+        font-size: 23px;
+        padding: 3px;
+    }
+
+    p.table-title {
+        margin: 26px 0 10px 0;
+        font-size: 17px;
+    }
+  }
+
+  @media only screen and (max-width: 1240px) {
+    div.content {
+        grid-template-columns: minmax(200px, 230px) auto;
+    }
+
+      h1.slogan {
+          display: none;
+      }
+
+      section.main {
+          flex-direction: column;
+          justify-content: start;
+          align-items: center;
+          margin: 15px 0;
+        }
+
+      textarea.text-input {
+        width: 100%;
+        min-height: 340px;
+    }
+      
+      div.commands-container{
+          padding: 10px;
+          flex: 1;
+          width: 100%;
+          order: -1;
+          height: auto;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: flex-start;
+          margin: 0 0 10px 0;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          border-radius: 8px;
+          box-shadow: 0px 4px 10px 1px #00000023;
+      }
+
+      div.commands-container button.mic {
+          top: -20px;
+      }
+
+      div.mic-container {
+          width: 50%;
+      }
+
+      div.spoken-command-container {
+          width: 50%;
+      }
+
+      div.command-list {
+          width: 50%;
+      }
+
+      p.table-title {
+          margin: 0 0 10px 0;
+      }
+
+      section.settings {
+          width: 100%;
+          max-width: unset;
+      }
+  }
+
+@media only screen and (max-width: 1006px) {
+    div.content {
+        display: unset;
+    }
+
+    div.content-right {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    div.content-right {
+        margin: calc(5vh) auto 0 auto;
+    }
+
+    div.commands-container {
+        display: none;
+    }
+
+    textarea.text-input {
+        min-height: 300px;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    section.settings {
+        flex-direction: column;
+    }
+
+    div.ajusts {
+        width: 160px;
+    }
+
+    p.speed-label {
+        text-align: center;
+    }
+
+    div.actions {
+        margin-top: 15px;
+    }
+
+    button.speak:first-child {
+        margin-left: 0;
+    }
+}

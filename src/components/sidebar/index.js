@@ -34,20 +34,21 @@ export default function Sidebar(props) {
 
     return(
         <aside>
-            <h3 className="title">Textos Salvos:</h3>
-            <button onClick={() => props.onTextAdd()} 
-            title="Adicionar Texto" 
-            className="btn-add"
-            >
-                +
-            </button>
-            {props.texts.map((item, index) => {
-                var btnClass = index === props.activeText ? 'trash-disable' : 'trash';
-                var divClass = index === props.activeText ? 'active' : '';
+            <div className="sidebar-container">
+                <h3 className="title">Textos Salvos:</h3>
+                <button onClick={() => props.onTextAdd()} 
+                title="Adicionar Texto" 
+                className="btn-add"
+                >
+                    +
+                </button>
+                {props.texts.map((item, index) => {
+                    var btnClass = index === props.activeText ? 'trash-disable' : 'trash';
+                    var divClass = index === props.activeText ? 'active' : '';
 
-                return loadedTexts(index, btnClass, divClass);
-            })
-         }
+                    return loadedTexts(index, btnClass, divClass);
+                })}
+            </div>
         </aside>
     );
 }

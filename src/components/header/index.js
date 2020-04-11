@@ -7,9 +7,16 @@ import './styles.css'
 function Header() {
     return(
         <header>
-            <Link className="logo" to="/">
-            <span className="logo-brand">ditey</span>
-            </Link>
+            <div className="logo-container">
+                <div className="hamburger">
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                </div>
+                <Link className="logo" to="/">
+                <span className="logo-brand">ditey</span>
+                </Link>
+            </div>
             
             <nav>
              <ul className="nav-links">
@@ -26,12 +33,6 @@ function Header() {
                      <Link className="nav-link" to="#">nosso app</Link>
                  </li>
              </ul>
-
-              <div className="hamburger">
-                        <div className="line"></div>
-                        <div className="line"></div>
-                        <div className="line"></div>
-              </div>
             </nav>
         </header>
     );

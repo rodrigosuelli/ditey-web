@@ -185,18 +185,24 @@ export default function Main() {
                         </textarea>
 
                         <div className="commands-container">
-                            <button onClick={handleHear} className="mic">
-                            <FaMicrophoneAlt size={64} color="#FF0000"/>    
-                            </button>
-                            <p className="commands-title">{micStatus}</p>  
-                            <p style={{color: '#2c2c2c'}}>você disse:</p>
-                            <p className="command">{command}</p>
-                            <p className="table-title">Comandos:</p>
+                            <div className="mic-container">
+                                <button onClick={handleHear} className="mic">
+                                <FaMicrophoneAlt size={64} color="#FF0000"/>    
+                                </button>
+                                <p className="commands-title">{micStatus}</p>  
+                            </div>
+                            <div className="spoken-command-container">
+                                <p style={{color: '#2c2c2c', textAlign: 'center'}}>você disse:</p>
+                                <p className="command">{command}</p>
+                            </div>
                             <div className="command-list">
-                                <p className="table-item"><FaCheck color="#757575"/> iniciar</p>        
-                                <p className="table-item"><FaCheck color="#757575"/> pausar</p> 
-                                <p className="table-item"><FaCheck color="#757575"/> retomar</p>    
-                                <p className="table-item"><FaCheck color="#757575"/> parar</p>    
+                                <p className="table-title">Comandos:</p>
+                                <div className="table-items">
+                                    <p className="table-item"><FaCheck style={{marginRight: '10px'}} color="#757575"/>iniciar</p>        
+                                    <p className="table-item"><FaCheck style={{marginRight: '10px'}} color="#757575"/>pausar</p> 
+                                    <p className="table-item"><FaCheck style={{marginRight: '10px'}} color="#757575"/>retomar</p>    
+                                    <p className="table-item"><FaCheck style={{marginRight: '10px'}} color="#757575"/>parar</p>    
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -221,19 +227,12 @@ export default function Main() {
                             <button 
                             onClick={speakAction === 'Falar' ? handleSpeak : speakAction === 'Pausar' ? handlePause : handlePause} 
                             className="speak">
-                            <FaPlay 
-                            className="play-icon" 
-                            size={21} 
-                            color="#fff"
-                            /> {speakAction}
-                            </button>
+                            <FaPlay className="play-icon" size={21} color="#fff" />{speakAction}</button>
+
                             <button 
                             onClick={() => window.speechSynthesis.cancel()} 
                             className="speak">
-                            <FaStop
-                            size={21}
-                            color="#fff"
-                            />
+                            <FaStop size={21} color="#fff" />
                             </button>
                         </div>
                     </section>

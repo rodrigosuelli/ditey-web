@@ -11,6 +11,11 @@ header {
     justify-content: space-between;
 }
 
+div.logo-container {
+    display: flex;
+    align-items: center;
+}
+
 ul.nav-links {
     width: 100%;
     display: flex;
@@ -36,33 +41,11 @@ a.nav-link {
 }
 
 .logo-brand {
-    font-size: 36px;
+    font-size: 38px;
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 5px #0000006b;
 }
-
-@media screen and (max-width: 890px) {
-    ul.nav-links {
-        display: none;
-    }
-    
-    .line {
-        width: 30px;
-        box-shadow: 0 0 4px 0 #00000075;
-        height: 3px;
-        border-radius: 1px;
-        background-color: #fff;
-        margin: 5px;
-    }
-    
-    .hamburger {
-        cursor: pointer;
-        margin-right: 10px;
-    }
-}
-
-
 
 a.nav-link:hover {
     color: #fff;
@@ -84,4 +67,29 @@ a.nav-link::after {
 a.nav-link:hover::after {
     opacity: 100%;
     bottom: -4px;
+}
+
+@media screen and (max-width: 830px) {
+    header {
+        padding: 0 100px 0 50px;
+        justify-content: center;
+    }
+
+    ul.nav-links {
+        display: none;
+    }
+    
+    .line {
+        width: 30px;
+        box-shadow: 0 0 4px 0 #00000075;
+        height: 3px;
+        border-radius: 1px;
+        background-color: #fff;
+        margin: 5px;
+    }
+    
+    .hamburger {
+        cursor: pointer;
+        margin-right: 10px;
+    }
 }
