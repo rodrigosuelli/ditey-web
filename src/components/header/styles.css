@@ -1,4 +1,4 @@
-header {
+header.menu-container {
     width: 100%;
     height: 70px;
     background-image: linear-gradient(to right, #6A42F4, #6A42F4, #4e42f4);
@@ -70,7 +70,7 @@ a.nav-link:hover::after {
 }
 
 @media screen and (max-width: 830px) {
-    header {
+    header.menu-container {
         justify-content: center;
     }
 
@@ -78,13 +78,16 @@ a.nav-link:hover::after {
         display: none;
     }
     
-    .line {
+    .one,
+    .two,
+    .three {
         width: 30px;
-        box-shadow: 0 0 4px 0 #00000075;
-        height: 3px;
+        /* box-shadow: 0 0 4px 0 #00000075; */
+        height: 4px;
         border-radius: 1px;
         background-color: #fff;
         margin: 5px;
+        transition-duration: 0.3s;
     }
     
     .hamburger {
@@ -93,4 +96,45 @@ a.nav-link:hover::after {
     }
 
     /* fullscreen */
+    .menu-container.on {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to bottom right, #6a42f4, #4b23d8, #4b23d8);
+        z-index: 10;
+    }
+
+    .menu-container.on nav, 
+    .menu-container.on ul.nav-links {
+        display: block;
+    }
+
+    .menu-container.on .logo-container {
+        position: absolute;
+        top: 12px;
+        left: auto;
+        right: auto;
+    }
+
+    .menu-container.on .one {
+        transform: rotate(45deg) translate(7px, 6px);
+    }
+
+    .menu-container.on .two {
+        opacity: 0;
+    }
+
+    .menu-container.on .three {
+        transform: rotate(-45deg) translate(7px, -5px);
+    }
+
+    .menu-container.on nav ul li a {
+        transition-duration: 0.5s;
+        font-size: 24px;
+        line-height: 5rem;
+        display: block;
+        white-space: nowrap;
+    }
 }
