@@ -112,19 +112,28 @@ export default function Main() {
             return alert('Ops! Já tem um texto sendo lido!');
             handleSpeak();
         }
+
         if (message.includes('pausar')) {
             if (speechSynthesis.speaking === true && speechSynthesis.paused === true)
             return alert('Ops! A leitura já está pausada!');
+
+            if (speechSynthesis.speaking === false)
+            return alert('Ops! Não há nada para ser pausado!')
             handlePause();
         }
+
         if (message.includes('retomar')) {
             if (speechSynthesis.speaking === true && speechSynthesis.paused === false)
             return alert('Ops! A leitura não está pausada!');
+
+            if (speechSynthesis.speaking === false)
+            return alert('Ops! Não há nada para ser retomado!')
             handlePause();
         }
+        
         if (message.includes('parar')) {
             if (speechSynthesis.speaking === false)
-            return alert('Ops! A leitura já está pausada!');
+            return alert('Ops! Não há o que parar!');
             window.speechSynthesis.cancel();
         }
     }
