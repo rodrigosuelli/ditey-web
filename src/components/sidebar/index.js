@@ -4,7 +4,6 @@ import { FiTrash2 } from 'react-icons/fi';
 import './styles.css';
 
 export default function Sidebar(props) {
-    
 
     function loadedTexts(index, btnClass, divClass) {
         return(
@@ -30,7 +29,6 @@ export default function Sidebar(props) {
         }
         return <p className="text-preview">{props.texts[i]}</p>
     };
-
 
     return(
         <aside>

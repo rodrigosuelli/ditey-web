@@ -1,0 +1,186 @@
+div.commands-container {
+    margin-left: 40px;
+    width: 230px;
+    height: 420px;
+    background: #fff;
+    border-radius: 8px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0 10px 10px 0 #00000023;
+    padding: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.mic-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.mic-container button.mic {
+    position: absolute;
+    top: -25px;
+    border: 8px solid #eeeeee;
+    background: #eeeeee;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 5px #00000023;
+    transition: all ease 0.3s;
+}
+
+div.mic-container button.mic.on::after {
+    content: '';
+    width: 74px;
+    height: 74px;
+    border: 5px solid #fc4444;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    left: -10px;
+    animation: pulsate infinite 1s;
+}
+
+@keyframes pulsate {
+    0% {
+      -webkit-transform: scale(1, 1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1.2, 1.2);
+      opacity: 0;
+    }
+  }
+
+div.commands-container button.mic:hover {
+    background: #d8d8d8;
+    border: 8px solid #d8d8d8;
+}
+
+div.mic-container p.commands-title {
+    margin-top: 59px;
+    margin-bottom: 23px;
+    color: #04ce04;
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+}
+
+div.spoken-command-container {
+    width: 100%;
+}
+
+div.spoken-command-container p.mini-title {
+    color: #2c2c2c;
+    text-align: center;
+}
+
+div.spoken-command-container p.command {
+    width: 100%;
+    text-align: center;
+    color: #8230ce;
+    font-size: 22px;
+    font-weight: 700;
+    border: 1px solid #979797;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.command-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.command-list p.table-title {
+    width: 100%;
+    text-align: center;
+    margin: 22px 0 10px 0;
+    font-weight: 600;
+    color: #3d3d3d;
+}
+
+div.command-list p.table-item {
+    margin-bottom: 2px;
+    font-weight: 500;
+    color: #3d3d3d;
+}
+
+div.command-list p.table-item .action-icon {
+    margin-right: 10px;
+}
+
+@media only screen and (min-width: 1367px) {
+    div.commands-container {
+        width: 250px;
+        height: 520px;
+    }
+
+    p.commands-title {
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    p.command {
+        font-size: 23px;
+        padding: 3px;
+    }
+
+    p.table-title {
+        margin: 26px 0 10px 0;
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 1240px) {
+    div.commands-container{
+        padding: 10px;
+        flex: 1;
+        width: 100%;
+        order: -1;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 0 0 10px 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px 1px #00000023;
+    }
+
+    div.commands-container button.mic {
+        top: -20px;
+    }
+
+    div.mic-container {
+        width: 50%;
+    }
+
+    div.spoken-command-container {
+        width: 50%;
+    }
+
+    div.command-list {
+        width: 50%;
+    }
+
+    p.table-title {
+        margin: 0 0 10px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    div.commands-container {
+        display: none;
+    }
+}

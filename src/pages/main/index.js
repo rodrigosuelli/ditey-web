@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { FaPlay, FaStop, FaMicrophoneAlt, FaCheck } from 'react-icons/fa';
 
 import './styles.css';
 
-import Header from '../../components/header';
-import Sidebar from '../../components/sidebar';
+import Header from '../../components/Header';
+import Sidebar from '../../components/Sidebar';
+import Footer from '../../components/Footer';
+
+import Commands from '../../components/Commands';
+import Settings from '../../components/Settings';
+import ShowPages from '../../components/ShowPages';
 
 export default function Main() {
     const [texts, setTexts] = useState(['']);
@@ -82,60 +86,6 @@ export default function Main() {
         }
         window.speechSynthesis.pause();
         setSpeakAction('Retomar');
-    } 
-
-    const [micStatus, setMicStatus] = useState('Clique no ícone ou pressione space...');
-    const [command, setCommand] = useState('iniciar');
-    function handleHear() {
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        const recognition = new SpeechRecognition();
-
-        recognition.onstart = () => {
-            setMicStatus('Estou ouvindo...');
-        };
-
-        recognition.onresult = (event) => {
-            const current = event.resultIndex;
-            const transcript = event.results[current][0].transcript;
-
-            setMicStatus('Clique no ícone ou pressione space...');
-            setCommand(transcript);
-            readMessage(transcript);
-        };
-
-        recognition.start();
-    }
-
-    function readMessage(message) {
-        if (message.includes('iniciar')) {
-            if (speechSynthesis.speaking === true)
-            return alert('Ops! Já tem um texto sendo lido!');
-            handleSpeak();
-        }
-
-        if (message.includes('pausar')) {
-            if (speechSynthesis.speaking === true && speechSynthesis.paused === true)
-            return alert('Ops! A leitura já está pausada!');
-
-            if (speechSynthesis.speaking === false)
-            return alert('Ops! Não há nada para ser pausado!')
-            handlePause();
-        }
-
-        if (message.includes('retomar')) {
-            if (speechSynthesis.speaking === true && speechSynthesis.paused === false)
-            return alert('Ops! A leitura não está pausada!');
-
-            if (speechSynthesis.speaking === false)
-            return alert('Ops! Não há nada para ser retomado!')
-            handlePause();
-        }
-        
-        if (message.includes('parar')) {
-            if (speechSynthesis.speaking === false)
-            return alert('Ops! Não há o que parar!');
-            window.speechSynthesis.cancel();
-        }
     }
 
     function handleChangeActiveText(i) {
@@ -167,87 +117,61 @@ export default function Main() {
         setTexts(texts.concat(''));
     }
 
+    const [page, setPage] = useState('Meet');
+
     return(
         <div className="main-container">
-            <Header />
+            <Header 
+            page={page}
+            onPageChange={setPage}
+            />
             <div className="content">
-                <Sidebar 
-                onTextAdd={handleAddText} 
-                onTextDelete={handleDeleteText}
-                onChangeActiveText={handleChangeActiveText}
-                texts={texts}
-                activeText={activeTextIndex}
-                />
-                <div className="content-right">
-                    <h1 className="slogan">
-                        O <span className="ditey">ditey</span> dita qualquer coisa
-                        <span className="y-dot">.</span>
-                        <span className="r-dot">.</span>
-                        <span className="g-dot">.</span>
-                    </h1>
+                    <Sidebar 
+                    onTextAdd={handleAddText} 
+                    onTextDelete={handleDeleteText}
+                    onChangeActiveText={handleChangeActiveText}
+                    texts={texts}
+                    activeText={activeTextIndex}
+                    />
+                    <div className="content-right">
+                        <h1 className="slogan">
+                            O <span className="ditey">ditey</span> dita qualquer coisa
+                            <span className="y-dot">.</span>
+                            <span className="r-dot">.</span>
+                            <span className="g-dot">.</span>
+                        </h1>
 
-                    <section className="main">
-                        <textarea onChange={e => handleSaveText(e)}
-                        value={texts[activeTextIndex]}
-                        className="text-input" 
-                        placeholder="Insira seu texto aqui...">
-                        </textarea>
+                        <section className="main">
+                            <textarea onChange={e => handleSaveText(e)}
+                            value={texts[activeTextIndex]}
+                            className="text-input" 
+                            placeholder="Insira seu texto aqui...">
+                            </textarea>
 
-                        <div className="commands-container">
-                            <div className="mic-container">
-                                <button onClick={handleHear} className="mic">
-                                <FaMicrophoneAlt size={64} color="#FF0000"/>    
-                                </button>
-                                <p className="commands-title">{micStatus}</p>  
-                            </div>
-                            <div className="spoken-command-container">
-                                <p style={{color: '#2c2c2c', textAlign: 'center'}}>você disse:</p>
-                                <p className="command">{command}</p>
-                            </div>
-                            <div className="command-list">
-                                <p className="table-title">Comandos:</p>
-                                <div className="table-items">
-                                    <p className="table-item"><FaCheck style={{marginRight: '10px'}} color="#757575"/>iniciar</p>        
-                                    <p className="table-item"><FaCheck style={{marginRight: '10px'}} color="#757575"/>pausar</p> 
-                                    <p className="table-item"><FaCheck style={{marginRight: '10px'}} color="#757575"/>retomar</p>    
-                                    <p className="table-item"><FaCheck style={{marginRight: '10px'}} color="#757575"/>parar</p>    
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                            <Commands 
+                            onSpeak={handleSpeak}
+                            onPause={handlePause}
+                            />
+                        </section>
 
-                    <section className="settings">
-                        <div className="ajusts">
-                            <label htmlFor="speed">
-                                <p className="speed-label">Velocidade: {speed}</p>
-                            </label>
-
-                            <input onChange={e => setSpeed(e.target.value)}
-                            value={speed} 
-                            min="0.1" max="5" 
-                            type="range"
-                            step="0.1"
-                            className="range" 
-                            name="speed" 
-                            id="speed"/>
-                        </div>
-
-                        <div className="actions">
-                            <button 
-                            onClick={speakAction === 'Falar' ? handleSpeak : speakAction === 'Pausar' ? handlePause : handlePause} 
-                            className="speak">
-                            <FaPlay className="play-icon" size={21} color="#fff" />{speakAction}</button>
-
-                            <button 
-                            onClick={() => window.speechSynthesis.cancel()} 
-                            className="speak">
-                            <FaStop size={21} color="#fff" />
-                            </button>
-                        </div>
-                    </section>
-
-                </div>
+                        <Settings 
+                        speed={speed} setSpeed={setSpeed}
+                        speakAction={speakAction} setSpeakAction={setSpeakAction}
+                        onSpeak={handleSpeak}
+                        onPause={handlePause}
+                        />
+                    </div>
             </div>
+
+            <ShowPages 
+            page={page}
+            onPageChange={setPage}
+            />
+            
+            <Footer 
+            page={page}
+            onPageChange={setPage}
+            />
         </div>
-        );
-    }
+    );
+}

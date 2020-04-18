@@ -6,9 +6,21 @@ div.content {
     grid-template-areas: 
     "aside content";
     grid-area: content;
+    margin-bottom: 4.9rem;
     /* max-width: 1120px; */
     /* margin: 10px auto; */
 }
+
+/* div.content::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 10rem;
+    background: url('../../assets/svg/blue-wave-2.svg') bottom no-repeat;
+    background-size: 100vw;
+    bottom: -6rem;
+    left: 0;
+} */
 
 div.content-right{
     width: 90%;
@@ -50,199 +62,14 @@ textarea.text-input {
     min-height: 420px;
 }
 
-div.commands-container {
-    margin-left: 40px;
-    width: 230px;
-    height: 420px;
-    background: #fff;
-    border-radius: 8px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    box-shadow: 0 10px 10px 0 #00000023;
-    padding: 16px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-div.mic-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-div.commands-container button.mic {
-    position: absolute;
-    top: -25px;
-    border: 8px solid #eeeeee;
-    background: #eeeeee;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0px 0px 10px 5px #00000023;
-    transition: all ease 0.3s;
-}
-
-div.commands-container button.mic:hover {
-    background: #d8d8d8;
-    border: 8px solid #d8d8d8;
-}
-
-p.commands-title {
-    margin-top: 59px;
-    margin-bottom: 23px;
-    color: #04ce04;
-    text-align: center;
-    font-weight: 500;
-    width: 100%;
-}
-
-div.spoken-command-container {
-    width: 100%;
-}
-
-p.command {
-    width: 100%;
-    text-align: center;
-    color: #8230ce;
-    font-size: 22px;
-    font-weight: 700;
-    border: 1px solid #979797;
-    border-radius: 5px;
-    padding: 3px;
-    cursor: default;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-div.command-list {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-p.table-title {
-    width: 100%;
-    text-align: center;
-    margin: 22px 0 10px 0;
-    font-weight: 600;
-    color: #3d3d3d;
-}
-
-p.table-item {
-    margin-bottom: 2px;
-    font-weight: 500;
-    color: #3d3d3d;
-}
-
-section.settings {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 73%;
-    max-width: 840px;
-}
-
-div.ajusts {
-    width: 150px;
-}
-
-p.speed-label {
-    color: #FF3366;
-    font-size: 20px;
-    font-weight: 600;
-    white-space: nowrap;
-    margin-bottom: 2px;
-}
-
-.play-icon {
-    margin-right: 10px;
-}
-
-button.speak {
-    background: #FF3366;
-    margin-left: 10px;
-    padding: 10px 12px;
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 22px;
-    color: #fff;
-    border-radius: 4px;
-    transition: all ease 150ms;
-}
-
-button.speak:hover {
-    filter: opacity(75%);
-}
-
-
-/** Range Input 
-*Applying base CSS styles*/
-input[type=range] {
-    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-    width: 100%; /* Specific width is required for Firefox. */
-    background: transparent; /* Otherwise white in Chrome */
-  }
-  
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-  }
-  
-  input[type=range]:focus {
-    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-  }
-
-  /* Styling the Thumb */
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: #FF3366;
-    cursor: pointer;
-    margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-}
-
-input[type=range]::-moz-range-thumb {
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: #FF3366;
-    cursor: pointer;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 4px;
-    cursor: pointer;
-    background: #FF3366;
-    border-radius: 0px;
-  }
-  
-  input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #FF3366;
-  }
-  
-  input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 4px;
-    cursor: pointer;
-    background: #FF3366;
-    border-radius: 0px;
-  }
-
   /* media queries */
-  @media only screen and (min-width: 1367px) {
+@media only screen and (min-width: 1367px) {
     div.content-right {
-          margin: 20px auto;
+        margin: 20px auto;
     }
 
     h1.slogan {
-        font-size: 50px
+        font-size: 50px;
     }
 
     textarea.text-input {
@@ -250,90 +77,29 @@ input[type=range]::-webkit-slider-runnable-track {
         min-height: 520px;
     }
 
-    div.commands-container {
-        width: 250px;
-        height: 520px;
-    }
+}
 
-    p.commands-title {
-        font-size: 17px;
-        font-weight: 600;
-    }
-
-    p.command {
-        font-size: 23px;
-        padding: 3px;
-    }
-
-    p.table-title {
-        margin: 26px 0 10px 0;
-        font-size: 17px;
-    }
-  }
-
-  @media only screen and (max-width: 1240px) {
+@media only screen and (max-width: 1240px) {
     div.content {
         grid-template-columns: minmax(200px, 230px) auto;
     }
 
-      h1.slogan {
-          display: none;
-      }
+    h1.slogan {
+        display: none;
+    }
 
-      section.main {
-          flex-direction: column;
-          justify-content: start;
-          align-items: center;
-          margin: 15px 0;
-        }
+    section.main {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        margin: 15px 0;
+    }
 
-      textarea.text-input {
+    textarea.text-input {
         width: 100%;
         min-height: 340px;
     }
-      
-      div.commands-container{
-          padding: 10px;
-          flex: 1;
-          width: 100%;
-          order: -1;
-          height: auto;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: flex-start;
-          margin: 0 0 10px 0;
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
-          border-radius: 8px;
-          box-shadow: 0px 4px 10px 1px #00000023;
-      }
-
-      div.commands-container button.mic {
-          top: -20px;
-      }
-
-      div.mic-container {
-          width: 50%;
-      }
-
-      div.spoken-command-container {
-          width: 50%;
-      }
-
-      div.command-list {
-          width: 50%;
-      }
-
-      p.table-title {
-          margin: 0 0 10px 0;
-      }
-
-      section.settings {
-          width: 100%;
-          max-width: unset;
-      }
-  }
+}
 
 @media only screen and (max-width: 1006px) {
     div.content {
@@ -350,33 +116,7 @@ input[type=range]::-webkit-slider-runnable-track {
         margin: calc(5vh) auto 0 auto;
     }
 
-    div.commands-container {
-        display: none;
-    }
-
     textarea.text-input {
         min-height: 300px;
-    }
-}
-
-@media only screen and (max-width: 370px) {
-    section.settings {
-        flex-direction: column;
-    }
-
-    div.ajusts {
-        width: 160px;
-    }
-
-    p.speed-label {
-        text-align: center;
-    }
-
-    div.actions {
-        margin-top: 15px;
-    }
-
-    button.speak:first-child {
-        margin-left: 0;
     }
 }

@@ -1,0 +1,68 @@
+section.settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 73%;
+    max-width: 840px;
+}
+
+div.ajusts {
+    width: 150px;
+}
+
+p.speed-label {
+    color: #FF3366;
+    font-size: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-bottom: 2px;
+}
+
+button.speak {
+    background: #FF3366;
+    margin-left: 10px;
+    padding: 10px 12px;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #fff;
+    border-radius: 4px;
+    transition: all ease 150ms;
+}
+
+button.speak:hover {
+    filter: opacity(75%);
+}
+
+.play-icon {
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 1240px) {
+    section.settings {
+        width: 100%;
+        max-width: unset;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    section.settings {
+        flex-direction: column;
+    }
+
+    div.ajusts {
+        width: 160px;
+    }
+
+    p.speed-label {
+        text-align: center;
+    }
+
+    div.actions {
+        margin-top: 15px;
+    }
+
+    button.speak:first-child {
+        margin-left: 0;
+    }
+}

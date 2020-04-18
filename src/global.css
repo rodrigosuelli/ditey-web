@@ -12,7 +12,8 @@ html, body, #root {
 }
 
 body {
-    background-color: #E9E6E1;
+    /* background-color: #E9E6E1; */
+    background-color: #dddee4;
 }
 
 body, button, ul, textarea {
@@ -42,7 +43,7 @@ a {
 }
 
 textarea {
-    resize: vertical;
+    resize: none;
     border-radius: 8px;
     font-weight: 500;
     font-size: 15px;
@@ -55,4 +56,69 @@ textarea {
 
 textarea::placeholder {
     color: #000000be;
+}
+
+.yellow-text {
+    color: #FFDD00;
+}
+
+.black-text {
+    color: black;
+    text-shadow: none;
+}
+
+/** Range Input 
+*Applying base CSS styles*/
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+}
+  
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+/* Styling the Thumb */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #FF3366;
+    cursor: pointer;
+    margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+input[type=range]::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #FF3366;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #FF3366;
+    border-radius: 0px;
+  }
+  
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #FF3366;
+}
+  
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #FF3366;
+    border-radius: 0px;
 }

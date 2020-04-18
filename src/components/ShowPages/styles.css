@@ -1,0 +1,56 @@
+section.pages {
+    background: linear-gradient(to right, #3089de, #2b93dc, #279eda, #259eda);
+    padding-bottom: 10rem;
+}
+
+section.pages.green {
+    background: linear-gradient(to right, #3eb10d, #40aa19);
+}
+
+section.pages::before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 10rem;
+    background: url('../../assets/svg/blue-wave-2.svg') bottom no-repeat;
+    background-size: 100vw;
+    bottom: -6rem;
+    left: 0;
+}
+
+section.pages.green::before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 10rem;
+    background: url('../../assets/svg/green-wave.svg') bottom no-repeat;
+    background-size: 100vw;
+    bottom: -6rem;
+    left: 0;
+}
+
+div.button-div {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+div.button-div button.btn-switch {
+    margin-left: 2rem;
+    padding: 10px 15px;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 4px;
+    background: #7a23ec;
+    color: #fff;
+    transition: all ease 150ms;
+}
+
+div.button-div button.btn-switch:hover {
+    background: #6b19d6;
+}
+
+div.button-div button.btn-switch:active {
+    background: #5402be;
+}
