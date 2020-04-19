@@ -82,12 +82,31 @@ div.list-container p.copyright {
     margin-bottom: 5px;
 }
 
+@media only screen and (max-width: 1360px) {
+    footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    footer::before {
+        height: 15rem;
+        top: -10rem;
+    }
+}
+
+@media only screen and (max-width: 1006px) {
+    footer {
+        display: none;
+    }
+}
+
 @media only screen and (max-height: 800px) {
     footer::before {
         top: -10rem;
     }
 
     footer {
-        margin-top: 4rem;
+        margin-top: 2rem;
     }
 }

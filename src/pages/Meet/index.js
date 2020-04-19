@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaDownload, FaInfinity, FaMicrophone  } from 'react-icons/fa';
+import { FaDownload, FaInfinity, FaMicrophone } from 'react-icons/fa';
 
 import './styles.css'
 

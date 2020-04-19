@@ -119,6 +119,7 @@ div.team-description {
 .team-description img {
     width: 50%;
     max-width: 600px;
+    margin-right: 10px;
 }
 
 .team-description .team-text {

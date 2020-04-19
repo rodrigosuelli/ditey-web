@@ -142,7 +142,7 @@ div.command-list p.table-item .action-icon {
 
 @media only screen and (max-width: 1240px) {
     div.commands-container{
-        padding: 10px;
+        padding: 5px;
         flex: 1;
         width: 100%;
         order: -1;
@@ -150,7 +150,7 @@ div.command-list p.table-item .action-icon {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         margin: 0 0 10px 0;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
@@ -159,7 +159,11 @@ div.command-list p.table-item .action-icon {
     }
 
     div.commands-container button.mic {
-        top: -20px;
+        top: -10px;
+    }
+
+    div.mic-container p.commands-title {
+        margin-top: 70px;
     }
 
     div.mic-container {
@@ -174,7 +178,7 @@ div.command-list p.table-item .action-icon {
         width: 50%;
     }
 
-    p.table-title {
+    div.command-list p.table-title {
         margin: 0 0 10px 0;
     }
 }

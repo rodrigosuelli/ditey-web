@@ -38,12 +38,12 @@ div.meet-description {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
 
 div.meet-description.start {
     align-items: center;
-    margin-top: 6rem;
+    margin-top: 4rem;
 }
 
 div.meet-description div.meet-text {
@@ -112,6 +112,30 @@ div.features h4 {
 @media only screen and (max-width: 1830px) {
     div.meet-container {
         margin-top: 7vh;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    div.meet-description img {
+        display: none;
+    }
+
+    div.meet-description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    div.features {
+        margin-top: 0rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+    
+    div.meet-description.start {
+        display: none;
     }
 }
 

@@ -7,12 +7,16 @@ section.pages.green {
     background: linear-gradient(to right, #3eb10d, #40aa19);
 }
 
+section.pages.blue {
+    background: linear-gradient(to bottom right, #613be8,#6039e8, #4518e2);
+}
+
 section.pages::before {
     content: "";
     width: 100%;
     position: absolute;
     height: 10rem;
-    background: url('../../assets/svg/blue-wave-2.svg') bottom no-repeat;
+    background: url('../../assets/svg/blue-wave-2.svg') top no-repeat;
     background-size: 100vw;
     bottom: -6rem;
     left: 0;
@@ -24,6 +28,17 @@ section.pages.green::before {
     position: absolute;
     height: 10rem;
     background: url('../../assets/svg/green-wave.svg') bottom no-repeat;
+    background-size: 100vw;
+    bottom: -6rem;
+    left: 0;
+}
+
+section.pages.blue::before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 10rem;
+    background: url('../../assets/svg/dark-blue-wave.svg') top no-repeat;
     background-size: 100vw;
     bottom: -6rem;
     left: 0;
@@ -54,3 +69,102 @@ div.button-div button.btn-switch:hover {
 div.button-div button.btn-switch:active {
     background: #5402be;
 }
+
+@media only screen and (max-width: 1600px) {
+    section.pages::before {
+        bottom: -7rem;
+    }
+
+    section.pages.green::before {
+        bottom: -5.3rem;
+    }
+
+    section.pages.blue::before  {
+        /* height: 9rem; */
+        bottom: -7.4rem;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    section.pages::before {
+        height: 9rem;
+        bottom: -8rem;
+    }
+
+    section.pages.blue::before  {
+        height: 9rem;
+        bottom: -8.6rem;
+    }
+}
+
+@media only screen and (max-width: 1360px) and (max-height: 700px) {
+    section.pages.green::before  {
+        height: 9rem;
+        bottom: -7rem;
+    }
+}
+
+@media only screen and (max-width: 1240px) {
+    section.pages::before {
+        bottom: -9.9rem;
+    }
+
+    section.pages.green::before {
+        bottom: -6.2rem;
+    }
+
+    section.pages.blue::before  {
+        bottom: -9rem;
+    }
+
+    section.pages {
+        padding-bottom: 8rem;
+    }
+}
+
+@media only screen and (max-width: 1006px) {
+    /* section.pages::before {
+        bottom: 1rem;
+    }
+    
+
+    section.pages.green::before {
+        bottom: 5rem;
+    }
+
+    section.pages.blue::before {
+        bottom: 1rem;
+    } */
+
+    section.pages {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 832px) {
+    div.button-div {
+        margin-top: 1rem;
+    }
+}
+
+/* @media only screen and (max-width: 768px) and (max-height: 1024) {
+    section.pages.green::before {
+        bottom: 5rem;
+    }
+
+    section.pages.blue::before {
+        bottom: 1rem;
+    } 
+} */
+/* 
+@media only screen and (max-height: 730px) {
+    div.button-div {
+        margin-top: 4rem;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    div.button-div {
+        margin-top: 5rem;
+    }
+} */
