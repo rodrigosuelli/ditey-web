@@ -3,7 +3,11 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import './styles.css';
 
-import ProfileImg from '../../assets/png/preview.png';
+import RodrigoImg from '../../assets/png/rodrigo.png';
+import LucasImg from '../../assets/png/lucas.jpg';
+import GabrielImg from '../../assets/png/gabriel.jpg';
+import EusebioImg from '../../assets/png/eusebio.jpg';
+import JoseImg from '../../assets/png/jose.jpg';
 import WorkTogetherImg from '../../assets/svg/undraw_work_together.svg';
 
 export default function OurTeam() {
@@ -14,9 +18,9 @@ export default function OurTeam() {
         <div className="card one">
             <h3>José Murilo</h3>
             <div className="profile-pic">
-              <img src={ProfileImg} alt="profile-img" />
+              <img src={JoseImg} alt="profile-img" />
             </div>
-            <h4>Founder && Web Developer</h4>
+            <h4>Entrepreneur && Coach</h4>
             <p>Estudante apaixonado por tecnologia e programação.</p>
             <div className="links">
               <a href="https://github.com/f1gure" target="_blank" rel="noopener noreferrer">
@@ -31,9 +35,9 @@ export default function OurTeam() {
         <div className="card two">
           <h3>Gabriel Santim</h3>
           <div className="profile-pic">
-            <img src={ProfileImg} alt="profile-img" />
+            <img src={GabrielImg} alt="profile-img" />
           </div>
-          <h4>Founder && Web Developer</h4>
+          <h4>Founder && Database Administrator</h4>
           <p>Estudante apaixonado por tecnologia e programação.</p>
           <div className="links">
             <a href="https://github.com/GabrielSBova" target="_blank" rel="noopener noreferrer">
@@ -46,9 +50,9 @@ export default function OurTeam() {
         </div>
 
         <div className="card three">
-          <h3>Rodrigo H. Suélli</h3>
+          <h3>Rodrigo Suélli</h3>
           <div className="profile-pic">
-            <img src={ProfileImg} alt="profile-img" />
+            <img src={RodrigoImg} alt="profile-img" />
           </div>
           <h4>Founder && Web Developer</h4>
           <p>Estudante apaixonado por tecnologia e programação.</p>
@@ -65,9 +69,9 @@ export default function OurTeam() {
         <div className="card four">
           <h3>Eusébio Leite</h3>
           <div className="profile-pic">
-            <img src={ProfileImg} alt="profile-img" />
+            <img src={EusebioImg} alt="profile-img" />
           </div>
-          <h4>Founder && Web Developer</h4>
+          <h4>Founder && Mobile Developer</h4>
           <p>Estudante apaixonado por tecnologia e programação.</p>
           <div className="links">
             <a href="https://github.com/muun0" target="_blank" rel="noopener noreferrer">
@@ -82,9 +86,9 @@ export default function OurTeam() {
         <div className="card five">
           <h3>Lucas Tadeu</h3>
           <div className="profile-pic">
-            <img src={ProfileImg} alt="profile-img" />
+            <img src={LucasImg} alt="profile-img" />
           </div>
-          <h4>Founder && Web Developer</h4>
+          <h4>Decision Making && Marketing Specialist</h4>
           <p>Estudante apaixonado por tecnologia e programação.</p>
           <div className="links">
             <a href="https://github.com/lucastmendoncaf" target="_blank" rel="noopener noreferrer">
