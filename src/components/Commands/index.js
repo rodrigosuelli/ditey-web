@@ -18,6 +18,8 @@ export default function Commands(props) {
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         const recognition = new SpeechRecognition();
 
+        recognition.lang = 'pt-BR';
+
         recognition.onstart = () => {
             setMicStatus('Estou ouvindo...');
         };
