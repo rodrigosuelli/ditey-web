@@ -36,10 +36,10 @@ export default function OurTeam() {
           <h4>Founder && Web Developer</h4>
           <p>Estudante apaixonado por tecnologia e programação.</p>
           <div className="links">
-            <a href="https://github.com/rodrigosuelli" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/GabrielSBova" target="_blank" rel="noopener noreferrer">
               <FaGithub color="#fff" size={40} />
             </a>
-            <a href="https://www.linkedin.com/in/rodrigo-henrique-suélli-5b6b69190" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/gabriel-bova-44b1b3184/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin color="#fff" size={40} />
             </a>
           </div>
@@ -87,10 +87,10 @@ export default function OurTeam() {
           <h4>Founder && Web Developer</h4>
           <p>Estudante apaixonado por tecnologia e programação.</p>
           <div className="links">
-            <a href="https://github.com/rodrigosuelli" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/lucastmendoncaf" target="_blank" rel="noopener noreferrer">
               <FaGithub color="#fff" size={40} />
             </a>
-            <a href="https://www.linkedin.com/in/rodrigo-henrique-suélli-5b6b69190" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/lucas-ferreira-076a28197/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin color="#fff" size={40} />
             </a>
           </div>
