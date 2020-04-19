@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './styles.css'
 
@@ -38,9 +38,9 @@ export default function Header(props) {
                     <div className="two"></div>
                     <div className="three"></div>
                 </div>
-                <a className="logo" href="/">
+                <Link className="logo" to="/">
                 <span className="logo-brand">ditey</span>
-                </a>
+                </Link>
             </div>
             
             <nav>
