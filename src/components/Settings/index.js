@@ -51,7 +51,7 @@ export default function Settings(props) {
           <label htmlFor="speed" className="speed-label">
             <p>Velocidade: {speed}</p>
           </label>
-          <RangeInput />
+          {RangeInput()}
         </div>
 
         <div className="voice-container">
@@ -59,7 +59,15 @@ export default function Settings(props) {
             <p className="speed-label">Voz:</p>
           </label>
 
-          <select onChange={(e) => setVoice(e.target.value)} className="select-css" name="voice" id="voice">
+          <select
+            onChange={(e) => {
+              setVoice(e.target.value);
+              setSpeed(1);
+            }}
+            className="select-css"
+            name="voice"
+            id="voice"
+          >
             {voices.map((item, index) => (
               // eslint-disable-next-line react/no-array-index-key
               <option key={index} value={item.name}>
