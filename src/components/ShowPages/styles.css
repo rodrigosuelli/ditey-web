@@ -16,7 +16,7 @@ section.pages::before {
     width: 100%;
     position: absolute;
     height: 10rem;
-    background: url('../../assets/svg/blue-wave-2.svg') top no-repeat;
+    background: url('../../assets/waves/blue-wave.svg') top no-repeat;
     background-size: 100vw;
     bottom: -6rem;
     left: 0;
@@ -27,7 +27,7 @@ section.pages.green::before {
     width: 100%;
     position: absolute;
     height: 10rem;
-    background: url('../../assets/svg/green-wave.svg') bottom no-repeat;
+    background: url('../../assets/waves/green-wave.svg') bottom no-repeat;
     background-size: 100vw;
     bottom: -6rem;
     left: 0;
@@ -38,7 +38,7 @@ section.pages.blue::before {
     width: 100%;
     position: absolute;
     height: 10rem;
-    background: url('../../assets/svg/dark-blue-wave.svg') top no-repeat;
+    background: url('../../assets/waves/dark-blue-wave.svg') top no-repeat;
     background-size: 100vw;
     bottom: -6rem;
     left: 0;

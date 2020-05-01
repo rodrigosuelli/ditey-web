@@ -1,14 +1,13 @@
 div.content {
-    height: calc(100vh - 70px);
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: minmax(250px, 280px) auto;
-    grid-template-areas: 
-    "aside content";
-    grid-area: content;
-    margin-bottom: 4rem;
-    /* max-width: 1120px; */
-    /* margin: 10px auto; */
+  height: calc(100vh - 70px);
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: minmax(250px, 280px) auto;
+  grid-template-areas: 'aside content';
+  grid-area: content;
+  margin-bottom: 4rem;
+  /* max-width: 1120px; */
+  /* margin: 10px auto; */
 }
 
 /* div.content::after {
@@ -22,104 +21,108 @@ div.content {
     left: 0;
 } */
 
-div.content-right{
-    width: 90%;
-    max-width: 1180px;
-    margin: 10px auto;
+div.content-right {
+  width: 90%;
+  max-width: 1180px;
+  margin: 10px auto;
 }
 /* TITLE */
 h1.slogan {
-    font-weight: 600;
-    font-size: 45px;
+  font-weight: 600;
+  font-size: 45px;
 }
 
 .slogan span.ditey {
-    font-weight: 700;
-    color: #6A42F4;
+  font-weight: 700;
+  color: #6a42f4;
 }
 
 .slogan span.y-dot {
-    color: #FFDD00;
+  color: #ffdd00;
 }
 
 .slogan span.r-dot {
-    color: #FF0000;
+  color: #ff0000;
 }
 
 .slogan span.g-dot {
-    color: #00FF00;
+  color: #00ff00;
 }
 
 section.main {
-    margin: 15px 0 20px 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  margin: 15px 0 20px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 textarea.text-input {
-    width: 740px;
-    min-height: 420px;
+  width: 740px;
+  min-height: 420px;
 }
 
-  /* media queries */
-  
+/* media queries */
 
 @media only screen and (min-width: 1367px) {
-    div.content-right {
-        margin: 20px auto;
-    }
+  div.content-right {
+    margin: 20px auto;
+  }
 
-    h1.slogan {
-        font-size: 50px;
-    }
+  h1.slogan {
+    font-size: 50px;
+  }
 
-    textarea.text-input {
-        width: 840px;
-        min-height: 520px;
-    }
+  textarea.text-input {
+    width: 840px;
+    min-height: 520px;
+  }
+}
 
+@media only screen and (max-width: 1360px) {
+  div.content {
+    grid-template-columns: minmax(230px, 250px) auto;
+  }
 }
 
 @media only screen and (max-width: 1240px) {
-    div.content {
-        grid-template-columns: minmax(200px, 230px) auto;
-    }
+  div.content {
+    grid-template-columns: minmax(200px, 230px) auto;
+  }
 
-    h1.slogan {
-        display: none;
-    }
+  h1.slogan {
+    display: none;
+  }
 
-    section.main {
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-        margin: 15px 0;
-    }
+  section.main {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: 15px 0;
+  }
 
-    textarea.text-input {
-        width: 100%;
-        min-height: 340px;
-    }
+  textarea.text-input {
+    width: 100%;
+    min-height: 340px;
+  }
 }
 
 @media only screen and (max-width: 1006px) {
-    div.content {
-        display: unset;
-    }
+  div.content {
+    display: unset;
+  }
 
-    div.content-right {
-        margin-top: 20px;
-        margin-bottom: 6rem;
-    }
+  div.content-right {
+    margin-top: 20px;
+    margin-bottom: 6rem;
+  }
 }
 
 @media only screen and (max-width: 500px) {
-    div.content-right {
-        margin: calc(5vh) auto 0 auto;
-    }
+  div.content-right {
+    margin: calc(5vh) auto 0 auto;
+  }
 
-    textarea.text-input {
-        min-height: 300px;
-    }
+  textarea.text-input {
+    min-height: 300px;
+  }
 }

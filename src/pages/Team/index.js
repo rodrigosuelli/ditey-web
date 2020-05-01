@@ -3,11 +3,11 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import './styles.css';
 
-import RodrigoImg from '../../assets/png/rodrigo.png';
-import LucasImg from '../../assets/png/lucas.jpg';
-import GabrielImg from '../../assets/png/gabriel.jpg';
-import EusebioImg from '../../assets/png/eusebio.jpg';
-import JoseImg from '../../assets/png/jose.jpg';
+import RodrigoImg from '../../assets/profile-pics/rodrigo.jpg';
+import LucasImg from '../../assets/profile-pics/lucas.jpg';
+import GabrielImg from '../../assets/profile-pics/gabriel.jpg';
+import EusebioImg from '../../assets/profile-pics/eusebio.jpg';
+import JoseImg from '../../assets/profile-pics/jose.jpg';
 import WorkTogetherImg from '../../assets/svg/undraw_work_together.svg';
 
 export default function OurTeam() {

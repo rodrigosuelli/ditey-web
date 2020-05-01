@@ -12,7 +12,7 @@ footer::before {
     width: 100%;
     position: absolute;
     height: 15rem;
-    background: url('../../assets/svg/footer-wave.svg') top no-repeat;
+    background: url('../../assets/waves/footer-wave.svg') top no-repeat;
     background-size: 100vw;
     top: -11rem;
     left: 0;
