@@ -1,0 +1,29 @@
+<h1 align="center" >Ditey</h1>
+<p align="center">Um poderoso <strong>leitor de textos</strong> desenvolvido com a Web Speech API 🎤⚛</p>
+
+## 💻 Tecnologias
+
+- [React](https://reactjs.org)
+- [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
+
+## 🤔 Sobre este Projeto
+
+O **ditey** é um leitor de textos online com várias funções como: salvar textos no armazenamento local do navegador, comandos de voz e escolher uma dentre as vozes disponíveis para ler o seu texto.
+
+## 🚀 Instalação
+
+**Clone o Repositório**
+
+```
+git clone https://github.com/rodrigosuelli/semana-omnistack-11.git
+
+cd semana-omnistack-11
+```
+
+**Instale as dependências com `npm install` ou `yarn`**
+
+**Rode `yarn start` ou `npm start` para abrir o projeto no servidor local**
+
+## :memo: Licença
+
+Este projeto está licenciado sob a licença [MIT](./LICENSE).
