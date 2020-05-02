@@ -10,6 +10,8 @@
 
 O **ditey** é um leitor de textos online com várias funções como: salvar textos no armazenamento local do navegador, comandos de voz e escolher uma dentre as vozes disponíveis para ler o seu texto.
 
+**Observação**: devido a compatibilidade da Web Speech API, algumas funções do projeto não funcionam em dispositivos móveis. 
+
 ## 🚀 Instalação
 
 **Clone o Repositório**
