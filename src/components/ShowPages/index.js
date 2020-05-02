@@ -8,68 +8,63 @@ import Team from '../../pages/Team';
 import App from '../../pages/App';
 
 export default function ShowPages(props) {
+  const { page, onPageChange } = props;
 
-    function showPage() {
-        if (props.page === 'Team') {
-            return <Team />
-        }
-
-        if (props.page === 'App') {
-            return <App />
-        }
-        
-        return <Meet />
+  function showPage() {
+    if (page === 'Team') {
+      return <Team />;
     }
 
-    function handlePreviousPage() {
-        if (props.page === 'Team') {
-            return props.onPageChange('Meet');
-        }
-
-        if (props.page === 'App') {
-            return props.onPageChange('Team');
-        }
-
-        return;
+    if (page === 'App') {
+      return <App />;
     }
 
-    function handleNextPage() {
-        if (props.page === 'Meet') {
-            return props.onPageChange('Team');
-        }
+    return <Meet />;
+  }
 
-        if (props.page === 'Team') {
-            return props.onPageChange('App');
-        }
-
-        return;
+  function handlePreviousPage() {
+    if (page === 'Team') {
+      return onPageChange('Meet');
     }
 
-    let pagesClass = 'pages';
-    if (props.page === 'Team') pagesClass = 'pages green';
-    if (props.page === 'App') pagesClass = 'pages blue';
-    
-    return(
-        <section id="pages" className={pagesClass}>
-            {showPage()}
+    if (page === 'App') {
+      return onPageChange('Team');
+    }
+    return false;
+  }
 
-            <div className="button-div">
-                <AnchorLink 
-                offset={() => 40}
-                onClick={handlePreviousPage}
-                href='#pages'
-                >
-                <button className="btn-switch">Anterior</button>
-                </AnchorLink>
+  function handleNextPage() {
+    if (page === 'Meet') {
+      return onPageChange('Team');
+    }
 
-                <AnchorLink 
-                offset={() => 40}
-                onClick={handleNextPage}
-                href='#pages'
-                >
-                <button className="btn-switch">Próxima</button>
-                </AnchorLink>
-            </div>
-        </section>
-    );
+    if (page === 'Team') {
+      return onPageChange('App');
+    }
+    return false;
+  }
+
+  let pagesClass = 'pages';
+  if (page === 'Team') pagesClass = 'pages green';
+  if (page === 'App') pagesClass = 'pages blue';
+
+  return (
+    <section id="pages" className={pagesClass}>
+      {showPage()}
+
+      <div className="button-div">
+        <AnchorLink offset={() => 40} onClick={handlePreviousPage} href="#pages">
+          <button type="button" className="btn-switch">
+            Anterior
+          </button>
+        </AnchorLink>
+
+        <AnchorLink offset={() => 40} onClick={handleNextPage} href="#pages">
+          <button type="button" className="btn-switch">
+            Próxima
+          </button>
+        </AnchorLink>
+      </div>
+    </section>
+  );
 }

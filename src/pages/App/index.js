@@ -15,10 +15,8 @@ export default function App() {
           <div className="block one">
             <h2>Motivação</h2>
             <h3>
-              Funcionalidades como pausar, retomar e comandos de voz não
-              funcionam em dispositivos movéis, mas não fique triste, instalando
-              o aplicativo você poderá usar esses e muitos outros recursos
-              exclusivos do app.
+              Funcionalidades como pausar, retomar e comandos de voz não funcionam em dispositivos movéis, mas não fique
+              triste, instalando o aplicativo você poderá usar esses e muitos outros recursos exclusivos do app.
             </h3>
           </div>
           <div className="block two">

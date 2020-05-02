@@ -26,11 +26,6 @@ export default function Footer(props) {
                 Nosso App
               </AnchorLink>
             </li>
-            <li>
-              <AnchorLink offset={() => 40} onClick={() => props.onPageChange('Rate')} href="#pages">
-                Avalie
-              </AnchorLink>
-            </li>
           </ul>
         </div>
         <div className="list-container">
