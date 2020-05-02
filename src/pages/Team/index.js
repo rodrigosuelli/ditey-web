@@ -21,7 +21,7 @@ export default function OurTeam() {
             <img src={JoseImg} alt="profile-img" />
           </div>
           <h4>Entrepreneur && Coach</h4>
-          <p>Estudante apaixonado por tecnologia e programação.</p>
+          <p>Autônomo apaixonado por hardware, games e música.</p>
           <div className="links">
             <a href="https://github.com/f1gure" target="_blank" rel="noopener noreferrer">
               <FaGithub color="#fff" size={40} />
@@ -41,8 +41,8 @@ export default function OurTeam() {
           <div className="profile-pic">
             <img src={GabrielImg} alt="profile-img" />
           </div>
-          <h4>Founder && Database Administrator</h4>
-          <p>Estudante apaixonado por tecnologia e programação.</p>
+          <h4>Founder && Data Scientist</h4>
+          <p>Buscando conhecimentos na área de Data Science e Machine Learning.</p>
           <div className="links">
             <a href="https://github.com/GabrielSBova" target="_blank" rel="noopener noreferrer">
               <FaGithub color="#fff" size={40} />
@@ -59,7 +59,7 @@ export default function OurTeam() {
             <img src={RodrigoImg} alt="profile-img" />
           </div>
           <h4>Founder && Web Developer</h4>
-          <p>Estudante apaixonado por tecnologia e programação.</p>
+          <p>Apaixonado por tecnologia e programação. Focando na stack Javascript.</p>
           <div className="links">
             <a href="https://github.com/rodrigosuelli" target="_blank" rel="noopener noreferrer">
               <FaGithub color="#fff" size={40} />
@@ -80,7 +80,7 @@ export default function OurTeam() {
             <img src={EusebioImg} alt="profile-img" />
           </div>
           <h4>Founder && Mobile Developer</h4>
-          <p>Estudante apaixonado por tecnologia e programação.</p>
+          <p>Atualmente aprendendo as tecnologias do ecossistema Java.</p>
           <div className="links">
             <a href="https://github.com/muun0" target="_blank" rel="noopener noreferrer">
               <FaGithub color="#fff" size={40} />
@@ -97,7 +97,7 @@ export default function OurTeam() {
             <img src={LucasImg} alt="profile-img" />
           </div>
           <h4>Decision Making && Marketing Specialist</h4>
-          <p>Estudante apaixonado por tecnologia e programação.</p>
+          <p>Líder de equipes e negociante por natureza. Curto games e eletrônica.</p>
           <div className="links">
             <a href="https://github.com/lucastmendoncaf" target="_blank" rel="noopener noreferrer">
               <FaGithub color="#fff" size={40} />
