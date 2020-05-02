@@ -58,7 +58,6 @@ export default function Settings(props) {
           <label htmlFor="voice">
             <p className="speed-label">Voz:</p>
           </label>
-
           <select
             onChange={(e) => {
               setVoice(e.target.value);

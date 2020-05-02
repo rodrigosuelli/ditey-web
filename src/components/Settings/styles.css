@@ -15,6 +15,10 @@ div.speed-container {
   width: 150px;
 }
 
+div.voice-container {
+  width: 230px;
+}
+
 .speed-label {
   color: #ff3366;
   font-size: 20px;
@@ -91,7 +95,22 @@ button.speak:hover {
   }
 }
 
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 655px) {
+  div.speed-container {
+    margin-right: 1rem;
+    width: 140px;
+  }
+
+  div.voice-container {
+    width: 200px;
+  }
+
+  div.actions {
+    display: inline-flex;
+  }
+}
+
+@media only screen and (max-width: 580px) {
   section.settings {
     flex-direction: column;
   }
