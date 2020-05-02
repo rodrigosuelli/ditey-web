@@ -79,8 +79,8 @@ export default function Settings(props) {
       </div>
 
       <div className="actions">
-        <button type="button" onClick={speakAction === 'Pausar' ? onPause : onSpeak} className="speak">
-          <SpeakIcon speakAction={speakAction} />
+        <button type="button" onClick={speakAction === 'Falar' ? onSpeak : onPause} className="speak">
+          <SpeakIcon />
           {speakAction}
         </button>
 

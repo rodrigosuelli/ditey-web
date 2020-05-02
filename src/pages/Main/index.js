@@ -59,6 +59,7 @@ export default function Main() {
 
   function handleSpeak() {
     let myTimeout;
+
     function myTimer() {
       window.speechSynthesis.pause();
       window.speechSynthesis.resume();
@@ -66,8 +67,8 @@ export default function Main() {
     }
 
     myTimeout = setTimeout(myTimer, 10000);
-    const utt = new SpeechSynthesisUtterance(texts[activeTextIndex]);
 
+    const utt = new SpeechSynthesisUtterance(texts[activeTextIndex]);
     utt.volume = 1;
     utt.rate = speed;
     utt.lang = 'pt-BR';
@@ -88,6 +89,7 @@ export default function Main() {
     utt.onresume = () => {
       myTimeout = setTimeout(myTimer, 10000);
     };
+
     window.speechSynthesis.speak(utt);
     setSpeakAction('Pausar');
   }
