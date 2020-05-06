@@ -17,9 +17,7 @@ export default function OurTeam() {
       <div className="cards">
         <div className="card one">
           <h3>José Murilo</h3>
-          <div className="profile-pic">
-            <img src={JoseImg} alt="profile-img" />
-          </div>
+          <img src={JoseImg} alt="profile-img" />
           <h4>Entrepreneur && Coach</h4>
           <p>Autônomo apaixonado por hardware, games e música.</p>
           <div className="links">
@@ -38,9 +36,7 @@ export default function OurTeam() {
 
         <div className="card two">
           <h3>Gabriel Santim</h3>
-          <div className="profile-pic">
-            <img src={GabrielImg} alt="profile-img" />
-          </div>
+          <img src={GabrielImg} alt="profile-img" />
           <h4>Founder && Data Scientist</h4>
           <p>Buscando conhecimentos na área de Data Science e Machine Learning.</p>
           <div className="links">
@@ -55,9 +51,7 @@ export default function OurTeam() {
 
         <div className="card three">
           <h3>Rodrigo Suélli</h3>
-          <div className="profile-pic">
-            <img src={RodrigoImg} alt="profile-img" />
-          </div>
+          <img src={RodrigoImg} alt="profile-img" />
           <h4>Founder && Web Developer</h4>
           <p>Apaixonado por tecnologia e programação. Focando na stack Javascript.</p>
           <div className="links">
@@ -76,9 +70,7 @@ export default function OurTeam() {
 
         <div className="card four">
           <h3>Eusébio Leite</h3>
-          <div className="profile-pic">
-            <img src={EusebioImg} alt="profile-img" />
-          </div>
+          <img src={EusebioImg} alt="profile-img" />
           <h4>Founder && Mobile Developer</h4>
           <p>Atualmente aprendendo as tecnologias do ecossistema Java.</p>
           <div className="links">
@@ -93,9 +85,7 @@ export default function OurTeam() {
 
         <div className="card five">
           <h3>Lucas Tadeu</h3>
-          <div className="profile-pic">
-            <img src={LucasImg} alt="profile-img" />
-          </div>
+          <img src={LucasImg} alt="profile-img" />
           <h4>Decision Making && Marketing Specialist</h4>
           <p>Líder de equipes e negociante por natureza. Curto games e eletrônica.</p>
           <div className="links">
