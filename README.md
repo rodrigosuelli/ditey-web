@@ -1,5 +1,5 @@
 <h1 align="center" >Ditey</h1>
-<p align="center">Um poderoso <strong>leitor de textos</strong> desenvolvido com a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Web Speech API</a> 🎤⚛</p>
+<p align="center">Um poderoso <strong>leitor de textos</strong> online desenvolvido com a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Web Speech API</a> 🎤⚛</p>
 
 ## 💻 Tecnologias
 
