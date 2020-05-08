@@ -24,6 +24,7 @@ ul,
 textarea {
   font-family: 'Montserrat', sans-serif;
   list-style: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 button {
