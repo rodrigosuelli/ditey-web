@@ -17,9 +17,9 @@ O **ditey** é um leitor de textos online com várias funções como: salvar tex
 **Clone o Repositório**
 
 ```
-git clone https://github.com/rodrigosuelli/semana-omnistack-11.git
+git clone https://github.com/rodrigosuelli/ditey.git
 
-cd semana-omnistack-11
+cd ditey
 ```
 
 **Instale as dependências com `npm install` ou `yarn`**
