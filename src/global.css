@@ -81,10 +81,6 @@ input[type='range'] {
   background: transparent; /* Otherwise white in Chrome */
 }
 
-input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
-
 input[type='range']:focus {
   outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
 }
@@ -107,6 +103,7 @@ input[type='range']::-moz-range-thumb {
   border-radius: 50%;
   background: #ff3366;
   cursor: pointer;
+  margin: auto;
 }
 
 input[type='range']::-webkit-slider-runnable-track {
@@ -127,4 +124,23 @@ input[type='range']::-moz-range-track {
   cursor: pointer;
   background: #ff3366;
   border-radius: 0px;
+}
+
+input[type='range']::-ms-track {
+  border: 0;
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: #ff3366;
+  border-radius: 0px;
+}
+
+input[type='range']::-ms-thumb {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #ff3366;
+  cursor: pointer;
+  margin: auto;
 }
