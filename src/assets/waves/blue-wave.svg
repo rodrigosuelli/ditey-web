@@ -1,1 +1,19 @@
-<svg id="Camada_3" data-name="Camada 3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 161"><defs><style>.cls-1{fill:url(#Gradiente_sem_nome_28);}.cls-2{fill:url(#Gradiente_sem_nome_25);}</style><linearGradient id="Gradiente_sem_nome_28" x1="951.94" y1="22.17" x2="963.02" y2="132.94" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#128acc"/><stop offset="1" stop-color="#3d63e6"/></linearGradient><linearGradient id="Gradiente_sem_nome_25" x1="959.31" y1="89.59" x2="960.9" y2="167.12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3d63e6"/><stop offset="1" stop-color="#259eda"/></linearGradient></defs><title>blue-wave-2</title><path class="cls-1" d="M1050,29C404,108,20,30,0,23V166.47H1920V39C1899,37,1560-17,1050,29Z"/><path class="cls-2" d="M1050,70C404,149,20,71,0,64V166.47H1920V80C1899,78,1560,24,1050,70Z"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Camada_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 365.5" style="enable-background:new 0 0 1920 365.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="951.9413" y1="260.1653" x2="963.0213" y2="370.9353" gradientTransform="matrix(1 0 0 1 0 -248.49)">
+	<stop  offset="0" style="stop-color:#128ACC"/>
+	<stop  offset="1" style="stop-color:#3D63E6"/>
+</linearGradient>
+<path class="st0" d="M1050,18.5c-646,79-1030,1-1050-6V156h1920V28.5C1899,26.5,1560-27.5,1050,18.5z"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="959.31" y1="327.5854" x2="960.9" y2="405.1154" gradientTransform="matrix(1 0 0 1 0 -248.49)">
+	<stop  offset="0" style="stop-color:#3D63E6"/>
+	<stop  offset="1" style="stop-color:#259EDA"/>
+</linearGradient>
+<path class="st1" d="M1050,59.5c-646,79-1030,1-1050-6V156h1920V69.5C1899,67.5,1560,13.5,1050,59.5z"/>
+</svg>

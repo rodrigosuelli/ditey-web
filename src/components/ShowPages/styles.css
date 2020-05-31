@@ -1,129 +1,129 @@
 section.pages {
-    background: linear-gradient(to right, #3089de, #2b93dc, #279eda, #259eda);
-    padding-bottom: 10rem;
+  background: linear-gradient(to right, #3089de, #2b93dc, #279eda, #259eda);
+  padding-bottom: 10rem;
 }
 
 section.pages.green {
-    background: linear-gradient(to right, #3eb10d, #40aa19);
+  background: linear-gradient(to right, #3eb10d, #40aa19);
 }
 
 section.pages.blue {
-    background: linear-gradient(to bottom right, #613be8,#6039e8, #4518e2);
+  background: linear-gradient(to bottom right, #613be8, #6039e8, #4518e2);
 }
 
 section.pages::before {
-    content: "";
-    width: 100%;
-    position: absolute;
-    height: 10rem;
-    background: url('../../assets/waves/blue-wave.svg') top no-repeat;
-    background-size: 100vw;
-    bottom: -6rem;
-    left: 0;
+  content: '';
+  width: 100%;
+  position: absolute;
+  height: 10rem;
+  background: url('../../assets/waves/blue-wave.svg') top no-repeat;
+  background-size: 100vw;
+  bottom: -6rem;
+  left: 0;
 }
 
 section.pages.green::before {
-    content: "";
-    width: 100%;
-    position: absolute;
-    height: 10rem;
-    background: url('../../assets/waves/green-wave.svg') bottom no-repeat;
-    background-size: 100vw;
-    bottom: -6rem;
-    left: 0;
+  content: '';
+  width: 100%;
+  position: absolute;
+  height: 10rem;
+  background: url('../../assets/waves/green-wave.svg') top no-repeat;
+  background-size: 100vw;
+  bottom: -6rem;
+  left: 0;
 }
 
 section.pages.blue::before {
-    content: "";
-    width: 100%;
-    position: absolute;
-    height: 10rem;
-    background: url('../../assets/waves/dark-blue-wave.svg') top no-repeat;
-    background-size: 100vw;
-    bottom: -6rem;
-    left: 0;
+  content: '';
+  width: 100%;
+  position: absolute;
+  height: 10rem;
+  background: url('../../assets/waves/purple-wave.svg') top no-repeat;
+  background-size: 100vw;
+  bottom: -6rem;
+  left: 0;
 }
 
 div.button-div {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 div.button-div button.btn-switch {
-    margin-left: 2rem;
-    padding: 10px 15px;
-    font-size: 22px;
-    font-weight: 500;
-    border-radius: 4px;
-    background: #7a23ec;
-    color: #fff;
-    transition: all ease 150ms;
+  margin-left: 2rem;
+  padding: 10px 15px;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 4px;
+  background: #7a23ec;
+  color: #fff;
+  transition: all ease 150ms;
 }
 
 div.button-div button.btn-switch:hover {
-    background: #6b19d6;
+  background: #6b19d6;
 }
 
 div.button-div button.btn-switch:active {
-    background: #5402be;
+  background: #5402be;
 }
 
 @media only screen and (max-width: 1600px) {
-    section.pages::before {
-        bottom: -7rem;
-    }
+  section.pages::before {
+    bottom: -7rem;
+  }
 
-    section.pages.green::before {
-        bottom: -5.3rem;
-    }
+  section.pages.green::before {
+    bottom: -5.3rem;
+  }
 
-    section.pages.blue::before  {
-        /* height: 9rem; */
-        bottom: -7.4rem;
-    }
+  section.pages.blue::before {
+    /* height: 9rem; */
+    bottom: -7.4rem;
+  }
 }
 
 @media only screen and (max-width: 1400px) {
-    section.pages::before {
-        height: 9rem;
-        bottom: -8rem;
-    }
+  section.pages::before {
+    height: 9rem;
+    bottom: -8rem;
+  }
 
-    section.pages.blue::before  {
-        height: 9rem;
-        bottom: -8.6rem;
-    }
+  section.pages.blue::before {
+    height: 9rem;
+    bottom: -8.6rem;
+  }
 }
 
 @media only screen and (max-width: 1360px) and (max-height: 700px) {
-    section.pages.green::before  {
-        height: 9rem;
-        bottom: -7rem;
-    }
+  section.pages.green::before {
+    height: 9rem;
+    bottom: -7rem;
+  }
 }
 
 @media only screen and (max-width: 1240px) {
-    section.pages::before {
-        bottom: -9.9rem;
-    }
+  section.pages::before {
+    bottom: -9.9rem;
+  }
 
-    section.pages.green::before {
-        bottom: -6.2rem;
-    }
+  section.pages.green::before {
+    bottom: -6.2rem;
+  }
 
-    section.pages.blue::before  {
-        bottom: -9rem;
-    }
+  section.pages.blue::before {
+    bottom: -9rem;
+  }
 
-    section.pages {
-        padding-bottom: 8rem;
-    }
+  section.pages {
+    padding-bottom: 8rem;
+  }
 }
 
 @media only screen and (max-width: 1006px) {
-    /* section.pages::before {
+  /* section.pages::before {
         bottom: 1rem;
     }
     
@@ -136,15 +136,15 @@ div.button-div button.btn-switch:active {
         bottom: 1rem;
     } */
 
-    section.pages {
-        display: none;
-    }
+  section.pages {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 832px) {
-    div.button-div {
-        margin-top: 1rem;
-    }
+  div.button-div {
+    margin-top: 1rem;
+  }
 }
 
 /* @media only screen and (max-width: 768px) and (max-height: 1024) {
