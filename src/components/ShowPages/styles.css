@@ -1,5 +1,5 @@
 section.pages {
-  background: linear-gradient(to right, #3089de, #2b93dc, #279eda, #259eda);
+  background: linear-gradient(to right, #2d8fde, #2a96db, #279eda, #259eda);
   padding-bottom: 10rem;
 }
 
@@ -18,7 +18,7 @@ section.pages::before {
   height: 10rem;
   background: url('../../assets/waves/blue-wave.svg') top no-repeat;
   background-size: 100vw;
-  bottom: -6rem;
+  bottom: -7rem;
   left: 0;
 }
 
@@ -29,7 +29,7 @@ section.pages.green::before {
   height: 10rem;
   background: url('../../assets/waves/green-wave.svg') top no-repeat;
   background-size: 100vw;
-  bottom: -6rem;
+  bottom: -7rem;
   left: 0;
 }
 
@@ -40,7 +40,7 @@ section.pages.blue::before {
   height: 10rem;
   background: url('../../assets/waves/purple-wave.svg') top no-repeat;
   background-size: 100vw;
-  bottom: -6rem;
+  bottom: -7rem;
   left: 0;
 }
 

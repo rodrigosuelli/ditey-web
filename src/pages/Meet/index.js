@@ -12,7 +12,10 @@ export default function Meet() {
       <h1>Conheça o ditey</h1>
       <div className="meet-description">
         <div className="meet-text">
-          <h2>Um poderoso leitor de textos, que pode ser usado para te ajudar em casa, na escola ou no trabalho.</h2>
+          <h2>
+            Um poderoso leitor de textos, que pode ser usado para te ajudar em
+            casa, na escola ou no trabalho.
+          </h2>
 
           <div className="features">
             <div className="feat-one">
@@ -42,7 +45,10 @@ export default function Meet() {
         <img src={studyingImg} alt="studyingVector" />
         <div className="meet-text two">
           <h1 className="black-text">Problemas com a lição de casa?</h1>
-          <h2>Coloque a velocidade de fala em 0.1 e termine de copiar esse texto na velocidade da luz !</h2>
+          <h2>
+            Coloque a velocidade de fala em 0.1 e termine de copiar esse texto
+            na velocidade da luz !
+          </h2>
         </div>
       </div>
     </div>

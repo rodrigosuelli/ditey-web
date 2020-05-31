@@ -16,131 +16,131 @@
 } */
 
 div.meet-container {
-    color: #fff;
-    width: 90%;
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+  color: #fff;
+  width: 90%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 
 div.meet-container h1 {
-    font-size: 3rem;
-    text-align: center;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
 div.meet-container div.meet-text.two h1 {
-    text-shadow: none;
+  text-shadow: none;
 }
 
 div.meet-description {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
 }
 
 div.meet-description.start {
-    align-items: center;
-    margin-top: 4rem;
+  align-items: center;
+  margin-top: 4rem;
 }
 
 div.meet-description div.meet-text {
-    width: 50%;
+  width: 50%;
 }
 
 div.meet-text h1 {
-    font-size: 2.6rem;
+  font-size: 2.6rem;
 }
 
 div.meet-description h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.25);
-    text-align: center;
-    padding-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
 div.meet-description img {
-    width: 50%;
-    max-width: 500px;
+  width: 50%;
+  max-width: 500px;
 }
 
 div.meet-text.two h2 {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
 div.features {
-    margin-top: 2rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
+  margin-top: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
 div.features h4 {
-    font-weight: 500;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.25);
-    text-align: center;
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
 }
 
 .feat-one,
 .feat-two,
 .feat-three {
-    width: 90%;
-    max-width: 160px;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
+  width: 90%;
+  max-width: 160px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
 }
 
 .oval-div {
-    background: #fff;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
+  background: #fff;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .feat-icon {
-    color: #6c63ff;
+  color: #6c63ff;
 }
 
 @media only screen and (max-width: 1830px) {
-    div.meet-container {
-        margin-top: 7vh;
-    }
+  div.meet-container {
+    margin-top: 7vh;
+  }
 }
 
 @media only screen and (max-width: 930px) {
-    div.meet-description img {
-        display: none;
-    }
+  div.meet-description img {
+    display: none;
+  }
 
-    div.meet-description {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 2rem;
-    }
+  div.meet-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
 
-    div.features {
-        margin-top: 0rem;
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-around;
-    }
-    
-    div.meet-description.start {
-        display: none;
-    }
+  div.features {
+    margin-top: 0rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  div.meet-description.start {
+    display: none;
+  }
 }
 
 @media only screen and (max-height: 700px) {
-    div.meet-container {
-        margin-top: 12vh;
-    }
+  div.meet-container {
+    margin-top: 12vh;
+  }
 }
