@@ -1,7 +1,7 @@
 div.meet-container {
   color: #fff;
   width: 90%;
-  max-width: 1280px;
+  max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -17,12 +17,7 @@ div.meet-description {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 3rem;
-}
-
-div.meet-description.start {
-  align-items: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 div.meet-description div.meet-text {

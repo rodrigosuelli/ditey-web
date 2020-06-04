@@ -12,17 +12,29 @@ export default function Footer(props) {
           <h3 className="list-title">Links</h3>
           <ul>
             <li>
-              <AnchorLink offset={() => 40} onClick={() => props.onPageChange('Meet')} href="#pages">
+              <AnchorLink
+                offset={() => 40}
+                onClick={() => props.onPageChange('Meet')}
+                href="#pages"
+              >
                 Conheça
               </AnchorLink>
             </li>
             <li>
-              <AnchorLink offset={() => 40} onClick={() => props.onPageChange('Team')} href="#pages">
+              <AnchorLink
+                offset={() => 40}
+                onClick={() => props.onPageChange('Team')}
+                href="#pages"
+              >
                 Quem Somos
               </AnchorLink>
             </li>
             <li>
-              <AnchorLink offset={() => 40} onClick={() => props.onPageChange('App')} href="#pages">
+              <AnchorLink
+                offset={() => 40}
+                onClick={() => props.onPageChange('App')}
+                href="#pages"
+              >
                 Nosso App
               </AnchorLink>
             </li>
@@ -40,7 +52,7 @@ export default function Footer(props) {
         </div>
         <div className="list-container logo">
           <p className="footer-logo">ditey</p>
-          <p className="copyright">Copyright &copy; Karin Technologic Solutions 2020</p>
+          <p className="copyright">Copyright &copy; Ditey 2020</p>
           <a
             className="align-center"
             href="https://github.com/rodrigosuelli/ditey"

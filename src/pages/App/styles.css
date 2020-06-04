@@ -1,132 +1,130 @@
 .app-container {
-    color: #fff;
-    width: 90%;
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+  color: #fff;
+  width: 90%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 
-
 .app-container h1 {
-    font-size: 3rem;
-    text-align: center;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
 .app-container .app-description {
-    display: flex;
-    justify-content:space-around;
-    align-items: flex-start;
-    margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 2rem;
 }
 
 .app-container .app-description img {
-    height: 70vh;
+  height: 70vh;
 }
 
 .app-container .app-description .app-text {
-    width: 50%;
-    height: 62vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+  width: 50%;
+  height: 62vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .app-container .app-description .app-text .block {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .app-container .app-description .app-text .block.three .img-div {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .app-container .app-description .app-text .block.three img {
-    width: 50%;
-    height: 100%;
-    cursor: pointer;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
 }
 
 .app-container .app-description .app-text h2 {
-    font-size: 2rem;
-    text-align: center;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.25);
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
 }
 
 .app-container .app-description .app-text h3 {
-    text-shadow: 0 1px 4px rgba(0,0,0,0.25);
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 600;
 }
 
 .app-container .app-description .app-text .block.three h2 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .app-container .app-description .app-text .features {
-    width: 90%;
-    /* margin-top: 2rem; */
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin: 0;
+  width: 90%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0;
 }
 
 .app-container .app-description .app-text .features h4 {
-    font-weight: 500;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.25);
-    text-align: center;
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
 }
 
 .app-container .app-description .app-text .features .feat-one,
 .app-container .app-description .app-text .features .feat-two,
 .app-container .app-description .app-text .features .feat-three {
-    width: 90%;
-    max-width: 160px;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
+  width: 90%;
+  max-width: 160px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
 }
 
 .app-container .app-description .app-text .features .oval-div {
-    background: #fff;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
+  background: #fff;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .app-container .app-description .app-text .features .feat-icon {
-    color: #6c63ff;
+  color: #6c63ff;
 }
 
 @media only screen and (max-width: 832px) {
-    .app-container .app-description img {
-        display: none;
-    }
+  .app-container .app-description img {
+    display: none;
+  }
 
-    .app-container .app-description .app-text .block.three img {
-        width: 60%;
-        cursor: pointer;
-        display: unset;
-    }
+  .app-container .app-description .app-text .block.three img {
+    width: 60%;
+    cursor: pointer;
+    display: unset;
+  }
 
-    .app-container .app-description .app-text {
-        align-items: center;
-        justify-content: start;
-    }
+  .app-container .app-description .app-text {
+    align-items: center;
+    justify-content: start;
+  }
 
-    .app-container .app-description .app-text .block.one {
-        display: none;
-    }
+  .app-container .app-description .app-text .block.one {
+    display: none;
+  }
 }
