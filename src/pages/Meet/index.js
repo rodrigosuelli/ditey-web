@@ -44,7 +44,7 @@ export default function Meet() {
       <div className="meet-description start">
         <img src={studyingImg} alt="studyingVector" />
         <div className="meet-text two">
-          <h1 className="black-text">Problemas com a lição de casa?</h1>
+          <h1>Problemas com a lição de casa?</h1>
           <h2>
             Coloque a velocidade de fala em 0.1 e termine de copiar esse texto
             na velocidade da luz !
