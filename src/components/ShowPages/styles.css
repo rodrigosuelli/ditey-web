@@ -18,7 +18,7 @@ section.pages::before {
   height: 10rem;
   background: url('../../assets/waves/blue-wave.svg') top no-repeat;
   background-size: 100vw;
-  bottom: -7.5rem;
+  bottom: -7rem;
   left: 0;
 }
 
@@ -29,7 +29,7 @@ section.pages.green::before {
   height: 10rem;
   background: url('../../assets/waves/green-wave.svg') top no-repeat;
   background-size: 100vw;
-  bottom: -7.5rem;
+  bottom: -7rem;
   left: 0;
 }
 
@@ -40,7 +40,7 @@ section.pages.blue::before {
   height: 10rem;
   background: url('../../assets/waves/purple-wave.svg') top no-repeat;
   background-size: 100vw;
-  bottom: -7.5rem;
+  bottom: -7rem;
   left: 0;
 }
 
