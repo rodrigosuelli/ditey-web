@@ -169,6 +169,10 @@ div.command-list p.table-item .action-icon {
     top: -10px;
   }
 
+  div.mic-container button.mic:active {
+    top: -8px;
+  }
+
   div.mic-container p.commands-title {
     margin-top: 70px;
   }
