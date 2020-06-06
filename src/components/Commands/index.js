@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { FaPlay, FaPause, FaStop, FaMicrophoneAlt, FaCheck } from 'react-icons/fa';
+import {
+  FaPlay,
+  FaPause,
+  FaStop,
+  FaMicrophoneAlt,
+  FaCheck,
+} from 'react-icons/fa';
 import './styles.css';
 
 import useEvent from '../../hooks/useEvent';
@@ -10,7 +16,8 @@ export default function Commands(props) {
 
   function readMessage(message) {
     if (message.includes('iniciar')) {
-      if (speechSynthesis.speaking === true) return alert('Ops! Já tem um texto sendo lido!');
+      if (speechSynthesis.speaking === true)
+        return alert('Ops! Já tem um texto sendo lido!');
       props.onSpeak();
     }
 
@@ -18,7 +25,8 @@ export default function Commands(props) {
       if (speechSynthesis.speaking === true && speechSynthesis.paused === true)
         return alert('Ops! A leitura já está pausada!');
 
-      if (speechSynthesis.speaking === false) return alert('Ops! Não há nada para ser pausado!');
+      if (speechSynthesis.speaking === false)
+        return alert('Ops! Não há nada para ser pausado!');
       props.onPause();
     }
 
@@ -26,12 +34,14 @@ export default function Commands(props) {
       if (speechSynthesis.speaking === true && speechSynthesis.paused === false)
         return alert('Ops! A leitura não está pausada!');
 
-      if (speechSynthesis.speaking === false) return alert('Ops! Não há nada para ser retomado!');
+      if (speechSynthesis.speaking === false)
+        return alert('Ops! Não há nada para ser retomado!');
       props.onPause();
     }
 
     if (message.includes('parar')) {
-      if (speechSynthesis.speaking === false) return alert('Ops! Não há o que parar!');
+      if (speechSynthesis.speaking === false)
+        return alert('Ops! Não há o que parar!');
       window.speechSynthesis.cancel();
     }
 
@@ -39,7 +49,8 @@ export default function Commands(props) {
   }
 
   function handleHear() {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
 
     recognition.lang = 'pt-BR';

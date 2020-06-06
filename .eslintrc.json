@@ -39,6 +39,7 @@
       }
     ],
     "no-console": "off",
+    "no-alert": "off",
     "no-nested-ternary": "warn",
     "prefer-destructuring": "off",
     "react/jsx-one-expression-per-line": "off",
