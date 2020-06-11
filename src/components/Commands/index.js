@@ -16,42 +16,56 @@ export default function Commands(props) {
 
   function readMessage(message) {
     if (message.includes('iniciar')) {
-      if (speechSynthesis.speaking === true)
+      if (speechSynthesis.speaking === true) {
         return alert('Ops! Já tem um texto sendo lido!');
+      }
       props.onSpeak();
     }
 
     if (message.includes('pausar')) {
-      if (speechSynthesis.speaking === true && speechSynthesis.paused === true)
+      if (
+        speechSynthesis.speaking === true &&
+        speechSynthesis.paused === true
+      ) {
         return alert('Ops! A leitura já está pausada!');
+      }
 
-      if (speechSynthesis.speaking === false)
+      if (speechSynthesis.speaking === false) {
         return alert('Ops! Não há nada para ser pausado!');
+      }
       props.onPause();
     }
 
     if (message.includes('retomar')) {
-      if (speechSynthesis.speaking === true && speechSynthesis.paused === false)
+      if (
+        speechSynthesis.speaking === true &&
+        speechSynthesis.paused === false
+      ) {
         return alert('Ops! A leitura não está pausada!');
+      }
 
-      if (speechSynthesis.speaking === false)
+      if (speechSynthesis.speaking === false) {
         return alert('Ops! Não há nada para ser retomado!');
+      }
       props.onPause();
     }
 
     if (message.includes('parar')) {
-      if (speechSynthesis.speaking === false)
+      if (speechSynthesis.speaking === false) {
         return alert('Ops! Não há o que parar!');
+      }
       window.speechSynthesis.cancel();
     }
-
-    return false;
   }
 
   function handleHear() {
-    const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
+    if (navigator.userAgent.includes('Edg')) {
+      return alert('Ooops! Seu browser não suporta esta função, use o Chrome!');
+    }
+
+    const SpeechRecog =
+      window.SpeechRecognition || window.webkitSpeechRecognition || false;
+    const recognition = new SpeechRecog();
 
     recognition.lang = 'pt-BR';
 
@@ -82,7 +96,10 @@ export default function Commands(props) {
   });
 
   let micClassName = 'mic';
-  if (micStatus === 'Estou ouvindo...') micClassName += ' on';
+  if (micStatus === 'Estou ouvindo...') {
+    micClassName += ' on';
+  }
+
   return (
     <div className="commands-container">
       <div className="mic-container">

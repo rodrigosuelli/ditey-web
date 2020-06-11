@@ -52,15 +52,6 @@ textarea::placeholder {
   color: #000000be;
 }
 
-.yellow-text {
-  color: #ffdd00;
-}
-
-.black-text {
-  color: black;
-  text-shadow: none;
-}
-
 /** Range Input 
 *Applying base CSS styles*/
 input[type='range'] {

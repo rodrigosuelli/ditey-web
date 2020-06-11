@@ -58,9 +58,9 @@ a.nav-link::after {
   left: 0px;
   bottom: 1px;
   opacity: 0;
-  background: rgb(255, 255, 255);
+  background: #ffffff;
   border-radius: 10px;
-  transition: all 0.2s ease;
+  transition: all 200ms ease;
 }
 
 a.nav-link:hover::after {

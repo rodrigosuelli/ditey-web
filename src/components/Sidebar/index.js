@@ -4,28 +4,42 @@ import { FiTrash2 } from 'react-icons/fi';
 import './styles.css';
 
 export default function Sidebar(props) {
-  function loadedTexts(index, btnClass, divClass) {
+  const {
+    texts,
+    activeText,
+    onChangeActiveText,
+    onTextDelete,
+    onTextAdd,
+  } = props;
+
+  function loadedTexts(index) {
+    let divClass = 'text-container';
+    let trashClass = 'trash';
+
+    if (index === activeText) {
+      divClass += ' active';
+      trashClass += ' disabled';
+    }
+
     return (
-      <div key={index} className={`text-container ${divClass}`}>
-        <div
-          onClick={() => props.onChangeActiveText(index)}
-          className={`text ${divClass}`}
-        >
-          {showText(index)}
+      <div key={index} className={divClass}>
+        <div onClick={() => onChangeActiveText(index)} className="text">
+          {texts[index] === '' ? (
+            <p className="text-preview">Insira seu texto aqui...</p>
+          ) : (
+            <p className="text-preview">{texts[index]}</p>
+          )}
         </div>
 
-        <button onClick={() => props.onTextDelete(index)} className={btnClass}>
+        <button
+          type="button"
+          onClick={() => onTextDelete(index)}
+          className={trashClass}
+        >
           <FiTrash2 className="trash-icon" size={20} />
         </button>
       </div>
     );
-  }
-
-  function showText(i) {
-    if (props.texts[i] === '') {
-      return <p className="text-preview">Insira seu texto aqui...</p>;
-    }
-    return <p className="text-preview">{props.texts[i]}</p>;
   }
 
   return (
@@ -33,18 +47,15 @@ export default function Sidebar(props) {
       <div className="sidebar-container">
         <h3 className="title">Textos Salvos:</h3>
         <button
-          onClick={() => props.onTextAdd()}
+          onClick={onTextAdd}
+          type="button"
           title="Adicionar Texto"
           className="btn-add"
         >
           +
         </button>
-        {props.texts.map((item, index) => {
-          var btnClass = index === props.activeText ? 'trash-disable' : 'trash';
-          var divClass = index === props.activeText ? 'active' : '';
 
-          return loadedTexts(index, btnClass, divClass);
-        })}
+        {texts.map((item, index) => loadedTexts(index))}
       </div>
     </aside>
   );

@@ -12,51 +12,45 @@ import Settings from '../../components/Settings';
 import ShowPages from '../../components/ShowPages';
 
 export default function Main() {
-  const [firstLoad, setFirstLoad] = useState(true);
-
   const [texts, setTexts] = useState(['']);
-  const [storageTexts, setStorageTexts] = useState('text0');
   const [activeTextIndex, setActiveTextIndex] = useState(0);
+  const [textsQuantity, setTextsQuantity] = useState(['text0']);
+  const [deleting, setDeleting] = useState(false);
 
-  const [speed, setSpeed] = useState(1);
   const voices = useGetVoices();
+  const [speed, setSpeed] = useState(1);
   const [voice, setVoice] = useState('');
   const [speakAction, setSpeakAction] = useState('Falar');
 
   const [page, setPage] = useState('Meet');
 
   useEffect(() => {
-    if (firstLoad === false) return;
-
-    if (localStorage.getItem('texts') === null) {
-      localStorage.setItem('texts', storageTexts);
+    if (localStorage.length < 2 || !localStorage.length) {
       return;
     }
 
-    const getTexts = localStorage.getItem('texts');
-    setStorageTexts(getTexts);
+    const replaceTexts = localStorage.getItem('texts').split(',');
 
-    const replaceTexts = getTexts.split(',');
-    setTexts(
-      replaceTexts.map((item) => {
-        return localStorage.getItem(item);
-      })
-    );
-
-    setFirstLoad(false);
-  }, [firstLoad, storageTexts]);
+    setTextsQuantity(replaceTexts);
+    setTexts(replaceTexts.map((item) => localStorage.getItem(item)));
+  }, []);
 
   useEffect(() => {
-    localStorage.clear();
-    const newStorageTexts = texts.map((item, index) => {
+    localStorage.setItem('texts', textsQuantity);
+  }, [textsQuantity]);
+
+  useEffect(() => {
+    if (!deleting) {
+      return;
+    }
+
+    texts.forEach((item, index) => {
+      localStorage.removeItem(`text${index + 1}`);
       localStorage.setItem(`text${index}`, `${item}`);
-      return `text${index}`;
     });
 
-    localStorage.setItem('texts', newStorageTexts);
-
-    setStorageTexts(newStorageTexts.join(','));
-  }, [storageTexts, texts]);
+    setDeleting(false);
+  }, [deleting, texts]);
 
   function handleSpeak() {
     let myTimeout;
@@ -109,32 +103,42 @@ export default function Main() {
   }
 
   function handleSaveText(e) {
-    setTexts(
-      texts.map((item, index) => {
-        if (index === activeTextIndex) {
-          return e.target.value;
-        }
-        return item;
-      })
-    );
+    const newTexts = texts.map((item, index) => {
+      if (index === activeTextIndex) {
+        localStorage.setItem(`text${index}`, e.target.value);
+        return e.target.value;
+      }
+
+      return item;
+    });
+
+    setTexts(newTexts);
   }
 
   function handleDeleteText(i) {
-    if (activeTextIndex === i) return;
-    if (i < activeTextIndex) setActiveTextIndex(activeTextIndex - 1);
+    if (i < activeTextIndex) {
+      setActiveTextIndex(activeTextIndex - 1);
+    }
 
     localStorage.removeItem(`text${i}`);
 
-    setTexts(
-      texts.filter((_item, index) => {
-        return index !== i;
-      })
+    setTextsQuantity(
+      textsQuantity.filter((_, index) => index !== textsQuantity.length - 1)
     );
+
+    setTexts(texts.filter((_, index) => index !== i));
+
+    if (i < textsQuantity.length - 1) {
+      setDeleting(true);
+    }
   }
 
   function handleAddText() {
     if (texts.length >= 5) return;
-    setTexts(texts.concat(''));
+
+    setTextsQuantity([...textsQuantity, `text${textsQuantity.length}`]);
+
+    setTexts([...texts, '']);
   }
 
   return (

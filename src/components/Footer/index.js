@@ -13,7 +13,7 @@ export default function Footer(props) {
           <ul>
             <li>
               <AnchorLink
-                offset={() => 40}
+                offset={() => 20}
                 onClick={() => props.onPageChange('Meet')}
                 href="#pages"
               >
@@ -22,7 +22,7 @@ export default function Footer(props) {
             </li>
             <li>
               <AnchorLink
-                offset={() => 40}
+                offset={() => 20}
                 onClick={() => props.onPageChange('Team')}
                 href="#pages"
               >
@@ -31,7 +31,7 @@ export default function Footer(props) {
             </li>
             <li>
               <AnchorLink
-                offset={() => 40}
+                offset={() => 20}
                 onClick={() => props.onPageChange('App')}
                 href="#pages"
               >

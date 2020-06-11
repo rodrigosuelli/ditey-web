@@ -11,37 +11,36 @@ export default function ShowPages(props) {
   const { page, onPageChange } = props;
 
   function showPage() {
-    if (page === 'Team') {
-      return <Team />;
+    switch (page) {
+      case 'Team':
+        return <Team />;
+      case 'App':
+        return <App />;
+      default:
+        return <Meet />;
     }
-
-    if (page === 'App') {
-      return <App />;
-    }
-
-    return <Meet />;
   }
 
   function handlePreviousPage() {
-    if (page === 'Team') {
-      return onPageChange('Meet');
+    switch (page) {
+      case 'Team':
+        return onPageChange('Meet');
+      case 'App':
+        return onPageChange('Team');
+      default:
+        return false;
     }
-
-    if (page === 'App') {
-      return onPageChange('Team');
-    }
-    return false;
   }
 
   function handleNextPage() {
-    if (page === 'Meet') {
-      return onPageChange('Team');
+    switch (page) {
+      case 'Meet':
+        return onPageChange('Team');
+      case 'Team':
+        return onPageChange('App');
+      default:
+        return false;
     }
-
-    if (page === 'Team') {
-      return onPageChange('App');
-    }
-    return false;
   }
 
   let pagesClass = 'pages';
@@ -53,13 +52,17 @@ export default function ShowPages(props) {
       {showPage()}
 
       <div className="button-div">
-        <AnchorLink offset={() => 40} onClick={handlePreviousPage} href="#pages">
+        <AnchorLink
+          offset={() => 20}
+          onClick={handlePreviousPage}
+          href="#pages"
+        >
           <button type="button" className="btn-switch">
             Anterior
           </button>
         </AnchorLink>
 
-        <AnchorLink offset={() => 40} onClick={handleNextPage} href="#pages">
+        <AnchorLink offset={() => 20} onClick={handleNextPage} href="#pages">
           <button type="button" className="btn-switch">
             Próxima
           </button>
