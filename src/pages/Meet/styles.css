@@ -21,6 +21,7 @@ div.meet-description {
 }
 
 div.meet-description div.meet-text {
+  min-width: 530px;
   width: 50%;
 }
 
@@ -39,6 +40,12 @@ div.meet-description h2 {
 div.meet-description img {
   width: 50%;
   max-width: 500px;
+  margin-right: 50px;
+}
+
+div.meet-description img:not(:first-child) {
+  margin-left: 50px;
+  margin-right: 0;
 }
 
 div.meet-text.two h2 {
@@ -79,16 +86,6 @@ div.features h4 {
   margin-bottom: 10px;
 }
 
-.feat-icon {
-  color: #6c63ff;
-}
-
-@media only screen and (max-width: 1830px) {
-  div.meet-container {
-    margin-top: 7vh;
-  }
-}
-
 @media only screen and (max-width: 930px) {
   div.meet-description img {
     display: none;
@@ -110,11 +107,5 @@ div.features h4 {
 
   div.meet-description.start {
     display: none;
-  }
-}
-
-@media only screen and (max-height: 700px) {
-  div.meet-container {
-    margin-top: 12vh;
   }
 }

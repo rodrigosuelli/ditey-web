@@ -4,6 +4,7 @@ aside {
   height: 100%;
   background: linear-gradient(to bottom, #6a42f4, #4b23d8, #4b23d8);
   box-shadow: 2px 10px 10px 0 #474747;
+  overflow: auto;
 }
 
 div.sidebar-container {
@@ -21,7 +22,7 @@ div.sidebar-container {
 }
 
 .title {
-  font-size: 20px;
+  font-size: 1.25rem;
   letter-spacing: 0.4px;
 }
 
@@ -31,7 +32,7 @@ div.sidebar-container {
   height: 30px;
   border: 2px solid #fff;
   background: transparent;
-  font-size: 28px;
+  font-size: 1.75rem;
   line-height: 28px;
   margin: 10px 0 15px 0;
   cursor: pointer;
@@ -46,11 +47,13 @@ div.sidebar-container {
 div.text-container {
   width: 100%;
   height: 125px;
-  border: 2px solid #707070;
-  border-radius: 20px;
-  background: #fff;
   margin-bottom: 15px;
+  padding: 18px 15px;
+  border-radius: 20px;
+  border: 2px solid #707070;
+  background: #fff;
   position: relative;
+  cursor: pointer;
 }
 
 div.text-container.active {
@@ -65,8 +68,6 @@ div.text {
   width: 100%;
   font-size: 15px;
   flex: 1;
-  cursor: pointer;
-  padding: 18px 15px 84px;
 }
 
 p.text-preview {
@@ -92,6 +93,43 @@ button.trash.disabled {
 .trash-icon {
   color: #757575;
   transition: all 150ms;
+}
+
+@media only screen and (max-height: 900px) {
+  aside {
+    padding: 5px 0;
+  }
+
+  div.text-container {
+    height: 110px;
+  }
+}
+
+@media only screen and (max-height: 780px) {
+  aside {
+    padding: 0;
+  }
+
+  .btn-add {
+    margin: 5px 0 10px;
+  }
+
+  div.text-container {
+    height: 95px;
+    margin-bottom: 10px;
+    padding: 15px 12px;
+  }
+
+  button.trash {
+    left: 12px;
+    bottom: 10px;
+  }
+}
+
+@media only screen and (max-height: 655px) {
+  aside {
+    padding-bottom: 5rem;
+  }
 }
 
 @media only screen and (max-width: 1006px) {

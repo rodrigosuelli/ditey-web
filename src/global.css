@@ -52,6 +52,18 @@ textarea::placeholder {
   color: #000000be;
 }
 
+@media only screen and (max-width: 1366px) {
+  html {
+    font-size: 95%;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  html {
+    font-size: 90%;
+  }
+}
+
 /** Range Input 
 *Applying base CSS styles*/
 input[type='range'] {

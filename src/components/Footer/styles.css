@@ -39,33 +39,32 @@ div.list-container.logo {
   align-items: center;
 }
 
-div.list-container ul {
+div.list-container div {
   width: 70%;
 }
 
 div.list-container .list-title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
 }
 
-div.list-container ul {
+div.list-container div {
   margin-top: 5px;
 }
 
-div.list-container li {
-  padding: 5px 0;
-}
-
-div.list-container a,
-li {
+div.list-container a {
   font-weight: 500;
   display: block;
   color: #ffffff96;
   cursor: pointer;
+  line-height: 1.85;
 }
 
-div.list-container a:hover,
-div.list-container li:hover {
+div.list-container.logo a {
+  line-height: unset;
+}
+
+div.list-container a:hover {
   color: #fff;
 }
 
@@ -73,6 +72,7 @@ div.list-container .footer-logo {
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
+  color: #fff;
   text-shadow: 2px 2px 5px #0000006b;
 }
 

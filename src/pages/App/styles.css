@@ -20,17 +20,15 @@
   margin-top: 2rem;
 }
 
-.app-container .app-description img {
-  height: 70vh;
+.app-container .app-description img.phone-img {
+  width: 50%;
+  max-width: 327.63px;
 }
 
 .app-container .app-description .app-text {
   width: 50%;
-  height: 62vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+  min-width: 570px;
+  margin-right: 50px;
 }
 
 .app-container .app-description .app-text .block {
@@ -56,6 +54,14 @@
   text-align: center;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 1rem;
+}
+
+.app-container .app-description .app-text h2 {
+  margin-top: 2.63rem;
+}
+
+.app-container .app-description .app-text .block.one h2 {
+  margin-top: 0;
 }
 
 .app-container .app-description .app-text h3 {
@@ -102,10 +108,6 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-}
-
-.app-container .app-description .app-text .features .feat-icon {
-  color: #6c63ff;
 }
 
 @media only screen and (max-width: 832px) {

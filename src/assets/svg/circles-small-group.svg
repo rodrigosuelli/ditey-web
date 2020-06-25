@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="323px" height="390px" viewBox="0 0 323 390" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="131" y="0" width="264" height="466"></rect>
+    </defs>
+    <g id="Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="carbon-design-home-9" transform="translate(-15.000000, -1086.000000)">
+            <g id="Group-4" transform="translate(20.000000, 1066.000000)">
+                <g id="Group-5" transform="translate(0.000000, 20.000000)" fill-rule="nonzero">
+                    <g id="Group-4" transform="translate(0.000000, 66.000000)" fill="#8F7CFF" stroke-width="10">
+                        <ellipse id="Oval-2-Copy-2" stroke="#8E7CFF" opacity="0.0659598214" cx="172" cy="177.5" rx="141" ry="141.5"></ellipse>
+                        <ellipse id="Oval-2-Copy-3" stroke="#8270E3" opacity="0.0887834821" cx="96.5" cy="97" rx="96.5" ry="97"></ellipse>
+                    </g>
+                    <circle id="Oval-8-Copy-2" fill="#E6E3F9" cx="175.5" cy="5.5" r="5.5"></circle>
+                    <circle id="Oval-8-Copy" fill="#E6E3F9" cx="193" cy="57" r="12"></circle>
+                </g>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero"></g>
+                <circle id="Oval-8-Copy-2" fill="#E6E3F9" fill-rule="nonzero" mask="url(#mask-2)" cx="176.5" cy="25.5" r="5.5"></circle>
+                <circle id="Oval-8-Copy" fill="#E6E3F9" fill-rule="nonzero" mask="url(#mask-2)" cx="194" cy="77" r="12"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

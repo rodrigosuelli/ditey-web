@@ -2,8 +2,8 @@ section.settings {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 73%;
-  max-width: 840px;
+  width: 74%;
+  max-width: 870px;
 }
 
 div.ajusts {
@@ -21,7 +21,7 @@ div.voice-container {
 
 .speed-label {
   color: #ff3366;
-  font-size: 20px;
+  font-size: 1.31rem;
   font-weight: 600;
   white-space: nowrap;
   margin-bottom: 2px;
@@ -71,8 +71,8 @@ div.voice-container {
 button.speak {
   background: #ff3366;
   margin-left: 10px;
-  padding: 10px 12px;
-  font-size: 22px;
+  padding: 12px 13px;
+  font-size: 1.43rem;
   font-weight: 500;
   line-height: 22px;
   color: #fff;
@@ -88,12 +88,32 @@ button.speak:hover {
   margin-right: 10px;
 }
 
-@media only screen and (max-width: 1240px) {
+@media only screen and (max-width: 1593px) {
+  section.settings {
+    max-width: 840px;
+  }
+}
+
+@media only screen and (max-height: 780px) {
+  button.speak {
+    background: #ff3366;
+    margin-left: 10px;
+    padding: 10px 12px;
+    font-size: 1.43rem;
+    font-weight: 500;
+    line-height: 22px;
+    color: #fff;
+    border-radius: 4px;
+    transition: all ease 150ms;
+  }
+}
+
+/* @media only screen and (max-width: 1240px) {
   section.settings {
     width: 100%;
     max-width: unset;
   }
-}
+} */
 
 @media only screen and (max-width: 655px) {
   div.speed-container {

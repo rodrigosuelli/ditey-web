@@ -1,7 +1,7 @@
 div.commands-container {
   margin-left: 40px;
-  width: 230px;
-  height: 420px;
+  width: 250px;
+  height: 540px;
   background: #fff;
   border-radius: 8px;
   border-top-left-radius: 50px;
@@ -73,6 +73,7 @@ div.mic-container p.commands-title {
   color: #04ce04;
   text-align: center;
   font-weight: 600;
+  font-size: 1.06rem;
   width: 100%;
 }
 
@@ -83,13 +84,14 @@ div.spoken-command-container {
 div.spoken-command-container p.mini-title {
   color: #2c2c2c;
   text-align: center;
+  font-size: 16px;
 }
 
 div.spoken-command-container p.command {
   width: 100%;
   text-align: center;
   color: #8230ce;
-  font-size: 22px;
+  font-size: 23px;
   font-weight: 700;
   border: 1px solid #979797;
   border-radius: 5px;
@@ -110,7 +112,8 @@ div.command-list {
 div.command-list p.table-title {
   width: 100%;
   text-align: center;
-  margin: 22px 0 10px 0;
+  margin: 26px 0 10px 0;
+  font-size: 17px;
   font-weight: 600;
   color: #3d3d3d;
 }
@@ -118,6 +121,7 @@ div.command-list p.table-title {
 div.command-list p.table-item {
   margin-bottom: 2px;
   font-weight: 500;
+  font-size: 16px;
   color: #3d3d3d;
 }
 
@@ -125,29 +129,65 @@ div.command-list p.table-item .action-icon {
   margin-right: 10px;
 }
 
-@media only screen and (min-width: 1367px) {
+@media only screen and (max-height: 900px) {
   div.commands-container {
-    width: 250px;
     height: 520px;
-  }
-
-  p.commands-title {
-    font-size: 17px;
-    font-weight: 600;
-  }
-
-  p.command {
-    font-size: 23px;
-    padding: 3px;
-  }
-
-  p.table-title {
-    margin: 26px 0 10px 0;
-    font-size: 17px;
   }
 }
 
-@media only screen and (max-width: 1240px) {
+@media only screen and (max-width: 1593px) {
+  div.commands-container {
+    width: 240px;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  div.commands-container {
+    width: 230px;
+  }
+}
+
+@media only screen and (max-height: 780px) {
+  div.commands-container {
+    height: 450px;
+  }
+
+  div.mic-container button.mic svg {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  div.commands-container {
+    width: 210px;
+  }
+
+  div.mic-container button.mic svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  div.spoken-command-container p.command {
+    font-size: 1.437rem;
+  }
+
+  div.command-list p.table-title {
+    font-size: 1.062rem;
+  }
+
+  div.command-list p.table-item {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-height: 655px) {
+  div.commands-container {
+    height: 400px;
+  }
+}
+
+/* @media only screen and (max-width: 1320px) {
   div.commands-container {
     padding: 5px;
     flex: 1;
@@ -192,7 +232,7 @@ div.command-list p.table-item .action-icon {
   div.command-list p.table-title {
     margin: 0 0 10px 0;
   }
-}
+} */
 
 @media only screen and (max-width: 500px) {
   div.commands-container {

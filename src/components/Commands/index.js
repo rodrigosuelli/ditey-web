@@ -104,7 +104,7 @@ export default function Commands(props) {
     <div className="commands-container">
       <div className="mic-container">
         <button type="button" onClick={handleHear} className={micClassName}>
-          <FaMicrophoneAlt size={64} color="#FF0000" />
+          <FaMicrophoneAlt size={66} color="#FF0000" />
         </button>
         <p className="commands-title">{micStatus}</p>
       </div>

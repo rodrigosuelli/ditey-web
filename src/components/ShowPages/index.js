@@ -45,27 +45,29 @@ export default function ShowPages(props) {
 
   let pagesClass = 'pages';
   if (page === 'Team') pagesClass = 'pages green';
-  if (page === 'App') pagesClass = 'pages blue';
+  if (page === 'App') pagesClass = 'pages purple';
 
   return (
-    <section id="pages" className={pagesClass}>
+    <section className={pagesClass}>
       {showPage()}
 
       <div className="button-div">
         <AnchorLink
-          offset={() => 20}
+          offset={() => 10}
           onClick={handlePreviousPage}
+          className="btn-switch"
           href="#pages"
         >
-          <button type="button" className="btn-switch">
-            Anterior
-          </button>
+          Anterior
         </AnchorLink>
 
-        <AnchorLink offset={() => 20} onClick={handleNextPage} href="#pages">
-          <button type="button" className="btn-switch">
-            Próxima
-          </button>
+        <AnchorLink
+          offset={() => 10}
+          onClick={handleNextPage}
+          className="btn-switch"
+          href="#pages"
+        >
+          Próxima
         </AnchorLink>
       </div>
     </section>

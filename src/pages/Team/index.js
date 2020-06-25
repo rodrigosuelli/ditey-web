@@ -13,7 +13,7 @@ import TeamPageImg from '../../assets/svg/undraw_team_page.svg';
 
 export default function OurTeam() {
   return (
-    <div className="team-container">
+    <div id="pages" className="team-container">
       <h1>Nosso Time</h1>
       <div className="cards">
         <div className="card one">
@@ -116,7 +116,7 @@ export default function OurTeam() {
         <div className="card five">
           <h3>Lucas Tadeu</h3>
           <img src={LucasImg} alt="profile-img" />
-          <h4>Decision Making && Marketing Specialist</h4>
+          <h4>Marketing Specialist</h4>
           <p>
             Líder de equipes e negociante por natureza. Curto games e
             eletrônica.

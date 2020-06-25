@@ -182,6 +182,7 @@ export default function Main() {
             onPause={handlePause}
           />
         </div>
+        <div className="bg-shape-left" />
       </div>
 
       <ShowPages page={page} onPageChange={setPage} />

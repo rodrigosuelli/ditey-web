@@ -8,15 +8,17 @@ import googlePlayImg from '../../assets/badges/google-play-badge.png';
 
 export default function App() {
   return (
-    <div className="app-container">
+    <div id="pages" className="app-container">
       <h1>Nosso App</h1>
       <div className="app-description">
         <div className="app-text">
           <div className="block one">
             <h2>Motivação</h2>
             <h3>
-              Funcionalidades como pausar, retomar e comandos de voz não funcionam em dispositivos movéis, mas não fique
-              triste, instalando o aplicativo você poderá usar esses e muitos outros recursos exclusivos do app.
+              Funcionalidades como pausar, retomar e comandos de voz não
+              funcionam em dispositivos movéis, mas não fique triste, instalando
+              o aplicativo você poderá usar esses e muitos outros recursos
+              exclusivos do app.
             </h3>
           </div>
           <div className="block two">
@@ -24,19 +26,19 @@ export default function App() {
             <div className="features">
               <div className="feat-one">
                 <div className="oval-div">
-                  <FaMobileAlt className="feat-icon" size={64} />
+                  <FaMobileAlt color="#6a42f4" size={64} />
                 </div>
                 <h4>Mobilidade</h4>
               </div>
               <div className="feat-two">
                 <div className="oval-div">
-                  <FaTachometerAlt className="feat-icon" size={64} />
+                  <FaTachometerAlt color="#6a42f4" size={64} />
                 </div>
                 <h4>Desempenho</h4>
               </div>
               <div className="feat-three">
                 <div className="oval-div">
-                  <FaRegLightbulb className="feat-icon" size={64} />
+                  <FaRegLightbulb color="#6a42f4" size={64} />
                 </div>
                 <h4>Recursos Exclusivos</h4>
               </div>
@@ -49,7 +51,7 @@ export default function App() {
             </div>
           </div>
         </div>
-        <img src={iphoneImg} alt="iphone" />
+        <img className="phone-img" src={iphoneImg} alt="iphone" />
       </div>
     </div>
   );

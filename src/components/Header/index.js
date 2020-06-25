@@ -7,7 +7,7 @@ import './styles.css';
 
 export default function Header(props) {
   return (
-    <header className="menu-container">
+    <header id="header" className="menu-container">
       <div className="logo-container">
         <Link className="logo" to="/">
           <span className="logo-brand">ditey</span>
@@ -19,7 +19,7 @@ export default function Header(props) {
           <li className="nav-item">
             <AnchorLink
               className="nav-link"
-              offset={() => 20}
+              offset={() => 10}
               onClick={() => props.onPageChange('Meet')}
               href="#pages"
             >
@@ -29,7 +29,7 @@ export default function Header(props) {
           <li className="nav-item">
             <AnchorLink
               className="nav-link"
-              offset={() => 20}
+              offset={() => 10}
               onClick={() => props.onPageChange('Team')}
               href="#pages"
             >
@@ -39,7 +39,7 @@ export default function Header(props) {
           <li className="nav-item">
             <AnchorLink
               className="nav-link"
-              offset={() => 20}
+              offset={() => 10}
               onClick={() => props.onPageChange('App')}
               href="#pages"
             >
