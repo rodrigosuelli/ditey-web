@@ -6,9 +6,12 @@ import './styles.css';
 import iphoneImg from '../../assets/Apple iPhone X Space Grey.png';
 import googlePlayImg from '../../assets/badges/google-play-badge.png';
 
-export default function App() {
+export default function App(props) {
+  let appClass = 'app-container';
+  if (props.active) appClass += ' active';
+
   return (
-    <div id="pages" className="app-container">
+    <div className={appClass}>
       <h1>Nosso App</h1>
       <div className="app-description">
         <div className="app-text">

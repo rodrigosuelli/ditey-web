@@ -11,9 +11,12 @@ import JoseImg from '../../assets/profile-pics/jose.jpg';
 
 import TeamPageImg from '../../assets/svg/undraw_team_page.svg';
 
-export default function OurTeam() {
+export default function Team(props) {
+  let teamClass = 'team-container';
+  if (props.active) teamClass += ' active';
+
   return (
-    <div id="pages" className="team-container">
+    <div className={teamClass}>
       <h1>Nosso Time</h1>
       <div className="cards">
         <div className="card one">

@@ -10,17 +10,6 @@ import App from '../../pages/App';
 export default function ShowPages(props) {
   const { page, onPageChange } = props;
 
-  function showPage() {
-    switch (page) {
-      case 'Team':
-        return <Team />;
-      case 'App':
-        return <App />;
-      default:
-        return <Meet />;
-    }
-  }
-
   function handlePreviousPage() {
     switch (page) {
       case 'Team':
@@ -44,16 +33,18 @@ export default function ShowPages(props) {
   }
 
   let pagesClass = 'pages';
-  if (page === 'Team') pagesClass = 'pages green';
-  if (page === 'App') pagesClass = 'pages purple';
+  if (page === 'Team') pagesClass += ' green';
+  if (page === 'App') pagesClass += ' purple';
 
   return (
-    <section className={pagesClass}>
-      {showPage()}
+    <section id="pages" className={pagesClass}>
+      <Meet active={page === 'Meet'} />
+      <Team active={page === 'Team'} />
+      <App active={page === 'App'} />
 
       <div className="button-div">
         <AnchorLink
-          offset={() => 10}
+          offset={() => -45}
           onClick={handlePreviousPage}
           className="btn-switch"
           href="#pages"
@@ -62,7 +53,7 @@ export default function ShowPages(props) {
         </AnchorLink>
 
         <AnchorLink
-          offset={() => 10}
+          offset={() => -45}
           onClick={handleNextPage}
           className="btn-switch"
           href="#pages"

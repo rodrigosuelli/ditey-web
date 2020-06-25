@@ -6,9 +6,12 @@ import './styles.css';
 import readingImg from '../../assets/svg/undraw_reading.svg';
 import studyingImg from '../../assets/svg/undraw_studying.svg';
 
-export default function Meet() {
+export default function Meet(props) {
+  let meetClass = 'meet-container';
+  if (props.active) meetClass += ' active';
+
   return (
-    <div id="pages" className="meet-container">
+    <div className={meetClass}>
       <h1>Conheça o ditey</h1>
       <div className="meet-description">
         <div className="meet-text">
