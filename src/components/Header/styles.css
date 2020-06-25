@@ -64,7 +64,7 @@ a.nav-link::after {
 }
 
 a.nav-link:hover::after {
-  opacity: 100%;
+  opacity: 1;
   bottom: -4px;
 }
 
