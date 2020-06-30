@@ -91,6 +91,12 @@ div.features h4 {
   margin-bottom: 10px;
 }
 
+@media only screen and (max-width: 1593px) {
+  div.meet-container {
+    max-width: 1180px;
+  }
+}
+
 @media only screen and (max-width: 930px) {
   div.meet-description img {
     display: none;

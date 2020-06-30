@@ -83,6 +83,12 @@ div.list-container p.copyright {
   margin-bottom: 5px;
 }
 
+@media only screen and (max-width: 1593px) {
+  div.footer-container {
+    max-width: 1180px;
+  }
+}
+
 @media only screen and (max-width: 1360px) {
   footer {
     margin-top: 2rem;
