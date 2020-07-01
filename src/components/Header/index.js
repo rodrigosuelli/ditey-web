@@ -19,7 +19,7 @@ export default function Header(props) {
           <li className="nav-item">
             <AnchorLink
               className="nav-link"
-              offset={() => -45}
+              offset={() => -44}
               onClick={() => props.onPageChange('Meet')}
               href="#pages"
             >
@@ -29,7 +29,7 @@ export default function Header(props) {
           <li className="nav-item">
             <AnchorLink
               className="nav-link"
-              offset={() => -45}
+              offset={() => -44}
               onClick={() => props.onPageChange('Team')}
               href="#pages"
             >
@@ -39,7 +39,7 @@ export default function Header(props) {
           <li className="nav-item">
             <AnchorLink
               className="nav-link"
-              offset={() => -45}
+              offset={() => -44}
               onClick={() => props.onPageChange('App')}
               href="#pages"
             >

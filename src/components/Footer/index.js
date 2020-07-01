@@ -14,7 +14,7 @@ export default function Footer(props) {
           <h3 className="list-title">Links</h3>
           <div>
             <AnchorLink
-              offset={() => -45}
+              offset={() => -44}
               onClick={() => props.onPageChange('Meet')}
               href="#pages"
             >
@@ -22,7 +22,7 @@ export default function Footer(props) {
             </AnchorLink>
 
             <AnchorLink
-              offset={() => -45}
+              offset={() => -44}
               onClick={() => props.onPageChange('Team')}
               href="#pages"
             >
@@ -30,7 +30,7 @@ export default function Footer(props) {
             </AnchorLink>
 
             <AnchorLink
-              offset={() => -45}
+              offset={() => -44}
               onClick={() => props.onPageChange('App')}
               href="#pages"
             >

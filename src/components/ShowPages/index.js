@@ -44,7 +44,7 @@ export default function ShowPages(props) {
 
       <div className="button-div">
         <AnchorLink
-          offset={() => -45}
+          offset={() => -44}
           onClick={handlePreviousPage}
           className="btn-switch"
           href="#pages"
@@ -53,7 +53,7 @@ export default function ShowPages(props) {
         </AnchorLink>
 
         <AnchorLink
-          offset={() => -45}
+          offset={() => -44}
           onClick={handleNextPage}
           className="btn-switch"
           href="#pages"
