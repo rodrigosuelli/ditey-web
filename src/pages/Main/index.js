@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from 'react';
 import useGetVoices from '../../hooks/useGetVoices';
 
