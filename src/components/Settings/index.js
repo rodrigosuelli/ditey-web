@@ -17,41 +17,10 @@ export default function Settings(props) {
 
   function SpeakIcon() {
     if (speakAction === 'Pausar') {
-      return <FaPause className="play-icon" size={21} color="#fff" />;
+      return <FaPause className="icon" size={21} color="#fff" />;
     }
 
-    return <FaPlay className="play-icon" size={21} color="#fff" />;
-  }
-
-  function RangeInput() {
-    if (voice === 'Google português do Brasil') {
-      return (
-        <input
-          onChange={(e) => setSpeed(e.target.value)}
-          value={speed}
-          min="0.1"
-          max="2"
-          type="range"
-          step="0.1"
-          className="range"
-          name="speed"
-          id="speed"
-        />
-      );
-    }
-    return (
-      <input
-        onChange={(e) => setSpeed(e.target.value)}
-        value={speed}
-        min="0.1"
-        max="5"
-        type="range"
-        step="0.1"
-        className="range"
-        name="speed"
-        id="speed"
-      />
-    );
+    return <FaPlay className="icon" size={21} color="#fff" />;
   }
 
   return (
@@ -61,7 +30,17 @@ export default function Settings(props) {
           <label htmlFor="speed" className="speed-label">
             <p>Velocidade: {speed}</p>
           </label>
-          {RangeInput()}
+          <input
+            onChange={(e) => setSpeed(e.target.value)}
+            value={speed}
+            min="0.1"
+            max={voice === 'Google português do Brasil' ? 2 : 5}
+            type="range"
+            step="0.1"
+            className="range"
+            name="speed"
+            id="speed"
+          />
         </div>
 
         <div className="voice-container">
@@ -99,7 +78,7 @@ export default function Settings(props) {
 
         <button
           type="button"
-          onClick={() => window.speechSynthesis.cancel()}
+          onClick={() => speechSynthesis.cancel()}
           className="speak"
         >
           <FaStop size={21} color="#fff" />
