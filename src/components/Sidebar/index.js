@@ -22,12 +22,8 @@ export default function Sidebar(props) {
     }
 
     return (
-      <div
-        onClick={() => onChangeActiveText(index)}
-        key={index}
-        className={divClass}
-      >
-        <div className="text">
+      <div key={index} className={divClass}>
+        <div onClick={() => onChangeActiveText(index)} className="text">
           {texts[index] === '' ? (
             <p className="text-preview">Insira seu texto aqui...</p>
           ) : (
