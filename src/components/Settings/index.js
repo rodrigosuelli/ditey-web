@@ -4,12 +4,22 @@ import { FaStop, FaPlay, FaPause } from 'react-icons/fa';
 import './styles.css';
 
 export default function Settings(props) {
-  const { speakAction, voices, voice, setVoice, speed, setSpeed, onSpeak, onPause } = props;
+  const {
+    speakAction,
+    voices,
+    voice,
+    setVoice,
+    speed,
+    setSpeed,
+    onSpeak,
+    onPause,
+  } = props;
 
   function SpeakIcon() {
     if (speakAction === 'Pausar') {
       return <FaPause className="play-icon" size={21} color="#fff" />;
     }
+
     return <FaPlay className="play-icon" size={21} color="#fff" />;
   }
 
@@ -78,12 +88,20 @@ export default function Settings(props) {
       </div>
 
       <div className="actions">
-        <button type="button" onClick={speakAction === 'Falar' ? onSpeak : onPause} className="speak">
+        <button
+          type="button"
+          onClick={speakAction === 'Falar' ? onSpeak : onPause}
+          className="speak"
+        >
           <SpeakIcon />
           {speakAction}
         </button>
 
-        <button type="button" onClick={() => window.speechSynthesis.cancel()} className="speak">
+        <button
+          type="button"
+          onClick={() => window.speechSynthesis.cancel()}
+          className="speak"
+        >
           <FaStop size={21} color="#fff" />
         </button>
       </div>
