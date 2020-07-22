@@ -84,7 +84,7 @@ export default function Team(props) {
               <FaGithub color="#fff" size={40} />
             </a>
             <a
-              href="https://www.linkedin.com/in/rodrigo-henrique-suélli-5b6b69190"
+              href="https://www.linkedin.com/in/rodrigosuelli"
               target="_blank"
               rel="noopener noreferrer"
             >
