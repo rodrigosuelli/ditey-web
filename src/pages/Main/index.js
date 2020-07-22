@@ -14,14 +14,6 @@ export default function Main() {
   const [texts, setTexts] = useState(['']);
   const [activeTextIndex, setActiveTextIndex] = useState(0);
   const [textsQuantity, setTextsQuantity] = useState(['text0']);
-  const [deleting, setDeleting] = useState(false);
-
-  const voices = useGetVoices();
-  const [speed, setSpeed] = useState(1);
-  const [voice, setVoice] = useState('');
-  const [speakAction, setSpeakAction] = useState('Falar');
-
-  const [page, setPage] = useState('Meet');
 
   useEffect(() => {
     if (localStorage.length < 2 || !localStorage.length) {
@@ -38,6 +30,8 @@ export default function Main() {
     localStorage.setItem('texts', textsQuantity);
   }, [textsQuantity]);
 
+  const [deleting, setDeleting] = useState(false);
+
   useEffect(() => {
     if (!deleting) {
       return;
@@ -50,6 +44,11 @@ export default function Main() {
 
     setDeleting(false);
   }, [deleting, texts]);
+
+  const voices = useGetVoices();
+  const [speed, setSpeed] = useState(1);
+  const [voice, setVoice] = useState('');
+  const [speakAction, setSpeakAction] = useState('Falar');
 
   function handleSpeak() {
     let myTimeout;
@@ -97,10 +96,6 @@ export default function Main() {
     return setSpeakAction('Retomar');
   }
 
-  function handleChangeActiveText(i) {
-    setActiveTextIndex(i);
-  }
-
   function handleSaveText(e) {
     const newTexts = texts.map((item, index) => {
       if (index === activeTextIndex) {
@@ -140,6 +135,8 @@ export default function Main() {
     setTexts([...texts, '']);
   }
 
+  const [page, setPage] = useState('Meet');
+
   return (
     <div className="main-container">
       <Header page={page} onPageChange={setPage} />
@@ -147,7 +144,7 @@ export default function Main() {
         <Sidebar
           onTextAdd={handleAddText}
           onTextDelete={handleDeleteText}
-          onChangeActiveText={handleChangeActiveText}
+          onChangeActiveText={setActiveTextIndex}
           texts={texts}
           activeText={activeTextIndex}
         />
