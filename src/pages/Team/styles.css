@@ -21,7 +21,6 @@ div.team-container.active {
 .team-container .cards {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
   align-items: center;
   position: relative;
   width: 100%;
@@ -29,7 +28,7 @@ div.team-container.active {
 }
 
 .card {
-  height: 460px;
+  height: 450px;
   width: 250px;
   background: rgb(41, 40, 40);
   border-radius: 2px;
@@ -41,13 +40,13 @@ div.team-container.active {
   transition: all ease 300ms;
   position: relative;
   z-index: 2;
-  box-shadow: 0px 2px 10px 4px #252525;
+  box-shadow: 0px 2px 10px 3px #252525;
   filter: brightness(60%);
 }
 
 .card.two,
 .card.four {
-  height: 440px;
+  height: 435px;
 }
 .card.one,
 .card.five {
@@ -60,7 +59,6 @@ div.team-container.active {
   left: -30px;
   z-index: 0;
 }
-
 .card.two {
   right: -20px;
 }
@@ -70,7 +68,7 @@ div.team-container.active {
 }
 
 .card:hover {
-  height: 480px;
+  height: 470px;
   width: 270px;
   filter: none;
   z-index: 10;
@@ -111,12 +109,11 @@ div.team-description {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2rem;
 }
 
 .team-description img {
   width: 50%;
-  max-width: 600px;
+  max-width: 500px;
   margin-right: 10px;
 }
 

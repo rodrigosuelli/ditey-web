@@ -22,7 +22,7 @@ div.meet-description {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 div.meet-description div.meet-text {
@@ -58,7 +58,7 @@ div.meet-text.two h2 {
 }
 
 div.features {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
