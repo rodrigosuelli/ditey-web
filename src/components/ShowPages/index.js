@@ -13,28 +13,37 @@ export default function ShowPages(props) {
   function handlePreviousPage() {
     switch (page) {
       case 'Team':
-        return onPageChange('Meet');
+        onPageChange('Meet');
+        break;
       case 'App':
-        return onPageChange('Team');
+        onPageChange('Team');
+        break;
       default:
-        return false;
     }
   }
 
   function handleNextPage() {
     switch (page) {
       case 'Meet':
-        return onPageChange('Team');
+        onPageChange('Team');
+        break;
       case 'Team':
-        return onPageChange('App');
+        onPageChange('App');
+        break;
       default:
-        return false;
     }
   }
 
   let pagesClass = 'pages';
-  if (page === 'Team') pagesClass += ' green';
-  if (page === 'App') pagesClass += ' purple';
+  switch (page) {
+    case 'Team':
+      pagesClass += ' green';
+      break;
+    case 'App':
+      pagesClass += ' purple';
+      break;
+    default:
+  }
 
   return (
     <section id="pages" className={pagesClass}>
