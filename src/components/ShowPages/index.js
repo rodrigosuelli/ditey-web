@@ -3,9 +3,9 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import './styles.css';
 
-import Meet from '../../pages/Meet';
-import Team from '../../pages/Team';
-import App from '../../pages/App';
+import Meet from './components/Meet';
+import Team from './components/Team';
+import App from './components/App';
 
 export default function ShowPages(props) {
   const { page, onPageChange } = props;
