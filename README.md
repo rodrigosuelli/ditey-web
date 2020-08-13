@@ -52,7 +52,7 @@ _ou_
 ```
 yarn
 ```
-**Rodar o projeto no modo de desenvolvimento**
+**Rode o projeto no modo de desenvolvimento**
 
 ```
 npm run start
