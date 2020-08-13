@@ -68,7 +68,7 @@ yarn start
 1. Faça um fork desse repositório
 2. Crie uma branch com a sua alteração (`git checkout -b feature/MinhaFeature`)
 3. Faça commit das suas alterações (`git commit -m 'feat: minha nova feature'`)
-4. Faça push para a sua branch (`git push origin feature/AmazingFeature`)
+4. Faça push para a sua branch (`git push origin feature/MinhaFeature`)
 5. Abre sua Pull Request no repositório que você fez o fork
 
 ## :memo: Licença
