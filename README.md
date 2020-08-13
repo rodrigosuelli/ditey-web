@@ -20,7 +20,7 @@ Se você quiser conhecer melhor o projeto, acesse ele clicando [aqui](https://di
 
 ## 🧾 Sobre esse Projeto
 
-O **ditey** é um leitor de textos online que dá controle total ao usuário sobre as variáveis da API de voz [Web Speech
+O **ditey** é um leitor de textos online que fornece controle total ao usuário sobre as variáveis da API de voz [Web Speech
 API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API), permitindo, assim, controlar a velocidade de
 fala, voz e outras opções. Possui também as funcionalidades de comandos de voz, e armazenamento de até 5 textos no local
 storage.
