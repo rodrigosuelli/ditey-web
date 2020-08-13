@@ -7,7 +7,7 @@ Se você quiser conhecer melhor o projeto, acesse ele clicando [aqui](https://di
 ## Índice
 
 * [Tecnologias](#-tecnologias)
-* [Sobre esse Projeto](#sobre-esse-projeto)
+* [Sobre esse Projeto](#-sobre-esse-projeto)
 * [Observações sobre o projeto](#observações-sobre-o-projeto)
 * [Instalação](#-instalação)
 * [Como contribuir](#-como-contribuir)
