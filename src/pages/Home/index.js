@@ -138,52 +138,54 @@ export default function Home() {
   const [page, setPage] = useState('Meet');
 
   return (
-    <div className="main-container">
-      <Header page={page} onPageChange={setPage} />
-      <div className="content">
-        <Sidebar
-          onTextAdd={handleAddText}
-          onTextDelete={handleDeleteText}
-          onChangeActiveText={setActiveTextIndex}
-          texts={texts}
-          activeText={activeTextIndex}
-        />
-        <div className="content-right">
-          <h1 className="slogan">
-            O <span className="ditey">ditey</span> dita qualquer coisa
-            <span className="y-dot">.</span>
-            <span className="r-dot">.</span>
-            <span className="g-dot">.</span>
-          </h1>
-
-          <section className="main">
-            <textarea
-              onChange={(e) => handleSaveText(e)}
-              value={texts[activeTextIndex]}
-              className="text-input"
-              placeholder="Insira seu texto aqui..."
-            />
-
-            <Commands onSpeak={handleSpeak} onPause={handlePause} />
-          </section>
-
-          <Settings
-            speed={speed}
-            setSpeed={setSpeed}
-            voice={voice}
-            setVoice={setVoice}
-            voices={voices}
-            speakAction={speakAction}
-            onSpeak={handleSpeak}
-            onPause={handlePause}
+    <div className="App">
+      <div className="main-container">
+        <Header page={page} onPageChange={setPage} />
+        <div className="content">
+          <Sidebar
+            onTextAdd={handleAddText}
+            onTextDelete={handleDeleteText}
+            onChangeActiveText={setActiveTextIndex}
+            texts={texts}
+            activeText={activeTextIndex}
           />
+          <div className="content-right">
+            <h1 className="slogan">
+              O <span className="ditey">ditey</span> dita qualquer coisa
+              <span className="y-dot">.</span>
+              <span className="r-dot">.</span>
+              <span className="g-dot">.</span>
+            </h1>
+
+            <section className="main">
+              <textarea
+                onChange={(e) => handleSaveText(e)}
+                value={texts[activeTextIndex]}
+                className="text-input"
+                placeholder="Insira seu texto aqui..."
+              />
+
+              <Commands onSpeak={handleSpeak} onPause={handlePause} />
+            </section>
+
+            <Settings
+              speed={speed}
+              setSpeed={setSpeed}
+              voice={voice}
+              setVoice={setVoice}
+              voices={voices}
+              speakAction={speakAction}
+              onSpeak={handleSpeak}
+              onPause={handlePause}
+            />
+          </div>
+          <div className="bg-shape-left" />
         </div>
-        <div className="bg-shape-left" />
+
+        <ShowPages page={page} onPageChange={setPage} />
+
+        <Footer page={page} onPageChange={setPage} />
       </div>
-
-      <ShowPages page={page} onPageChange={setPage} />
-
-      <Footer page={page} onPageChange={setPage} />
     </div>
   );
 }
