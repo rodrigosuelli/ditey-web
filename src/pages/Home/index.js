@@ -16,14 +16,17 @@ export default function Home() {
   const [textsQuantity, setTextsQuantity] = useState(['text0']);
 
   useEffect(() => {
-    if (localStorage.length < 2 || !localStorage.length) {
+    if (localStorage.length < 2) {
       return;
     }
 
-    const replaceTexts = localStorage.getItem('texts').split(',');
+    const storageTexts = localStorage
+      .getItem('texts')
+      .split(',')
+      .filter((item, index) => localStorage.getItem(item) !== null);
 
-    setTextsQuantity(replaceTexts);
-    setTexts(replaceTexts.map((item) => localStorage.getItem(item)));
+    setTextsQuantity(storageTexts);
+    setTexts(storageTexts.map((item) => localStorage.getItem(item)));
   }, []);
 
   useEffect(() => {
@@ -31,7 +34,6 @@ export default function Home() {
   }, [textsQuantity]);
 
   const [deleting, setDeleting] = useState(false);
-
   useEffect(() => {
     if (!deleting) {
       return;
