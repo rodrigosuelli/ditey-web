@@ -1,17 +1,17 @@
 # Ditey
 
-<img src="./static/screenshot.png" alt="screenshot">
+<img src="./.github/screenshot.png" alt="screenshot">
 
 Se você quiser conhecer melhor o projeto, acesse ele clicando [aqui](https://ditey.netlify.app/).
 
 ## Índice
 
-* [Tecnologias](#-tecnologias)
-* [Sobre esse Projeto](#-sobre-esse-projeto)
-* [Observações sobre o projeto](#observações-sobre-o-projeto)
-* [Instalação](#-instalação)
-* [Como contribuir](#-como-contribuir)
-* [Licença](#memo-licença)
+- [Tecnologias](#-tecnologias)
+- [Sobre esse Projeto](#-sobre-esse-projeto)
+- [Observações sobre o projeto](#observações-sobre-o-projeto)
+- [Instalação](#-instalação)
+- [Como contribuir](#-como-contribuir)
+- [Licença](#memo-licença)
 
 ## 💻 Tecnologias
 
@@ -28,9 +28,8 @@ storage.
 ## Observações sobre o projeto
 
 - Devido a compatibilidade da [Web Speech
-API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API), algumas funções do projeto podem não funcionar
-corretamente em alguns navegadores.
-
+  API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API), algumas funções do projeto podem não funcionar
+  corretamente em alguns navegadores.
 
 ## 🚀 Instalação
 
@@ -47,16 +46,19 @@ cd ditey
 ```
 npm install
 ```
+
 _ou_
 
 ```
 yarn
 ```
+
 **Rode o projeto no modo de desenvolvimento**
 
 ```
 npm run start
 ```
+
 _ou_
 
 ```
