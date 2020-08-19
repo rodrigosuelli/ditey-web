@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import useGetVoices from '../../hooks/useGetVoices';
 
-import Header from '../../components/Header';
+import useGetVoices from '../../hooks/useGetVoices';
+import speak from '../../utils/speak';
+import pause from '../../utils/pause';
+
+import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
-import Footer from '../../components/Footer';
 import Commands from '../../components/Commands';
 import Settings from '../../components/Settings';
 import ShowPages from '../../components/ShowPages';
@@ -12,8 +14,16 @@ import './styles.css';
 
 export default function Home() {
   const [texts, setTexts] = useState(['']);
-  const [activeTextIndex, setActiveTextIndex] = useState(0);
   const [textsQuantity, setTextsQuantity] = useState(['text0']);
+  const [activeTextIndex, setActiveTextIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  const voices = useGetVoices();
+  const [voice, setVoice] = useState('');
+  const [speed, setSpeed] = useState(1);
+  const [speakAction, setSpeakAction] = useState('Falar');
+
+  const [page, setPage] = useState('Meet');
 
   useEffect(() => {
     if (localStorage.length < 2) {
@@ -33,7 +43,6 @@ export default function Home() {
     localStorage.setItem('texts', textsQuantity);
   }, [textsQuantity]);
 
-  const [deleting, setDeleting] = useState(false);
   useEffect(() => {
     if (!deleting) {
       return;
@@ -47,55 +56,12 @@ export default function Home() {
     setDeleting(false);
   }, [deleting, texts]);
 
-  const voices = useGetVoices();
-  const [speed, setSpeed] = useState(1);
-  const [voice, setVoice] = useState('');
-  const [speakAction, setSpeakAction] = useState('Falar');
-
   function handleSpeak() {
-    let myTimeout;
-
-    function myTimer() {
-      window.speechSynthesis.pause();
-      window.speechSynthesis.resume();
-      myTimeout = setTimeout(myTimer, 10000);
-    }
-
-    myTimeout = setTimeout(myTimer, 10000);
-
-    const utt = new SpeechSynthesisUtterance(texts[activeTextIndex]);
-    utt.volume = 1;
-    utt.rate = speed;
-    utt.lang = 'pt-BR';
-    if (voice !== '') {
-      utt.voice = voices.filter((item) => item.name === voice)[0];
-    }
-
-    utt.onend = () => {
-      clearTimeout(myTimeout);
-      window.speechSynthesis.cancel();
-      setSpeakAction('Falar');
-    };
-
-    utt.onpause = () => {
-      clearTimeout(myTimeout);
-    };
-
-    utt.onresume = () => {
-      myTimeout = setTimeout(myTimer, 10000);
-    };
-
-    window.speechSynthesis.speak(utt);
-    setSpeakAction('Pausar');
+    speak(voices, voice, speed, texts[activeTextIndex], setSpeakAction);
   }
 
   function handlePause() {
-    if (window.speechSynthesis.paused) {
-      window.speechSynthesis.resume();
-      return setSpeakAction('Pausar');
-    }
-    window.speechSynthesis.pause();
-    return setSpeakAction('Retomar');
+    pause(setSpeakAction);
   }
 
   function handleSaveText(e) {
@@ -137,11 +103,8 @@ export default function Home() {
     setTexts([...texts, '']);
   }
 
-  const [page, setPage] = useState('Meet');
-
   return (
-    <div className="main-container">
-      <Header page={page} onPageChange={setPage} />
+    <Layout page={page} onPageChange={setPage}>
       <div className="content">
         <Sidebar
           onTextAdd={handleAddText}
@@ -172,9 +135,9 @@ export default function Home() {
           <Settings
             speed={speed}
             setSpeed={setSpeed}
+            voices={voices}
             voice={voice}
             setVoice={setVoice}
-            voices={voices}
             speakAction={speakAction}
             onSpeak={handleSpeak}
             onPause={handlePause}
@@ -184,8 +147,6 @@ export default function Home() {
       </div>
 
       <ShowPages page={page} onPageChange={setPage} />
-
-      <Footer page={page} onPageChange={setPage} />
-    </div>
+    </Layout>
   );
 }
