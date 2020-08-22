@@ -1,6 +1,10 @@
-export default function speak(params) {
-  const { voices, voice, speed, activeText, onChangeSpeakAction } = params;
-
+export default function speak(
+  voices,
+  voice,
+  speed,
+  activeText,
+  onChangeSpeakAction
+) {
   let myTimeout;
 
   function myTimer() {
