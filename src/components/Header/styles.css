@@ -7,7 +7,7 @@ header.menu-container {
   display: flex;
   align-items: center;
   flex-direction: row;
-  box-shadow: 280px 2px 10px 0 #474747;
+  box-shadow: 0px 2px 10px 0 #474747;
   justify-content: space-between;
 }
 
@@ -68,34 +68,15 @@ a.nav-link:hover::after {
   bottom: -4px;
 }
 
-@media only screen and (max-width: 1593px) {
-  header.menu-container {
-    box-shadow: 250px 2px 10px 0 #474747;
-  }
-}
-
 @media only screen and (max-width: 1366px) {
   header.menu-container {
     padding: 0 80px;
-    box-shadow: 230px 2px 10px 0 #474747;
   }
 }
 
 @media only screen and (max-height: 780px) {
   header.menu-container {
     height: 65px;
-  }
-}
-
-@media only screen and (max-width: 1240px) {
-  header.menu-container {
-    box-shadow: 230px 2px 10px 0 #474747;
-  }
-}
-
-@media only screen and (max-width: 1006px) {
-  header.menu-container {
-    box-shadow: 0px 2px 10px 0 #474747;
   }
 }
 

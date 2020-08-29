@@ -43,7 +43,7 @@ div.meet-description h2 {
 }
 
 div.meet-description img {
-  width: 50%;
+  width: 40%;
   max-width: 500px;
   margin-right: 50px;
 }
@@ -94,6 +94,18 @@ div.features h4 {
 @media only screen and (max-width: 1593px) {
   div.meet-container {
     max-width: 1180px;
+  }
+}
+
+@media only screen and (max-width: 1152px) {
+  .oval-div {
+    width: 90px;
+    height: 90px;
+  }
+
+  .oval-div svg {
+    width: 56px;
+    height: 56px;
   }
 }
 

@@ -104,17 +104,6 @@
   align-items: center;
 }
 
-.app-container .app-description .app-text .features .oval-div {
-  background: #fff;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
 @media only screen and (max-width: 1593px) {
   div.app-container {
     max-width: 1180px;

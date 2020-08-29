@@ -141,8 +141,38 @@ textarea.text-input {
 }
 
 @media only screen and (max-width: 1280px) {
+  section.main {
+    justify-content: space-between;
+  }
+
   textarea.text-input {
-    width: 780px;
+    width: 700px;
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  div.content {
+    grid-template-columns: minmax(200px, 210px) auto;
+  }
+
+  div.bg-shape-left {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  div.content {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  h1.slogan {
+    font-size: 2.7rem;
+  }
+
+  div.content::before {
+    display: none;
   }
 }
 
@@ -152,45 +182,14 @@ textarea.text-input {
   }
 }
 
-/* @media only screen and (max-width: 1320px) {
-  div.content {
-    grid-template-columns: minmax(200px, 230px) auto;
-  }
-
+@media only screen and (max-width: 780px) {
   h1.slogan {
     display: none;
-  }
-
-  section.main {
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    margin: 15px 0;
-  }
-
-  textarea.text-input {
-    width: 100%;
-    min-height: 340px;
-  }
-} */
-
-@media only screen and (max-width: 1006px) {
-  div.content {
-    display: unset;
-  }
-
-  div.content-right {
-    margin-top: 20px;
-    margin-bottom: 6rem;
   }
 }
 
 @media only screen and (max-width: 500px) {
-  div.content-right {
-    margin: calc(5vh) auto 0 auto;
-  }
-
   textarea.text-input {
-    min-height: 300px;
+    height: 62vh;
   }
 }
