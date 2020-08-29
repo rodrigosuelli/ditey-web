@@ -160,7 +160,8 @@ div.command-list p.table-item .action-icon {
 
 @media only screen and (max-width: 1280px) {
   div.commands-container {
-    width: 210px;
+    width: 200px;
+    margin-left: 20px;
   }
 
   div.mic-container button.mic svg {
@@ -170,6 +171,10 @@ div.command-list p.table-item .action-icon {
 
   div.spoken-command-container p.command {
     font-size: 1.437rem;
+  }
+
+  div.spoken-command-container p.mini-title {
+    font-size: 1rem;
   }
 
   div.command-list p.table-title {
@@ -187,6 +192,11 @@ div.command-list p.table-item .action-icon {
   }
 }
 
+@media only screen and (max-width: 780px) {
+  div.commands-container {
+    display: none;
+  }
+}
 /* @media only screen and (max-width: 1320px) {
   div.commands-container {
     padding: 5px;
@@ -233,9 +243,3 @@ div.command-list p.table-item .action-icon {
     margin: 0 0 10px 0;
   }
 } */
-
-@media only screen and (max-width: 500px) {
-  div.commands-container {
-    display: none;
-  }
-}

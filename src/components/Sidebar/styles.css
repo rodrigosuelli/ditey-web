@@ -32,7 +32,7 @@ div.sidebar-container {
   height: 30px;
   border: 2px solid #fff;
   background: transparent;
-  font-size: 1.75rem;
+  font-size: 28px;
   line-height: 28px;
   margin: 10px 0 15px 0;
   cursor: pointer;
@@ -138,7 +138,7 @@ button.trash.disabled {
   }
 }
 
-@media only screen and (max-width: 1006px) {
+@media only screen and (max-width: 1100px) {
   aside {
     display: none;
   }
