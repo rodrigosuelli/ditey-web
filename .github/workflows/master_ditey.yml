@@ -7,8 +7,8 @@ on:
   push:
     branches:
       - master
-      paths:
-        - './server/*'
+    paths:
+      - './server/*'
 
 jobs:
   build-and-deploy:
