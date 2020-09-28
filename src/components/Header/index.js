@@ -1,53 +1,41 @@
-import React from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Sidebar from './Sidebar';
+
+import logoImg from '../../assets/svg/ditey-logo.svg';
 
 import './styles.css';
 
-export default function Header(props) {
+export default function Header() {
+  const [menu, setMenu] = useState(false);
+
+  function handleToggleMenu() {
+    setMenu(!menu);
+  }
+
+  let sidebarShadowClass = 'sidebar-shadow';
+  if (menu === true) sidebarShadowClass += ' visible';
+
   return (
     <header id="header" className="menu-container">
-      <div className="logo-container">
+      <nav className="links">
+        <div onClick={handleToggleMenu} className="hamburger-btn">
+          <div className="bar" />
+          <div className="bar" />
+          <div className="bar" />
+        </div>
         <Link className="logo" to="/">
-          <span className="logo-brand">ditey</span>
+          <img src={logoImg} alt="logo" />
         </Link>
-      </div>
-
-      <nav>
-        <ul className="nav-links">
-          <li className="nav-item">
-            <AnchorLink
-              className="nav-link"
-              offset={() => -44}
-              onClick={() => props.onPageChange('Meet')}
-              href="#pages"
-            >
-              Conheça
-            </AnchorLink>
-          </li>
-          <li className="nav-item">
-            <AnchorLink
-              className="nav-link"
-              offset={() => -44}
-              onClick={() => props.onPageChange('Team')}
-              href="#pages"
-            >
-              Quem Somos
-            </AnchorLink>
-          </li>
-          <li className="nav-item">
-            <AnchorLink
-              className="nav-link"
-              offset={() => -44}
-              onClick={() => props.onPageChange('App')}
-              href="#pages"
-            >
-              Nosso App
-            </AnchorLink>
-          </li>
-        </ul>
+        <div className="right-links">
+          <Link to="/team">Nosso time</Link>
+          <Link to="/register">Cadastro</Link>
+          <Link to="/login">Log in</Link>
+        </div>
       </nav>
+
+      <div onClick={handleToggleMenu} className={sidebarShadowClass} />
+      <Sidebar onMenuToggle={handleToggleMenu} menu={menu} setMenu={setMenu} />
     </header>
   );
 }
