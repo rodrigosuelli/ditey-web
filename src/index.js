@@ -1,7 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import Routes from './routes';
+import { AuthProvider } from './contexts/auth';
 
 import './global.css';
 
-ReactDOM.render(<Routes />, document.getElementById('root'));
+ReactDOM.render(
+  <AuthProvider>
+    <Routes />
+  </AuthProvider>,
+  document.getElementById('root')
+);

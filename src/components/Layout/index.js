@@ -3,12 +3,12 @@ import React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 
-export default function Layout({ page, onPageChange, children }) {
+export default function Layout({ children }) {
   return (
     <>
-      <Header page={page} onPageChange={onPageChange} />
-      {children}
-      <Footer page={page} onPageChange={onPageChange} />
+      <Header />
+      <main>{children}</main>
+      <Footer />
     </>
   );
 }

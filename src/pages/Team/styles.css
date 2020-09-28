@@ -1,0 +1,108 @@
+h1.title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+div.cards {
+  width: 100%;
+}
+
+div.card {
+  position: relative;
+  width: 100%;
+  /* max-width: 600px; */
+  padding: 20px;
+  background: var(--black);
+  border-radius: 5px;
+  border: 2px solid var(--black);
+}
+
+div.card:hover {
+  border-color: var(--primary);
+}
+
+div.card:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+div.card div.portfolio {
+  display: none;
+  justify-content: space-between;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+div.card div.portfolio a:not(:last-child) {
+  margin-right: 10px;
+}
+
+div.card div.portfolio a svg {
+  color: #a8a8b3;
+}
+div.card div.portfolio a:hover svg {
+  color: #fff;
+}
+
+div.card div.wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+div.card div.wrapper div.info {
+  display: block;
+  margin-left: 15px;
+}
+
+div.card div.wrapper div.info h3.name {
+  font-size: 18px;
+}
+
+div.card div.wrapper div.info p.role {
+  margin-top: 5px;
+  color: var(--primary);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+div.card div.wrapper img.profile-pic {
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+
+div.card p.status {
+  color: #a8a8b3;
+}
+
+@media only screen and (min-width: 400px) {
+  div.card div.portfolio {
+    display: initial;
+  }
+}
+
+/* @media only screen and (min-width: 1120px) {
+  div.cards {
+    display: flex;
+  }
+
+  div.card:not(:last-child) {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+
+  div.card div.wrapper {
+    flex-direction: column;
+  }
+
+  div.card div.wrapper img.profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  div.card div.wrapper div.info {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+} */

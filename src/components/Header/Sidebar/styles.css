@@ -1,0 +1,33 @@
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  z-index: 1;
+  width: 280px;
+  height: 100%;
+  display: block;
+  background: var(--background);
+  transition: all 0.2s ease;
+}
+
+aside.visible {
+  transform: translateX(0);
+}
+
+aside div.brand {
+  background: var(--black);
+  height: 70px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+aside div.brand button.close-btn {
+  background: transparent;
+}
+
+aside div.links {
+  padding: 10px 20px;
+}

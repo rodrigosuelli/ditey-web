@@ -1,119 +1,52 @@
 footer {
-  margin-top: 2rem;
-  padding-top: 4rem;
-  padding-bottom: 5rem;
-  color: #fff;
-  background: linear-gradient(to right, #50089c, #5b0faf, #6714c4, #7219d6);
-  position: relative;
+  background: var(--black);
+  font-size: 15px;
+  padding: 20px;
 }
 
-footer::before {
-  content: '';
-  display: block;
-  background: url('../../assets/waves/footer-wave.svg') top no-repeat;
-  width: 100%;
-  position: absolute;
-  height: 15rem;
-  background-size: 100vw;
-  top: -11rem;
-}
-
-div.footer-container {
+footer .footer-container {
+  max-width: 1120px;
   width: 90%;
-  max-width: 1240px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: relative;
+  align-items: center;
+  justify-content: space-between;
 }
 
-div.list-container {
-  width: 25%;
-}
-
-div.list-container.logo {
+.logo-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-div.list-container div {
-  width: 70%;
+.logo-container p.copyright {
+  margin-top: 10px;
+  text-align: center;
 }
 
-div.list-container .list-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-div.list-container div {
-  margin-top: 5px;
-}
-
-div.list-container a {
-  font-weight: 500;
+.links a {
   display: block;
-  color: #ffffff96;
-  cursor: pointer;
-  line-height: 1.85;
+  line-height: 2.5;
 }
 
-div.list-container.logo a {
-  line-height: unset;
+.links a:hover {
+  text-decoration: underline;
 }
 
-div.list-container a:hover {
-  color: #fff;
+.links a:active {
+  color: white;
 }
 
-div.list-container .footer-logo {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px 5px #0000006b;
+.links a div.link-container {
+  display: flex;
+  align-items: center;
 }
 
-div.list-container p.copyright {
-  text-align: center;
-  font-weight: 500;
-  margin-top: 5px;
-  margin-bottom: 5px;
+.links a div.link-container svg {
+  margin-right: 10px;
 }
 
-@media only screen and (max-width: 1593px) {
-  div.footer-container {
-    max-width: 1180px;
-  }
-}
-
-@media only screen and (max-width: 1360px) {
-  footer {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-  }
-
-  footer::before {
-    height: 15rem;
-    top: -10rem;
-  }
-}
-
-@media only screen and (max-width: 1006px) {
-  footer {
-    display: none;
-  }
-}
-
-@media only screen and (max-height: 800px) {
-  footer::before {
-    top: -10rem;
-  }
-
-  footer {
-    margin-top: 2rem;
-  }
+.links a div.link-container svg.up-icon {
+  transform: rotate(180deg);
 }
