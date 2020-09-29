@@ -23,6 +23,8 @@ export function AuthProvider({ children }) {
 
         localStorage.setItem('token', response.data.accessToken);
         localStorage.setItem('refreshToken', response.data.refreshToken);
+
+        setAuthenticated(true);
       } catch (error) {
         alert(error);
       }
