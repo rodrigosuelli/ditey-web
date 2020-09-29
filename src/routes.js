@@ -7,11 +7,13 @@ import Team from './pages/Team';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import NotFound from './pages/NotFound';
+import Loading from './pages/Loading';
 
 function PrivateRoute({ path, component }) {
   const { loading, authenticated } = useAuth();
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loading />;
 
   if (!authenticated) return <Redirect to="/login" />;
 
@@ -21,7 +23,7 @@ function PrivateRoute({ path, component }) {
 function AuthRoute({ path, component }) {
   const { loading, authenticated } = useAuth();
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loading />;
 
   if (authenticated) return <Redirect to="/dashboard" />;
 
@@ -36,6 +38,7 @@ export default function Routes() {
       <AuthRoute path="/register" component={Register} />
       <AuthRoute path="/login" component={Login} />
       <PrivateRoute path="/dashboard" component={Dashboard} />
+      <Route component={NotFound} />
     </Switch>
   );
 }
