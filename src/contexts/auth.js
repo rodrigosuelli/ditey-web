@@ -1,4 +1,5 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import api from '../services/api';
 
 const AuthContext = createContext({ authenticated: false });
@@ -7,29 +8,39 @@ export function AuthProvider({ children }) {
   const [authenticated, setAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const history = useHistory();
+
   useEffect(() => {
-    async function checkAuthenticated() {
-      let response;
-
+    async function refreshToken() {
       try {
-        const storageToken = localStorage.getItem('token');
+        const storageRefreshToken = localStorage.getItem('refreshToken');
 
-        if (!storageToken) {
-          return;
-        }
+        const data = {
+          refreshToken: storageRefreshToken,
+        };
 
-        response = await api.post('/auth/verify');
+        const response = await api.post('/auth/refresh-token', data);
 
-        const parseRes = await response.json();
-        console.log(parseRes);
+        localStorage.setItem('token', response.data.accessToken);
+        localStorage.setItem('refreshToken', response.data.refreshToken);
+      } catch (error) {
+        alert(error);
+      }
+    }
 
-        if (parseRes === true) {
+    async function checkAuthenticated() {
+      try {
+        const response = await api.post('/auth/verify');
+
+        if (response.data === true) {
           setAuthenticated(true);
         } else {
           setAuthenticated(false);
         }
       } catch (error) {
-        console.log(response.data.msg);
+        if (error.response.data.msg === 'invalid token') {
+          refreshToken();
+        }
       }
     }
 
@@ -48,18 +59,17 @@ export function AuthProvider({ children }) {
       localStorage.setItem('token', response.data.accessToken);
       localStorage.setItem('refreshToken', response.data.refreshToken);
 
-      const storageToken = localStorage.getItem('token');
-      api.defaults.headers.Authorization = `Bearer ${storageToken}`;
+      setAuthenticated(true);
+
+      history.push('/dashboard');
     } catch (err) {
-      alert('Erro ao tentar criar conta, tente novamente.');
+      alert(err.response.data);
     }
   }
 
   async function logIn(data) {
-    let response;
-
     try {
-      response = await api.post('/auth/login', data);
+      const response = await api.post('/auth/login', data);
 
       const userInfo = { name: response.data.name, email: response.data.email };
 
@@ -67,12 +77,11 @@ export function AuthProvider({ children }) {
       localStorage.setItem('token', response.data.accessToken);
       localStorage.setItem('refreshToken', response.data.refreshToken);
 
-      const storageToken = localStorage.getItem('token');
-      api.defaults.headers.Authorization = `Bearer ${storageToken}`;
+      setAuthenticated(true);
+
+      history.push('/dashboard');
     } catch (err) {
-      console.log(err);
-      alert(err);
-      console.log(response);
+      alert(err.response.data);
     }
   }
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MdMailOutline, MdLockOutline } from 'react-icons/md';
 
 import Layout from '../../components/Layout';
@@ -13,8 +13,6 @@ export default function Login() {
 
   const { logIn } = useAuth();
 
-  const history = useHistory();
-
   function handleLogin(e) {
     e.preventDefault();
 
@@ -24,8 +22,6 @@ export default function Login() {
     };
 
     logIn(data);
-
-    history.push('/dashboard');
   }
 
   return (

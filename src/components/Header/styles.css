@@ -1,6 +1,5 @@
 header.menu-container {
   height: 70px;
-  padding: 0 20px;
 
   background: var(--black);
   font-size: 15px;
@@ -22,12 +21,11 @@ header.menu-container nav a.logo {
 }
 
 header.menu-container nav div.right-links {
-  width: 22%;
   display: flex;
-  justify-content: space-between;
 }
 
 header.menu-container nav div.right-links a:not(:last-child) {
+  margin-right: 32px;
   display: none;
 }
 
