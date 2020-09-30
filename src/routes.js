@@ -11,7 +11,9 @@ import NotFound from './pages/NotFound';
 import Loading from './pages/Loading';
 
 function PrivateRoute({ path, component }) {
-  const { authenticated } = useAuth();
+  const { loading, authenticated } = useAuth();
+
+  if (loading) return <Loading />;
 
   if (!authenticated) return <Redirect to="/login" />;
 
@@ -19,7 +21,9 @@ function PrivateRoute({ path, component }) {
 }
 
 function AuthRoute({ path, component }) {
-  const { authenticated } = useAuth();
+  const { loading, authenticated } = useAuth();
+
+  if (loading) return <Loading />;
 
   if (authenticated) return <Redirect to="/dashboard" />;
 
@@ -27,12 +31,6 @@ function AuthRoute({ path, component }) {
 }
 
 export default function Routes() {
-  const { loading } = useAuth();
-
-  if (loading) {
-    return <Loading />;
-  }
-
   return (
     <Switch>
       <Route path="/" exact component={Home} />
