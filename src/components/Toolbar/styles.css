@@ -1,0 +1,72 @@
+header.toolbar .center-buttons button.speak {
+  background: var(--primary);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+}
+
+header.toolbar .center-buttons button.speak:hover {
+  filter: brightness(95%);
+}
+
+header.toolbar .center-buttons button.speak:active {
+  filter: brightness(80%);
+}
+
+header.toolbar .center-buttons button:not(:last-child) {
+  margin-right: 10px;
+}
+
+header.toolbar .right-buttons button.mic {
+  background: var(--primary);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+header.toolbar div.right-buttons {
+  display: flex;
+}
+
+header.toolbar div.right-buttons button:not(:last-child) {
+  margin-right: 26px;
+}
+
+.hamburger-btn {
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--secondary);
+  transition-duration: 0.3s;
+}
+.bar:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+header.toolbar div.sidebar-shadow {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #00000099;
+  display: none;
+}
+
+header.toolbar div.sidebar-shadow.visible {
+  display: block;
+}
+
+@media only screen and (min-width: 500px) {
+  div.hamburger-btn {
+    display: none;
+  }
+
+  header.toolbar div.right-links a:not(:last-child) {
+    display: initial;
+  }
+}

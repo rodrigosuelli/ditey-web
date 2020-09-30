@@ -1,2 +1,28 @@
-div.app {
+div.text {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  padding: 30px 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+div.text textarea {
+  color: var(--secondary);
+  resize: none;
+}
+
+div.text textarea::placeholder {
+  color: #bbbbb96e;
+}
+
+div.text textarea.title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+div.text textarea.content {
+  font-size: 16px;
+  min-height: calc(100vh - 70px - 50px - 39px - 15px);
 }

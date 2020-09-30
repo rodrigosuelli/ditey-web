@@ -1,11 +1,11 @@
-header.menu-container {
+header {
   height: 70px;
 
   background: var(--black);
   font-size: 15px;
 }
 
-header.menu-container nav {
+header nav {
   max-width: 1120px;
   width: 90%;
   margin: 0 auto;
@@ -58,7 +58,7 @@ header.menu-container div.sidebar-shadow.visible {
   display: block;
 }
 
-@media only screen and (min-width: 1120px) {
+@media only screen and (min-width: 500px) {
   div.hamburger-btn {
     display: none;
   }

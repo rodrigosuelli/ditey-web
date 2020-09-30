@@ -10,6 +10,7 @@
     "axios": "^0.20.0",
     "react": "^16.13.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-autosize-textarea": "^7.1.0",
     "react-dom": "^16.13.0",
     "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2",
