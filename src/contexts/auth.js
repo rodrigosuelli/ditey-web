@@ -44,11 +44,11 @@ export function AuthProvider({ children }) {
           refreshToken();
         }
       }
+
+      setLoading(false);
     }
 
     checkAuthenticated();
-
-    setLoading(false);
   }, []);
 
   async function createAccount(data) {
