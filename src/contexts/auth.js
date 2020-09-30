@@ -26,7 +26,7 @@ export function AuthProvider({ children }) {
 
         setAuthenticated(true);
       } catch (error) {
-        alert(error);
+        alert(error.response.data);
       }
     }
 
@@ -36,8 +36,6 @@ export function AuthProvider({ children }) {
 
         if (response.data === true) {
           setAuthenticated(true);
-        } else {
-          setAuthenticated(false);
         }
       } catch (error) {
         if (error.response.data.msg === 'invalid token') {
