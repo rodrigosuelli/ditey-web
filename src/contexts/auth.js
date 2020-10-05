@@ -10,6 +10,19 @@ export function AuthProvider({ children }) {
 
   const history = useHistory();
 
+  function storeTokens(data) {
+    const userInfo = { name: data.name, email: data.email };
+
+    if (userInfo) {
+      localStorage.setItem('userInfo', JSON.stringify(userInfo));
+    }
+
+    localStorage.setItem('token', data.accessToken);
+    localStorage.setItem('refreshToken', data.refreshToken);
+
+    api.defaults.headers.Authorization = `Bearer ${data.accessToken}`;
+  }
+
   useEffect(() => {
     async function refreshToken() {
       try {
@@ -21,12 +34,11 @@ export function AuthProvider({ children }) {
 
         const response = await api.post('/auth/refresh-token', data);
 
-        localStorage.setItem('token', response.data.accessToken);
-        localStorage.setItem('refreshToken', response.data.refreshToken);
+        storeTokens(response.data);
 
         setAuthenticated(true);
       } catch (error) {
-        alert(error.response.data);
+        alert(error);
       }
     }
 
@@ -39,11 +51,17 @@ export function AuthProvider({ children }) {
         }
       } catch (error) {
         if (error.response.data.msg === 'invalid token') {
-          refreshToken();
+          await refreshToken();
         }
       }
 
       setLoading(false);
+    }
+
+    const storageToken = localStorage.getItem('token');
+
+    if (storageToken) {
+      api.defaults.headers.Authorization = `Bearer ${storageToken}`;
     }
 
     checkAuthenticated();
@@ -53,11 +71,7 @@ export function AuthProvider({ children }) {
     try {
       const response = await api.post('/auth/register', data);
 
-      const userInfo = { name: response.data.name, email: response.data.email };
-
-      localStorage.setItem('userInfo', JSON.stringify(userInfo));
-      localStorage.setItem('token', response.data.accessToken);
-      localStorage.setItem('refreshToken', response.data.refreshToken);
+      storeTokens(response.data);
 
       setAuthenticated(true);
 
@@ -71,11 +85,7 @@ export function AuthProvider({ children }) {
     try {
       const response = await api.post('/auth/login', data);
 
-      const userInfo = { name: response.data.name, email: response.data.email };
-
-      localStorage.setItem('userInfo', JSON.stringify(userInfo));
-      localStorage.setItem('token', response.data.accessToken);
-      localStorage.setItem('refreshToken', response.data.refreshToken);
+      storeTokens(response.data);
 
       setAuthenticated(true);
 
