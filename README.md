@@ -1,9 +1,5 @@
 # Ditey
 
-<img src="./.github/screenshot.png" alt="screenshot">
-
-Se você quiser conhecer melhor o projeto, acesse ele clicando [aqui](https://ditey.netlify.app/).
-
 ## Índice
 
 - [Tecnologias](#-tecnologias)
