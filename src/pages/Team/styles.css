@@ -3,14 +3,10 @@ h1.title {
   text-align: center;
 }
 
-div.cards {
-  width: 100%;
-}
-
 div.card {
   position: relative;
   width: 100%;
-  /* max-width: 600px; */
+  max-width: 600px;
   padding: 20px;
   background: var(--black);
   border-radius: 5px;
@@ -56,20 +52,21 @@ div.card div.wrapper div.info {
 }
 
 div.card div.wrapper div.info h3.name {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 div.card div.wrapper div.info p.role {
-  margin-top: 5px;
+  margin-top: 8px;
   color: var(--primary);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 500;
 }
 
 div.card div.wrapper img.profile-pic {
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  border: 2px solid var(--secondary);
+  width: 90px;
+  height: 90px;
 }
 
 div.card p.status {
@@ -81,6 +78,25 @@ div.card p.status {
     display: initial;
   }
 }
+
+/* @media only screen and (min-width: 700px) {
+  div.card div.wrapper img.profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  div.card div.wrapper div.info h3.name {
+    font-size: 30px;
+  }
+
+  div.card div.wrapper div.info p.role {
+    font-size: 24px;
+  }
+
+  div.card p.status {
+    font-size: 18px;
+  }
+} */
 
 /* @media only screen and (min-width: 1120px) {
   div.cards {

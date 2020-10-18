@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { MdPlayArrow, MdStop, MdMic, MdSettings } from 'react-icons/md';
 import Sidebar from './Sidebar';
 
-import logoImg from '../../assets/svg/ditey-logo.svg';
-
 import './styles.css';
 
-export default function Toolbar() {
+export default function Toolbar({
+  texts,
+  activeText,
+  onActiveTextChange,
+  onTextsChange,
+}) {
   const [menu, setMenu] = useState(false);
 
   function handleToggleMenu() {
@@ -44,7 +46,14 @@ export default function Toolbar() {
       </nav>
 
       <div onClick={handleToggleMenu} className={sidebarShadowClass} />
-      <Sidebar onMenuToggle={handleToggleMenu} menu={menu} setMenu={setMenu} />
+      <Sidebar
+        texts={texts}
+        onTextsChange={onTextsChange}
+        activeText={activeText}
+        onActiveTextChange={onActiveTextChange}
+        menu={menu}
+        onMenuChange={setMenu}
+      />
     </header>
   );
 }

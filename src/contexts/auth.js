@@ -1,4 +1,10 @@
-import React, { useState, useEffect, createContext, useContext } from 'react';
+import React, {
+  useState,
+  useEffect,
+  createContext,
+  useContext,
+  useCallback,
+} from 'react';
 import { useHistory } from 'react-router-dom';
 import api from '../services/api';
 
@@ -11,9 +17,10 @@ export function AuthProvider({ children }) {
   const history = useHistory();
 
   function storeTokens(data) {
-    const userInfo = { name: data.name, email: data.email };
+    let userInfo;
 
-    if (userInfo) {
+    if (data.name && data.email) {
+      userInfo = { name: data.name, email: data.email };
       localStorage.setItem('userInfo', JSON.stringify(userInfo));
     }
 
@@ -23,25 +30,25 @@ export function AuthProvider({ children }) {
     api.defaults.headers.Authorization = `Bearer ${data.accessToken}`;
   }
 
-  useEffect(() => {
-    async function refreshToken() {
-      try {
-        const storageRefreshToken = localStorage.getItem('refreshToken');
+  const refreshToken = useCallback(async () => {
+    try {
+      const storageRefreshToken = localStorage.getItem('refreshToken');
 
-        const data = {
-          refreshToken: storageRefreshToken,
-        };
+      const data = {
+        refreshToken: storageRefreshToken,
+      };
 
-        const response = await api.post('/auth/refresh-token', data);
+      const response = await api.post('/auth/refresh-token', data);
 
-        storeTokens(response.data);
+      storeTokens(response.data);
 
-        setAuthenticated(true);
-      } catch (error) {
-        alert(error);
-      }
+      setAuthenticated(true);
+    } catch (error) {
+      alert(error);
     }
+  }, []);
 
+  useEffect(() => {
     async function checkAuthenticated() {
       try {
         const response = await api.post('/auth/verify');
@@ -65,7 +72,7 @@ export function AuthProvider({ children }) {
     }
 
     checkAuthenticated();
-  }, []);
+  }, [refreshToken]);
 
   async function createAccount(data) {
     try {
@@ -96,12 +103,25 @@ export function AuthProvider({ children }) {
   }
 
   function logOut() {
+    setAuthenticated(false);
+
     localStorage.clear();
+
+    api.defaults.headers.Authorization = undefined;
+
+    history.push('/');
   }
 
   return (
     <AuthContext.Provider
-      value={{ authenticated, loading, createAccount, logIn, logOut }}
+      value={{
+        authenticated,
+        loading,
+        refreshToken,
+        createAccount,
+        logIn,
+        logOut,
+      }}
     >
       {children}
     </AuthContext.Provider>

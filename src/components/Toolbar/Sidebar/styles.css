@@ -1,14 +1,18 @@
 aside.toolbar {
+  width: 290px;
+  height: 100%;
+  background: var(--background);
+
   position: fixed;
   top: 0;
   left: 0;
-  transform: translateX(-100%);
+
+  display: flex;
+  flex-direction: column;
   z-index: 1;
-  width: 280px;
-  height: 100%;
-  display: block;
-  background: var(--background);
+  transform: translateX(-100%);
   transition: all 0.2s ease;
+  overflow: hidden;
 }
 
 aside.toolbar.visible {
@@ -16,66 +20,176 @@ aside.toolbar.visible {
 }
 
 aside.toolbar div.profile {
+  width: 100%;
   background: var(--primary);
-  padding-top: 10px;
+  padding: 15px 15px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 
-aside.toolbar div.profile div.profile-img {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background: #f2f2f2;
+aside.toolbar div.profile .profile-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+aside.toolbar div.profile .profile-wrapper div.profile-img {
+  min-width: 40px;
+  min-height: 40px;
+  margin-right: 10px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 15px;
-  margin-bottom: 10px;
 
+  border-radius: 50%;
+  background: #f2f2f2;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: 36px;
+  font-size: 28px;
   color: #3b1da3;
 }
 
-aside.toolbar div.profile div.profile-button {
-  cursor: pointer;
-  padding: 0 15px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+aside.toolbar div.profile .profile-wrapper div.profile-info {
+  width: 171px;
 }
 
-aside.toolbar div.profile div.profile-info {
-  overflow: hidden;
-}
-
-aside.toolbar div.profile div.profile-info h4,
-aside.toolbar div.profile div.profile-info p {
+aside.toolbar div.profile .profile-wrapper div.profile-info h4,
+aside.toolbar div.profile .profile-wrapper div.profile-info p {
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-aside.toolbar div.profile div.profile-info h4 {
+aside.toolbar div.profile .profile-wrapper div.profile-info h4 {
   color: #fff;
 }
 
-aside.toolbar div.profile div.profile-info p {
+aside.toolbar div.profile .profile-wrapper div.profile-info p {
   color: #c9c9c9;
 }
 
-aside.toolbar div.profile div.profile-button button {
-  /* padding: 10px 15px 10px; */
+aside.toolbar div.profile svg {
+  margin-left: 15px;
+  min-width: 24px;
+  min-height: 24px;
+  transition: all 300ms;
+}
+
+aside.toolbar div.profile svg.up {
+  transform: rotate(180deg);
+}
+
+aside.toolbar .texts-panel {
+  height: calc(100% - 70px);
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+aside.toolbar .texts-panel button.logout-btn {
+  font-size: 15px;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  line-height: 2.5;
+}
+
+aside.toolbar .texts-panel button.logout-btn:hover {
+  text-decoration: underline;
+}
+
+aside.toolbar .texts-panel button.logout-btn:active {
+  color: #fff;
+}
+
+aside.toolbar .texts-panel button.logout-btn svg {
+  transform: rotate(180deg);
+  margin-right: 10px;
+}
+
+aside.toolbar .texts-panel div.texts-list {
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.toolbar div.texts-list h2,
+.toolbar div.texts-list h3,
+.toolbar div.texts-list h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+.toolbar div.texts-list h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.toolbar div.texts-list div.text-item {
+  position: relative;
+  border-top: 1px solid #a9a7a7;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.toolbar div.texts-list div.text-item:last-child {
+  border-bottom: 1px solid #a9a7a7;
+}
+
+.toolbar div.texts-list div.text-item h4 {
+  margin-bottom: 5px;
+}
+
+.toolbar div.texts-list div.text-item p {
+  overflow: hidden;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+  height: 3.6em;
+}
+.toolbar div.texts-list div.text-item svg {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  z-index: 1;
+}
+
+.toolbar div.texts-list div.text-item svg:hover {
+  color: #fff;
+}
+
+.toolbar div.btn-add-container {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.toolbar div.btn-add-container button {
+  width: unset;
+  margin: unset;
+  padding: 12px 15px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  transition: all 300ms;
+}
+
+.toolbar div.btn-add-container button.off {
+  cursor: unset;
+  filter: opacity(50%);
+}
+
+.toolbar div.btn-add-container button svg {
+  margin-right: 5px;
 }
 
 aside.toolbar div.brand button.close-btn {
   background: transparent;
-}
-
-aside.toolbar div.texts-list {
-  padding: 10px 15px;
 }
