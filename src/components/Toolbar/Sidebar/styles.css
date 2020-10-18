@@ -1,7 +1,7 @@
 aside.toolbar {
   width: 290px;
   height: 100%;
-  background: var(--background);
+  background: #1e2125;
 
   position: fixed;
   top: 0;
@@ -20,7 +20,6 @@ aside.toolbar.visible {
 }
 
 aside.toolbar div.profile {
-  width: 100%;
   background: var(--primary);
   padding: 15px 15px;
   display: flex;
@@ -30,7 +29,6 @@ aside.toolbar div.profile {
 }
 
 aside.toolbar div.profile .profile-wrapper {
-  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -53,12 +51,11 @@ aside.toolbar div.profile .profile-wrapper div.profile-img {
 }
 
 aside.toolbar div.profile .profile-wrapper div.profile-info {
-  width: 171px;
+  max-width: 171px;
 }
 
 aside.toolbar div.profile .profile-wrapper div.profile-info h4,
 aside.toolbar div.profile .profile-wrapper div.profile-info p {
-  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -143,18 +140,22 @@ aside.toolbar .texts-panel div.texts-list {
 }
 
 .toolbar div.texts-list div.text-item h4 {
+  max-width: calc(100% - 20px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   margin-bottom: 5px;
 }
 
 .toolbar div.texts-list div.text-item p {
-  overflow: hidden;
-  overflow-wrap: break-word;
-  white-space: normal;
-  text-overflow: ellipsis;
   line-height: 1.2;
   height: 3.6em;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
 }
 .toolbar div.texts-list div.text-item svg {
+  margin-left: 10px;
   position: absolute;
   right: 5px;
   top: 10px;
