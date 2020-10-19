@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 import debounce from 'lodash.debounce';
 import { useAuth } from '../../contexts/auth';
@@ -32,20 +32,26 @@ export default function Dashboard() {
     loadTexts();
   }, []);
 
-  async function saveText(data) {
-    console.log('saving to db');
-
-    try {
-      await api.put(`/texts/${activeTextId}`, data);
-    } catch (error) {
-      if (error.response.data.msg === 'invalid token') {
-        await refreshToken();
-        await saveText(data);
-      } else {
-        alert(error);
+  const saveText = useCallback(
+    async (data) => {
+      console.log('saving');
+      try {
+        await api.put(`/texts/${activeTextId}`, data);
+      } catch (error) {
+        if (error.response.data.msg === 'invalid token') {
+          await refreshToken();
+          await saveText(data);
+        } else {
+          alert(error);
+        }
       }
-    }
-  }
+    },
+    [activeTextId, refreshToken]
+  );
+
+  const debouncedSave = useMemo(() => debounce((data) => saveText(data), 800), [
+    saveText,
+  ]);
 
   async function handleTextTitleChange(e) {
     e.persist();
@@ -64,11 +70,8 @@ export default function Dashboard() {
       content: activeText.content,
     };
 
-    debounce(() => saveText(data), 800);
+    debouncedSave(data);
   }
-
-  const debouncedSave = useRef(debounce((data) => saveText(data), 1000))
-    .current;
 
   async function handleTextContentChange(e) {
     e.persist();
