@@ -4,6 +4,42 @@ div.text {
   padding: 30px 20px 20px;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+div.text .saving {
+  color: var(--grayMedium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 4px;
+  right: 20px;
+  padding: 5px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+div.text .saving:hover {
+  background: #3f4447;
+}
+
+div.text .saving svg {
+  margin-left: 5px;
+  animation: spin;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 div.text textarea {

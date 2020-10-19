@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 import debounce from 'lodash.debounce';
+import { ImSpinner8 } from 'react-icons/im';
 import { useAuth } from '../../contexts/auth';
 import api from '../../services/api';
 
@@ -11,7 +12,7 @@ import './styles.css';
 export default function Dashboard() {
   const [texts, setTexts] = useState([]);
   const [activeTextId, setActiveTextId] = useState(0);
-  // const [saving, setSaving] = useState([]);
+  const [saving, setSaving] = useState(false);
 
   const activeText = texts.find((text) => text.id === activeTextId) || '';
 
@@ -34,7 +35,6 @@ export default function Dashboard() {
 
   const saveText = useCallback(
     async (data) => {
-      console.log('saving');
       try {
         await api.put(`/texts/${activeTextId}`, data);
       } catch (error) {
@@ -45,6 +45,8 @@ export default function Dashboard() {
           alert(error);
         }
       }
+
+      setSaving(false);
     },
     [activeTextId, refreshToken]
   );
@@ -54,6 +56,10 @@ export default function Dashboard() {
   ]);
 
   async function handleTextTitleChange(e) {
+    if (!saving) {
+      setSaving(true);
+    }
+
     e.persist();
 
     const newTextsArray = texts.map((text) => {
@@ -74,6 +80,10 @@ export default function Dashboard() {
   }
 
   async function handleTextContentChange(e) {
+    if (!saving) {
+      setSaving(true);
+    }
+
     e.persist();
 
     const newTextsArray = texts.map((text) => {
@@ -102,6 +112,12 @@ export default function Dashboard() {
         onTextsChange={setTexts}
       />
       <div className="text">
+        {saving && (
+          <div className="saving">
+            Salvando... <ImSpinner8 size={16} />
+          </div>
+        )}
+
         <TextareaAutosize
           onChange={(e) => handleTextTitleChange(e)}
           value={activeText.title}
