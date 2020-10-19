@@ -4,8 +4,8 @@ import { useAuth } from './contexts/auth';
 
 import Home from './pages/Home';
 import Team from './pages/Team';
-import Login from './pages/Login';
-import Register from './pages/Register';
+import Login from './pages/Authentication/Login';
+import Register from './pages/Authentication/Register';
 import Dashboard from './pages/Dashboard';
 import NotFound from './pages/NotFound';
 import Loading from './pages/Loading';

@@ -5,6 +5,8 @@ import Layout from '../../components/Layout';
 
 import { useAuth } from '../../contexts/auth';
 
+import './styles.css';
+
 export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
