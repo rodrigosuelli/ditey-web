@@ -133,10 +133,7 @@ export default function Sidebar(props) {
   }
 
   async function handleDeleteText(id) {
-    if (!texts[activeText]) {
-      return alert('opa');
-    }
-    if (id === texts[activeText].id) {
+    if (activeText.id === id) {
       return;
     }
 

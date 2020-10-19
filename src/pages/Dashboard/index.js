@@ -64,7 +64,7 @@ export default function Dashboard() {
       content: activeText.content,
     };
 
-    debounce(() => saveText(data), 1000);
+    debounce(() => saveText(data), 800);
   }
 
   const debouncedSave = useRef(debounce((data) => saveText(data), 1000))
@@ -94,7 +94,7 @@ export default function Dashboard() {
     <>
       <Toolbar
         texts={texts}
-        activeText={activeTextId}
+        activeText={activeText}
         onActiveTextChange={setActiveTextId}
         onTextsChange={setTexts}
       />
