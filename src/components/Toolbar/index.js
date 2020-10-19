@@ -35,6 +35,14 @@ export default function Toolbar({
             <MdStop size={30} />
           </button>
         </div>
+        <select className="voice" name="voice">
+          <option value="Microsoft Maria Desktop - Portuguese(Brazil)">
+            Microsoft Maria Desktop - Portuguese(Brazil)
+          </option>
+          <option value="Google português do Brasil">
+            Google português do Brasil
+          </option>
+        </select>
         <div className="right-buttons">
           <button className="mic" type="button">
             <MdMic size={18} />

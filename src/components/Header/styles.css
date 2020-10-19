@@ -59,7 +59,7 @@ header.menu-container div.sidebar-shadow.visible {
 }
 
 @media only screen and (min-width: 500px) {
-  div.hamburger-btn {
+  header#header div.hamburger-btn {
     display: none;
   }
 
