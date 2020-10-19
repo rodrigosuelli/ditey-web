@@ -31,22 +31,36 @@ export function AuthProvider({ children }) {
   }
 
   const refreshToken = useCallback(async () => {
+    const storageRefreshToken = localStorage.getItem('refreshToken');
+
+    if (!storageRefreshToken) {
+      if (authenticated) {
+        setAuthenticated(false);
+      }
+
+      return false;
+    }
+
+    const data = {
+      refreshToken: storageRefreshToken,
+    };
+
     try {
-      const storageRefreshToken = localStorage.getItem('refreshToken');
-
-      const data = {
-        refreshToken: storageRefreshToken,
-      };
-
       const response = await api.post('/auth/refresh-token', data);
 
       storeTokens(response.data);
 
       setAuthenticated(true);
+
+      return true;
     } catch (error) {
-      alert(error);
+      if (authenticated) {
+        setAuthenticated(false);
+      }
+
+      return false;
     }
-  }, []);
+  }, [authenticated]);
 
   useEffect(() => {
     async function checkAuthenticated() {

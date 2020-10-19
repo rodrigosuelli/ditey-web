@@ -26,12 +26,18 @@ export default function Dashboard() {
         setTexts(response.data);
         setActiveTextId(response.data[0].id);
       } catch (error) {
-        alert(error);
+        if (error.response.data.msg === 'invalid token') {
+          const response = await refreshToken();
+
+          if (response) {
+            loadTexts();
+          }
+        }
       }
     }
 
     loadTexts();
-  }, []);
+  }, [refreshToken]);
 
   const saveText = useCallback(
     async (data) => {
@@ -39,10 +45,13 @@ export default function Dashboard() {
         await api.put(`/texts/${activeTextId}`, data);
       } catch (error) {
         if (error.response.data.msg === 'invalid token') {
-          await refreshToken();
-          await saveText(data);
-        } else {
-          alert(error);
+          const response = await refreshToken();
+
+          if (response) {
+            saveText(data);
+          }
+
+          return;
         }
       }
 

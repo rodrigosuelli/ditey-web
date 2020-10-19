@@ -124,10 +124,11 @@ export default function Sidebar(props) {
       onMenuChange(false);
     } catch (error) {
       if (error.response.data.msg === 'invalid token') {
-        await refreshToken();
-        handleAddText();
-      } else {
-        alert(error);
+        const response = await refreshToken();
+
+        if (response) {
+          handleAddText();
+        }
       }
     }
   }
@@ -143,10 +144,11 @@ export default function Sidebar(props) {
       onTextsChange(texts.filter((text) => text.id !== id));
     } catch (error) {
       if (error.response.data.msg === 'invalid token') {
-        await refreshToken();
-        handleDeleteText(id);
-      } else {
-        alert(error);
+        const response = await refreshToken();
+
+        if (response) {
+          handleDeleteText(id);
+        }
       }
     }
   }
