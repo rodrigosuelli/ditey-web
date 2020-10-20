@@ -152,8 +152,17 @@ aside.toolbar .texts-panel div.texts-list {
   cursor: pointer;
 }
 
+.toolbar div.texts-list div.text-item.active,
+.toolbar div.texts-list div.text-item.active + div.text-item {
+  border-top: 1px solid var(--primary);
+}
+
 .toolbar div.texts-list div.text-item:last-child {
   border-bottom: 1px solid #a9a7a7;
+}
+
+.toolbar div.texts-list div.text-item.active:last-child {
+  border-bottom: 1px solid var(--primary);
 }
 
 .toolbar div.texts-list div.text-item h4 {
@@ -171,6 +180,12 @@ aside.toolbar .texts-panel div.texts-list {
   overflow-wrap: break-word;
   text-overflow: ellipsis;
 }
+
+.toolbar div.texts-list div.text-item.active h4,
+.toolbar div.texts-list div.text-item.active p {
+  color: #9272ff;
+}
+
 .toolbar div.texts-list div.text-item svg {
   margin-left: 10px;
   position: absolute;

@@ -109,7 +109,14 @@ export default function TextsMenu(props) {
               <div className="texts-list">
                 <h2>Meus Textos:</h2>
                 {texts.map((text) => (
-                  <div key={text.id} className="text-item">
+                  <div
+                    key={text.id}
+                    className={
+                      text.id === activeTextId
+                        ? 'text-item active'
+                        : 'text-item'
+                    }
+                  >
                     <MdDelete
                       onClick={() => handleDeleteText(text.id)}
                       size={17}
