@@ -54,14 +54,14 @@ export default function TextsMenu(props) {
   }
 
   async function handleDeleteText(id) {
-    if (activeText.id === id) {
-      return;
-    }
-
     try {
       await api.delete(`/texts/${id}`);
 
       onTextsChange(texts.filter((text) => text.id !== id));
+
+      if (activeText.id === id) {
+        onActiveTextIdChange(texts[0].id);
+      }
     } catch (error) {
       if (error.response.data.msg === 'invalid token') {
         const response = await refreshToken();
@@ -110,12 +110,11 @@ export default function TextsMenu(props) {
                 <h2>Meus Textos:</h2>
                 {texts.map((text) => (
                   <div key={text.id} className="text-item">
-                    {text.id !== activeText.id && (
-                      <MdDelete
-                        onClick={() => handleDeleteText(text.id)}
-                        size={17}
-                      />
-                    )}
+                    <MdDelete
+                      onClick={() => handleDeleteText(text.id)}
+                      size={17}
+                    />
+
                     <div
                       onClick={() => {
                         onActiveTextIdChange(text.id);
