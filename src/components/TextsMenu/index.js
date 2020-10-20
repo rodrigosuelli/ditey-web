@@ -54,12 +54,20 @@ export default function TextsMenu(props) {
   }
 
   async function handleDeleteText(id) {
+    if (texts.length === 1) {
+      return;
+    }
+
     try {
       await api.delete(`/texts/${id}`);
 
       onTextsChange(texts.filter((text) => text.id !== id));
 
       if (activeTextId === id) {
+        if (activeTextId === texts[0].id) {
+          return onActiveTextIdChange(texts[1].id);
+        }
+
         onActiveTextIdChange(texts[0].id);
       }
     } catch (error) {
@@ -117,11 +125,12 @@ export default function TextsMenu(props) {
                         : 'text-item'
                     }
                   >
-                    <MdDelete
-                      onClick={() => handleDeleteText(text.id)}
-                      size={17}
-                    />
-
+                    {texts.length > 1 && (
+                      <MdDelete
+                        onClick={() => handleDeleteText(text.id)}
+                        size={17}
+                      />
+                    )}
                     <div
                       onClick={() => {
                         onActiveTextIdChange(text.id);
