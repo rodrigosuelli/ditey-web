@@ -125,22 +125,14 @@ export default function Dashboard() {
       <TextsMenu
         texts={texts}
         onTextsChange={setTexts}
-        activeText={activeText}
+        activeTextId={activeTextId}
         onActiveTextIdChange={setActiveTextId}
         menu={menu}
         onMenuChange={setMenu}
         handleToggleMenu={handleToggleMenu}
       />
       <section className="workspace">
-        <Toolbar
-          texts={texts}
-          activeText={activeText}
-          onActiveTextChange={setActiveTextId}
-          onTextsChange={setTexts}
-          menu={menu}
-          onMenuChange={setMenu}
-          handleToggleMenu={handleToggleMenu}
-        />
+        <Toolbar handleToggleMenu={handleToggleMenu} />
         <div className="text">
           {saving && (
             <div className="saving">

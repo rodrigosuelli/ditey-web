@@ -12,7 +12,7 @@ export default function TextsMenu(props) {
     onMenuChange,
     texts,
     onTextsChange,
-    activeText,
+    activeTextId,
     onActiveTextIdChange,
     handleToggleMenu,
   } = props;
@@ -59,7 +59,7 @@ export default function TextsMenu(props) {
 
       onTextsChange(texts.filter((text) => text.id !== id));
 
-      if (activeText.id === id) {
+      if (activeTextId === id) {
         onActiveTextIdChange(texts[0].id);
       }
     } catch (error) {
