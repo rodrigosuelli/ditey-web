@@ -1,3 +1,18 @@
+header.toolbar nav {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header.toolbar .center-buttons {
+  white-space: nowrap;
+}
+
 header.toolbar .center-buttons button.speak {
   background: var(--primary);
   border-radius: 50%;
@@ -27,10 +42,10 @@ header.toolbar .center-buttons button:not(:last-child) {
 }
 
 header.toolbar .voice {
+  display: none;
   font-size: 1em;
   padding: 10px 35px 10px 20px;
   width: 225px;
-  box-sizing: border-box;
   margin: 0;
   box-shadow: 2px 2px 4px 0px #00000023;
   border-radius: 19px;
@@ -57,7 +72,110 @@ header.toolbar .voice:focus {
   outline: none;
 }
 
-header.toolbar .right-buttons button.mic {
+header.toolbar .speed-container {
+  display: none;
+  flex-direction: column;
+}
+
+header.toolbar .speed-container label {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+input[type='range'] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type='range']:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type='range']::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Styling the Thumb */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+input[type='range']::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  margin: auto;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: var(--primary);
+  border-radius: 0px;
+}
+
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background: var(--primary);
+}
+
+input[type='range']::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: var(--primary);
+  border-radius: 0px;
+}
+
+input[type='range']::-ms-track {
+  border: 0;
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: var(--primary);
+  border-radius: 0px;
+}
+
+input[type='range']::-ms-thumb {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  margin: auto;
+}
+
+header.toolbar div.right-buttons {
+  display: flex;
+}
+
+header.toolbar .right-buttons .mic-container {
+  display: flex;
+  align-items: center;
+}
+header.toolbar .right-buttons .mic-container span {
+  display: none;
+  margin-left: 15px;
+  color: #cbcbd3;
+}
+
+header.toolbar .right-buttons .mic-container button.mic {
   background: var(--primary);
   border-radius: 50%;
   width: 30px;
@@ -65,20 +183,16 @@ header.toolbar .right-buttons button.mic {
   transition: all 150ms;
 }
 
-header.toolbar .right-buttons button.mic:hover {
+header.toolbar .right-buttons .mic-container button.mic:hover {
   filter: brightness(95%);
 }
 
-header.toolbar .right-buttons button.mic:active {
+header.toolbar .right-buttons .mic-container button.mic:active {
   filter: brightness(80%);
 }
 
-header.toolbar div.right-buttons {
-  display: flex;
-}
-
-header.toolbar div.right-buttons button:not(:last-child) {
-  margin-right: 26px;
+header.toolbar div.right-buttons button:last-child {
+  margin-left: 26px;
 }
 
 .hamburger-btn {
@@ -95,27 +209,33 @@ header.toolbar div.right-buttons button:not(:last-child) {
   margin-bottom: 4px;
 }
 
-header.toolbar div.sidebar-shadow {
-  position: fixed;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-color: #00000099;
-  display: none;
+@media only screen and (min-width: 600px) {
+  header.toolbar .voice {
+    display: block;
+  }
 }
 
-header.toolbar div.sidebar-shadow.visible {
-  display: block;
+@media only screen and (min-width: 680px) {
+  header.toolbar .speed-container {
+    display: flex;
+  }
+
+  header.toolbar div.right-buttons button.settings {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 800px) {
-  header.toolbar div.hamburger-btn {
-    display: none;
+  header.toolbar .right-buttons .mic-container span {
+    display: block;
   }
+}
 
-  header.toolbar div.right-links a:not(:last-child) {
-    display: initial;
+@media only screen and (min-width: 900px) {
+}
+
+@media only screen and (min-width: 1260px) {
+  header.toolbar .hamburger-btn {
+    display: none;
   }
 }

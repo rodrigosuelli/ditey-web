@@ -1,23 +1,10 @@
 import React, { useState } from 'react';
 import { MdPlayArrow, MdStop, MdMic, MdSettings } from 'react-icons/md';
-import Sidebar from './Sidebar';
 
 import './styles.css';
 
-export default function Toolbar({
-  texts,
-  activeText,
-  onActiveTextChange,
-  onTextsChange,
-}) {
-  const [menu, setMenu] = useState(false);
-
-  function handleToggleMenu() {
-    setMenu(!menu);
-  }
-
-  let sidebarShadowClass = 'sidebar-shadow';
-  if (menu === true) sidebarShadowClass += ' visible';
+export default function Toolbar({ handleToggleMenu }) {
+  const [speed, setSpeed] = useState(1);
 
   return (
     <header className="toolbar">
@@ -43,25 +30,34 @@ export default function Toolbar({
             Google português do Brasil
           </option>
         </select>
+        <div className="speed-container">
+          <label htmlFor="speed">Velocidade: {speed}</label>
+          <input
+            value={speed}
+            onChange={(e) => setSpeed(e.target.value)}
+            min="0.1"
+            max="5"
+            step="0.1"
+            type="range"
+            name="speed"
+          />
+        </div>
         <div className="right-buttons">
-          <button className="mic" type="button">
-            <MdMic size={18} />
-          </button>
+          <div className="mic-container">
+            <button className="mic" type="button">
+              <MdMic size={18} />
+            </button>
+            <span>
+              Click no ícone ou
+              <br />
+              pressione / para falar
+            </span>
+          </div>
           <button className="settings" type="button">
             <MdSettings size={24} />
           </button>
         </div>
       </nav>
-
-      <div onClick={handleToggleMenu} className={sidebarShadowClass} />
-      <Sidebar
-        texts={texts}
-        onTextsChange={onTextsChange}
-        activeText={activeText}
-        onActiveTextChange={onActiveTextChange}
-        menu={menu}
-        onMenuChange={setMenu}
-      />
     </header>
   );
 }

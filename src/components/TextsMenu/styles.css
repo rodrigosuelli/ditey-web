@@ -1,5 +1,20 @@
+div.sidebar-shadow {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #00000099;
+  display: none;
+}
+
+div.sidebar-shadow.visible {
+  display: block;
+}
+
 aside.toolbar {
-  width: 290px;
+  min-width: 290px;
   height: 100%;
   background: #1e2125;
 
@@ -13,6 +28,8 @@ aside.toolbar {
   transform: translateX(-100%);
   transition: all 0.2s ease;
   overflow: hidden;
+
+  font-size: 15.4px;
 }
 
 aside.toolbar.visible {
@@ -116,16 +133,16 @@ aside.toolbar .texts-panel div.texts-list {
   overflow: auto;
 }
 
-.toolbar div.texts-list h2,
-.toolbar div.texts-list h3,
-.toolbar div.texts-list h4 {
+.toolbar div.texts-list h2 {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
-}
-
-.toolbar div.texts-list h2 {
   font-size: 18px;
   margin-bottom: 10px;
+}
+
+.toolbar div.texts-list h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: #f0f0f0;
 }
 
 .toolbar div.texts-list div.text-item {
@@ -193,4 +210,25 @@ aside.toolbar .texts-panel div.texts-list {
 
 aside.toolbar div.brand button.close-btn {
   background: transparent;
+}
+
+@media only screen and (min-height: 720px) {
+  aside.toolbar .texts-panel {
+    padding: 15px 15px 10px;
+  }
+
+  .toolbar div.texts-list h2 {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (min-width: 1260px) {
+  div.sidebar-shadow.visible {
+    display: none;
+  }
+
+  aside.toolbar.visible {
+    position: relative;
+    transform: translateX(0);
+  }
 }

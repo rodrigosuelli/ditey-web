@@ -1,15 +1,19 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
+import { isBrowser } from 'react-device-detect';
 import debounce from 'lodash.debounce';
 import { ImSpinner8 } from 'react-icons/im';
 import { useAuth } from '../../contexts/auth';
 import api from '../../services/api';
 
 import Toolbar from '../../components/Toolbar';
+import TextsMenu from '../../components/TextsMenu';
 
 import './styles.css';
 
 export default function Dashboard() {
+  const [menu, setMenu] = useState(isBrowser);
+
   const [texts, setTexts] = useState([]);
   const [activeTextId, setActiveTextId] = useState(0);
   const [saving, setSaving] = useState(false);
@@ -112,38 +116,56 @@ export default function Dashboard() {
     debouncedSave(data);
   }
 
-  return (
-    <>
-      <Toolbar
-        texts={texts}
-        activeText={activeText}
-        onActiveTextChange={setActiveTextId}
-        onTextsChange={setTexts}
-      />
-      <div className="text">
-        {saving && (
-          <div className="saving">
-            Salvando... <ImSpinner8 size={16} />
-          </div>
-        )}
+  function handleToggleMenu() {
+    setMenu(!menu);
+  }
 
-        <TextareaAutosize
-          onChange={(e) => handleTextTitleChange(e)}
-          value={activeText.title}
-          className="title"
-          placeholder="Untitled"
-          name="title"
-          id="title"
+  return (
+    <div id="app">
+      <TextsMenu
+        texts={texts}
+        onTextsChange={setTexts}
+        activeText={activeText}
+        onActiveTextIdChange={setActiveTextId}
+        menu={menu}
+        onMenuChange={setMenu}
+        handleToggleMenu={handleToggleMenu}
+      />
+      <section className="workspace">
+        <Toolbar
+          texts={texts}
+          activeText={activeText}
+          onActiveTextChange={setActiveTextId}
+          onTextsChange={setTexts}
+          menu={menu}
+          onMenuChange={setMenu}
+          handleToggleMenu={handleToggleMenu}
         />
-        <TextareaAutosize
-          value={activeText.content}
-          onChange={(e) => handleTextContentChange(e)}
-          className="content"
-          placeholder="Enter your text here"
-          name="content"
-          id="content"
-        />
-      </div>
-    </>
+        <div className="text">
+          {saving && (
+            <div className="saving">
+              Salvando... <ImSpinner8 size={16} />
+            </div>
+          )}
+
+          <TextareaAutosize
+            onChange={(e) => handleTextTitleChange(e)}
+            value={activeText.title}
+            className="title"
+            placeholder="Sem título"
+            name="title"
+            id="title"
+          />
+          <TextareaAutosize
+            value={activeText.content}
+            onChange={(e) => handleTextContentChange(e)}
+            className="content"
+            placeholder="Enter your text here"
+            name="content"
+            id="content"
+          />
+        </div>
+      </section>
+    </div>
   );
 }

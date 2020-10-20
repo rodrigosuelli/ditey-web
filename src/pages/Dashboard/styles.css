@@ -1,5 +1,15 @@
-div.text {
+div#app {
+  display: flex;
+  height: 100%;
+}
+
+section.workspace {
   width: 100%;
+}
+
+section.workspace div.text {
+  max-width: 900px;
+  margin: 0 auto;
   min-height: calc(100vh - 70px);
   padding: 30px 20px 20px;
   display: flex;
@@ -7,24 +17,24 @@ div.text {
   position: relative;
 }
 
-div.text .saving {
+section.workspace div.text .saving {
   color: var(--grayMedium);
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 4px;
+  top: 10px;
   right: 20px;
   padding: 5px 6px;
   border-radius: 3px;
   cursor: pointer;
 }
 
-div.text .saving:hover {
+section.workspace div.text .saving:hover {
   background: #3f4447;
 }
 
-div.text .saving svg {
+section.workspace div.text .saving svg {
   margin-left: 5px;
   animation: spin;
   animation-duration: 1.2s;
@@ -42,23 +52,33 @@ div.text .saving svg {
   }
 }
 
-div.text textarea {
+section.workspace div.text textarea {
   color: var(--secondary);
   resize: none;
 }
 
-div.text textarea::placeholder {
+section.workspace div.text textarea::placeholder {
   color: #bbbbb96e;
 }
 
-div.text textarea.title {
+section.workspace div.text textarea.title {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 32px;
   margin-bottom: 15px;
 }
 
-div.text textarea.content {
+section.workspace div.text textarea.content {
   font-size: 16px;
   min-height: calc(100vh - 70px - 50px - 39px - 15px);
+}
+
+@media only screen and (min-height: 720px) {
+  section.workspace div.text {
+    padding-top: 35px;
+  }
+
+  section.workspace div.text textarea.title {
+    margin-bottom: 20px;
+  }
 }
