@@ -177,10 +177,11 @@ aside.toolbar .texts-panel div.texts-list {
   right: 5px;
   top: 10px;
   z-index: 1;
+  transition: all 150ms;
 }
 
 .toolbar div.texts-list div.text-item svg:hover {
-  color: #fff;
+  color: var(--primary);
 }
 
 .toolbar div.btn-add-container {
