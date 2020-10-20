@@ -135,7 +135,11 @@ export default function TextsMenu(props) {
               </div>
               <div className="btn-add-container">
                 <button
-                  title={texts.length === 5 && 'Limite de 5 textos atingido'}
+                  title={
+                    texts.length === 5
+                      ? 'Limite de 5 textos atingido'
+                      : undefined
+                  }
                   onClick={handleAddText}
                   type="button"
                   className={texts.length === 5 ? 'primary off' : 'primary'}
