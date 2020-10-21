@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MdClose } from 'react-icons/md';
 
-import miniLogoImg from '../../../images/svg/ditey-minilogo.svg';
+import miniLogoImg from '../../../../images/svg/ditey-minilogo.svg';
 
-import './styles.css';
+import './Sidebar.css';
 
 export default function Sidebar({ menu, setMenu, onMenuToggle }) {
   let className = '';

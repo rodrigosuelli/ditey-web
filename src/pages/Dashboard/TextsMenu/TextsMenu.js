@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { MdArrowDropDown, MdAdd, MdDelete, MdExitToApp } from 'react-icons/md';
 import { isMobile } from 'react-device-detect';
-import { useAuth } from '../../contexts/auth';
-import api from '../../services/api';
+import { useAuth } from '../../../contexts/auth';
+import api from '../../../services/api';
 
-import './styles.css';
+import './TextsMenu.css';
 
 export default function TextsMenu(props) {
   const {

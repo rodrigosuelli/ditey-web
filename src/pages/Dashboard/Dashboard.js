@@ -6,10 +6,10 @@ import { ImSpinner8 } from 'react-icons/im';
 import { useAuth } from '../../contexts/auth';
 import api from '../../services/api';
 
-import Toolbar from '../../components/Toolbar';
-import TextsMenu from '../../components/TextsMenu';
+import Toolbar from './Toolbar/Toolbar';
+import TextsMenu from './TextsMenu/TextsMenu';
 
-import './styles.css';
+import './Dashboard.css';
 
 export default function Dashboard() {
   const [menu, setMenu] = useState(isBrowser);
