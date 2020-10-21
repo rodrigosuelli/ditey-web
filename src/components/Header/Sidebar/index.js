@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MdClose } from 'react-icons/md';
 
-import miniLogoImg from '../../../assets/svg/ditey-minilogo.svg';
+import miniLogoImg from '../../../images/svg/ditey-minilogo.svg';
 
 import './styles.css';
 

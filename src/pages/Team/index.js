@@ -2,11 +2,11 @@ import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Layout from '../../components/Layout';
 
-import rodrigoPic from '../../assets/profile-pics/rodrigo.jpg';
-import eusebioPic from '../../assets/profile-pics/eusebio.jpg';
-import gabrielPic from '../../assets/profile-pics/gabriel.jpg';
-import lucasPic from '../../assets/profile-pics/lucas.jpg';
-import josePic from '../../assets/profile-pics/jose.jpg';
+import rodrigoPic from '../../images/profile-pics/rodrigo.jpg';
+import eusebioPic from '../../images/profile-pics/eusebio.jpg';
+import gabrielPic from '../../images/profile-pics/gabriel.jpg';
+import lucasPic from '../../images/profile-pics/lucas.jpg';
+import josePic from '../../images/profile-pics/jose.jpg';
 
 import './styles.css';
 

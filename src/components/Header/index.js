@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
-import logoImg from '../../assets/svg/ditey-logo.svg';
+import logoImg from '../../images/svg/ditey-logo.svg';
 
 import './styles.css';
 

@@ -53,7 +53,7 @@ header.toolbar .voice {
   -webkit-appearance: none;
   appearance: none;
   background-color: #313136;
-  background-image: url('../../assets/icons/arrow_right_24px.svg');
+  background-image: url('../../images/icons/arrow_right_24px.svg');
   background-repeat: no-repeat, repeat;
   background-position: right 10px top 50%;
   transition: all 150ms;
