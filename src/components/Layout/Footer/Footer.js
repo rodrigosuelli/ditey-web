@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import { FaGithub } from 'react-icons/fa';
 import { MdArrowDropDownCircle } from 'react-icons/md';
 
-import logoImg from '../../images/svg/ditey-logo.svg';
+import logoImg from '../../../images/svg/ditey-logo.svg';
 
-import './styles.css';
+import './Footer.css';
 
 export default function Footer() {
   return (

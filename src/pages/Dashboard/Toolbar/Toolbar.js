@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MdPlayArrow, MdStop, MdMic, MdSettings } from 'react-icons/md';
 
-import './styles.css';
+import './Toolbar.css';
 
 export default function Toolbar({ handleToggleMenu }) {
   const [speed, setSpeed] = useState(1);

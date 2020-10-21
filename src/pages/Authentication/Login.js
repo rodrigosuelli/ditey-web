@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MdMailOutline, MdLockOutline } from 'react-icons/md';
 
-import Layout from '../../components/Layout';
+import Layout from '../../components/Layout/Layout';
 import { useAuth } from '../../contexts/auth';
 
-import './styles.css';
+import './Authentication.css';
 
 export default function Login() {
   const [email, setEmail] = useState('');

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Layout from '../../components/Layout';
+import Layout from '../../components/Layout/Layout';
 
 import './styles.css';
 

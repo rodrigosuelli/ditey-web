@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Sidebar from './Sidebar';
+import Sidebar from './Sidebar/Sidebar';
 
-import logoImg from '../../images/svg/ditey-logo.svg';
+import logoImg from '../../../images/svg/ditey-logo.svg';
 
-import './styles.css';
+import './Header.css';
 
 export default function Header() {
   const [menu, setMenu] = useState(false);
