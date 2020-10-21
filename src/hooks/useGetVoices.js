@@ -1,33 +1,30 @@
 import { useEffect, useState } from 'react';
 
 export default function useGetVoices() {
-  const [voices, setVoices] = useState([]);
+  const [filteredVoices, setFilteredVoice] = useState([]);
 
   function getVoices() {
     return new Promise((resolve, reject) => {
-      let voiceArr = speechSynthesis.getVoices();
-      if (voiceArr.length) {
-        resolve(voiceArr);
-        return;
-      }
       speechSynthesis.onvoiceschanged = () => {
-        voiceArr = speechSynthesis.getVoices();
+        const voiceArr = speechSynthesis.getVoices();
         resolve(voiceArr);
       };
     });
   }
 
   useEffect(() => {
-    async function filterVoicesLang(lang) {
-      setVoices(
-        (await getVoices()).filter((item) => {
-          return item.lang === lang;
+    async function filterAndSetVoicesByLang(lang) {
+      const voices = await getVoices();
+
+      setFilteredVoice(
+        voices.filter((voice) => {
+          return voice.lang === lang;
         })
       );
     }
 
-    filterVoicesLang('pt-BR');
+    filterAndSetVoicesByLang('pt-BR');
   }, []);
 
-  return voices;
+  return filteredVoices;
 }
