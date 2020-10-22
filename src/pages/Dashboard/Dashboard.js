@@ -132,7 +132,7 @@ export default function Dashboard() {
         handleToggleMenu={handleToggleMenu}
       />
       <section className="workspace">
-        <Toolbar handleToggleMenu={handleToggleMenu} />
+        <Toolbar handleToggleMenu={handleToggleMenu} activeText={activeText} />
         <div className="text">
           {saving && (
             <div className="saving">

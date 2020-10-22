@@ -127,7 +127,7 @@ aside.toolbar .texts-panel button.logout-btn svg {
 }
 
 aside.toolbar .texts-panel div.texts-list {
-  padding-bottom: 5px;
+  margin-bottom: 5px;
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -148,7 +148,6 @@ aside.toolbar .texts-panel div.texts-list {
 .toolbar div.texts-list div.text-item {
   position: relative;
   border-top: 1px solid #a9a7a7;
-  padding: 10px 0;
   cursor: pointer;
 }
 
@@ -163,6 +162,10 @@ aside.toolbar .texts-panel div.texts-list {
 
 .toolbar div.texts-list div.text-item.active:last-child {
   border-bottom: 1px solid var(--primary);
+}
+
+.toolbar div.texts-list div.text-item .text-container {
+  padding: 10px 0;
 }
 
 .toolbar div.texts-list div.text-item h4 {
@@ -189,7 +192,7 @@ aside.toolbar .texts-panel div.texts-list {
 .toolbar div.texts-list div.text-item svg {
   margin-left: 10px;
   position: absolute;
-  right: 5px;
+  right: 0;
   top: 10px;
   z-index: 1;
   transition: all 150ms;

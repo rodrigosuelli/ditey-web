@@ -34,9 +34,7 @@ export function AuthProvider({ children }) {
     const storageRefreshToken = localStorage.getItem('refreshToken');
 
     if (!storageRefreshToken) {
-      if (authenticated) {
-        setAuthenticated(false);
-      }
+      setAuthenticated(false);
 
       return false;
     }
@@ -54,13 +52,11 @@ export function AuthProvider({ children }) {
 
       return true;
     } catch (error) {
-      if (authenticated) {
-        setAuthenticated(false);
-      }
+      setAuthenticated(false);
 
       return false;
     }
-  }, [authenticated]);
+  }, []);
 
   useEffect(() => {
     async function checkAuthenticated() {
