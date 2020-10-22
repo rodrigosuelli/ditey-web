@@ -46,8 +46,16 @@ aside.toolbar div.profile {
 }
 
 aside.toolbar div.profile .profile-wrapper {
+  width: 100%;
   display: flex;
   align-items: center;
+  transition: all 150ms;
+}
+
+aside.toolbar div.profile .profile-wrapper .profile-options-wrapper {
+  display: flex;
+  align-items: center;
+  transition: all 150ms;
 }
 
 aside.toolbar div.profile .profile-wrapper div.profile-img {
@@ -65,10 +73,12 @@ aside.toolbar div.profile .profile-wrapper div.profile-img {
   font-weight: 500;
   font-size: 28px;
   color: #3b1da3;
+  transition: all 150ms;
 }
 
 aside.toolbar div.profile .profile-wrapper div.profile-info {
   max-width: 171px;
+  transition: all 150ms;
 }
 
 aside.toolbar div.profile .profile-wrapper div.profile-info h4,
@@ -103,6 +113,7 @@ aside.toolbar .texts-panel {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 150ms;
 }
 
 aside.toolbar .texts-panel button.logout-btn {
@@ -238,6 +249,47 @@ aside.toolbar div.brand button.close-btn {
 
   .toolbar div.texts-list h2 {
     margin-bottom: 15px;
+  }
+}
+
+@media only screen and (min-height: 760px) {
+  aside.toolbar div.profile .profile-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  aside.toolbar div.profile .profile-wrapper .profile-options-wrapper {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  aside.toolbar div.profile .profile-wrapper div.profile-img {
+    min-width: 46px;
+    min-height: 46px;
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #f2f2f2;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    color: #3b1da3;
+  }
+
+  aside.toolbar div.profile .profile-wrapper div.profile-info {
+    max-width: 221px;
+  }
+
+  aside.toolbar .texts-panel {
+    height: calc(100% - 124px);
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 

@@ -95,16 +95,19 @@ export default function TextsMenu(props) {
         <div onClick={handleToggleProfileOptions} className="profile">
           <div className="profile-wrapper">
             <div className="profile-img">{nameInitial}</div>
-            <div className="profile-info">
-              <h4>{name}</h4>
-              <p>{email}</p>
+            <div className="profile-options-wrapper">
+              <div className="profile-info">
+                <h4>{name}</h4>
+                <p>{email}</p>
+              </div>
+
+              <MdArrowDropDown
+                color="#fff"
+                className={profileOptions && 'up'}
+                size={24}
+              />
             </div>
           </div>
-          <MdArrowDropDown
-            color="#fff"
-            className={profileOptions && 'up'}
-            size={24}
-          />
         </div>
         <div className="texts-panel">
           {profileOptions ? (
