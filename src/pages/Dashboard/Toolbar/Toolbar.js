@@ -6,6 +6,7 @@ import {
   MdMic,
   MdSettings,
 } from 'react-icons/md';
+import { isMobile } from 'react-device-detect';
 import useGetVoices from '../../../hooks/useGetVoices';
 
 import './Toolbar.css';
@@ -59,6 +60,10 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
   }
 
   function handlePause() {
+    if (isMobile) {
+      return;
+    }
+
     if (
       (!speaking && selectedVoice === 'Google português do Brasil') ||
       speechSynthesis.paused
