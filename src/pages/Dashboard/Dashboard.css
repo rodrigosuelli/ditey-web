@@ -5,6 +5,7 @@ div#app {
 
 section.workspace {
   width: 100%;
+  overflow: auto;
 }
 
 section.workspace div.text {
@@ -66,11 +67,12 @@ section.workspace div.text textarea.title {
   font-weight: bold;
   font-size: 32px;
   margin-bottom: 15px;
+  line-height: 1.5;
 }
 
 section.workspace div.text textarea.content {
   font-size: 16px;
-  min-height: calc(100vh - 70px - 50px - 39px - 15px);
+  min-height: calc(100vh - 70px - 30px - 48px - 15px - 20px);
 }
 
 @media only screen and (min-height: 720px) {
@@ -80,5 +82,9 @@ section.workspace div.text textarea.content {
 
   section.workspace div.text textarea.title {
     margin-bottom: 20px;
+  }
+
+  section.workspace div.text textarea.content {
+    min-height: calc(100vh - 70px - 35px - 48px - 20px - 20px);
   }
 }

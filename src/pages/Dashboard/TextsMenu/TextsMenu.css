@@ -26,10 +26,8 @@ aside.toolbar {
   flex-direction: column;
   z-index: 1;
   transform: translateX(-100%);
-  transition: all 0.2s ease;
-  overflow: hidden;
-
   font-size: 15.4px;
+  transition: all 0.2s ease;
 }
 
 aside.toolbar.visible {
@@ -109,7 +107,7 @@ aside.toolbar div.profile svg.up {
 
 aside.toolbar .texts-panel {
   height: calc(100% - 70px);
-  padding: 10px 15px;
+  padding: 0 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -138,7 +136,7 @@ aside.toolbar .texts-panel button.logout-btn svg {
 }
 
 aside.toolbar .texts-panel div.texts-list {
-  margin-bottom: 5px;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -169,6 +167,7 @@ aside.toolbar .texts-panel div.texts-list {
 
 .toolbar div.texts-list div.text-item:last-child {
   border-bottom: 1px solid #a9a7a7;
+  margin-bottom: 5px;
 }
 
 .toolbar div.texts-list div.text-item.active:last-child {
@@ -185,6 +184,7 @@ aside.toolbar .texts-panel div.texts-list {
   white-space: nowrap;
   text-overflow: ellipsis;
   margin-bottom: 5px;
+  line-height: 1.2;
 }
 
 .toolbar div.texts-list div.text-item p {
@@ -214,7 +214,8 @@ aside.toolbar .texts-panel div.texts-list {
 }
 
 .toolbar div.btn-add-container {
-  padding: 10px 0;
+  padding-top: 10px;
+  padding-bottom: 20px;
   display: flex;
   justify-content: center;
 }
@@ -243,8 +244,8 @@ aside.toolbar div.brand button.close-btn {
 }
 
 @media only screen and (min-height: 720px) {
-  aside.toolbar .texts-panel {
-    padding: 15px 15px 10px;
+  aside.toolbar .texts-panel div.texts-list {
+    padding-top: 15px;
   }
 
   .toolbar div.texts-list h2 {
@@ -266,18 +267,10 @@ aside.toolbar div.brand button.close-btn {
   aside.toolbar div.profile .profile-wrapper div.profile-img {
     min-width: 46px;
     min-height: 46px;
+    margin-right: 0;
     margin-bottom: 10px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-    background: #f2f2f2;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
     font-size: 30px;
-    color: #3b1da3;
   }
 
   aside.toolbar div.profile .profile-wrapper div.profile-info {
@@ -286,10 +279,6 @@ aside.toolbar div.brand button.close-btn {
 
   aside.toolbar .texts-panel {
     height: calc(100% - 124px);
-    padding: 10px 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
 }
 
