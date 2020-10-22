@@ -5,8 +5,14 @@ export default function useGetVoices() {
 
   function getVoices() {
     return new Promise((resolve, reject) => {
+      let voiceArr = speechSynthesis.getVoices();
+      if (voiceArr.length) {
+        resolve(voiceArr);
+        return;
+      }
+
       speechSynthesis.onvoiceschanged = () => {
-        const voiceArr = speechSynthesis.getVoices();
+        voiceArr = speechSynthesis.getVoices();
         resolve(voiceArr);
       };
     });
