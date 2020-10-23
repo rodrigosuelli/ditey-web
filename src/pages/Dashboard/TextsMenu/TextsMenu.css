@@ -115,6 +115,8 @@ aside.toolbar .texts-panel {
 }
 
 aside.toolbar .texts-panel button.logout-btn {
+  padding: 5px 0;
+  margin: 5px 0;
   font-size: 15px;
   color: var(--secondary);
   display: flex;
