@@ -135,6 +135,10 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
       handleRunVoiceCommand(transcript);
     };
 
+    recognition.onerror = () => {
+      setMicStatus('Não entendi, tente novamente...');
+    };
+
     recognition.start();
   }
 
