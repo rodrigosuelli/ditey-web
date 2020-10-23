@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
     let userInfo;
 
     if (data.name && data.email) {
-      userInfo = { name: data.name, email: data.email, firstTime: true };
+      userInfo = { name: data.name, email: data.email };
       localStorage.setItem('userInfo', JSON.stringify(userInfo));
     }
 

@@ -25,9 +25,7 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
   );
   const [micModalShow, setMicModalShow] = useState(false);
 
-  const storageUserInfo = localStorage.getItem('userInfo');
-  const parsedUserInfo = storageUserInfo && JSON.parse(storageUserInfo);
-  const firstTime = parsedUserInfo.firstTime;
+  const alreadyVisited = localStorage.getItem('alreadyVisited');
 
   useEffect(() => {
     if (!speechSynthesis.speaking) {
@@ -137,13 +135,10 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
   }
 
   function handleMicClick() {
-    if (firstTime) {
+    if (!alreadyVisited) {
       setMicModalShow(true);
 
-      localStorage.setItem(
-        'userInfo',
-        JSON.stringify({ ...parsedUserInfo, firstTime: false })
-      );
+      localStorage.setItem('alreadyVisited', true);
     } else {
       handleHearVoiceCommand();
     }
