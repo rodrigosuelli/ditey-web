@@ -5,6 +5,7 @@ import {
   MdStop,
   MdMic,
   MdSettings,
+  MdClose,
 } from 'react-icons/md';
 import { isMobile } from 'react-device-detect';
 import useGetVoices from '../../../hooks/useGetVoices';
@@ -22,6 +23,11 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
   const [micStatus, setMicStatus] = useState(
     'Click no ícone ou pressione Ctrl para falar'
   );
+  const [micModalShow, setMicModalShow] = useState(false);
+
+  const storageUserInfo = localStorage.getItem('userInfo');
+  const parsedUserInfo = storageUserInfo && JSON.parse(storageUserInfo);
+  const firstTime = parsedUserInfo.firstTime;
 
   useEffect(() => {
     if (!speechSynthesis.speaking) {
@@ -130,6 +136,25 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
     recognition.start();
   }
 
+  function handleMicClick() {
+    if (firstTime) {
+      setMicModalShow(true);
+
+      localStorage.setItem(
+        'userInfo',
+        JSON.stringify({ ...parsedUserInfo, firstTime: false })
+      );
+    } else {
+      handleHearVoiceCommand();
+    }
+  }
+
+  function handleMicModalClick(event) {
+    if (event.target.className.toString().includes('mic-modal')) {
+      setMicModalShow(false);
+    }
+  }
+
   useEvent('keydown', (event) => {
     if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
       handleHearVoiceCommand();
@@ -190,11 +215,7 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
         </div>
         <div className="right-buttons">
           <div className="mic-container">
-            <button
-              onClick={handleHearVoiceCommand}
-              className="mic"
-              type="button"
-            >
+            <button onClick={handleMicClick} className="mic" type="button">
               <MdMic size={18} />
             </button>
             <span>{micStatus}</span>
@@ -204,6 +225,26 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
           </button>
         </div>
       </nav>
+      <div
+        onClick={handleMicModalClick}
+        className={micModalShow ? 'mic-modal visible' : 'mic-modal'}
+      >
+        <div className="modal-content">
+          <MdClose
+            onClick={() => setMicModalShow(false)}
+            color="#fff"
+            size={28}
+          />
+          <h1>Comandos de voz</h1>
+          <p>Economize clicks usando os comandos de voz:</p>
+          <ul className="commands-list">
+            <li>Iniciar</li>
+            <li>Pausar</li>
+            <li>Retomar</li>
+            <li>Parar</li>
+          </ul>
+        </div>
+      </div>
     </header>
   );
 }
