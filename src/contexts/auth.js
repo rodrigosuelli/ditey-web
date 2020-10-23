@@ -115,7 +115,9 @@ export function AuthProvider({ children }) {
   function logOut() {
     setAuthenticated(false);
 
-    localStorage.clear();
+    localStorage.removeItem('userInfo');
+    localStorage.removeItem('token');
+    localStorage.removeItem('refreshToken');
 
     api.defaults.headers.Authorization = undefined;
 

@@ -233,22 +233,36 @@ header.toolbar .mic-modal .modal-content {
   max-width: 500px;
   margin: auto;
   padding: 40px 30px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #313136;
   font-size: 18px;
+  animation: slide-in;
+  animation-duration: 0.4s;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 header.toolbar .mic-modal .modal-content svg {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 15px;
+  right: 20px;
   cursor: pointer;
 }
 
 header.toolbar .mic-modal .modal-content h1 {
   text-align: center;
   font-size: 32px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 header.toolbar .mic-modal .modal-content p {
@@ -268,6 +282,13 @@ header.toolbar .mic-modal .modal-content ul li {
 
 header.toolbar .mic-modal .modal-content ul li:last-child {
   margin: 0;
+}
+
+header.toolbar .mic-modal .modal-content p.warning {
+  color: var(--primary);
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 @media only screen and (min-width: 520px) {

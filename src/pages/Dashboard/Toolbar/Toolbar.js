@@ -26,6 +26,10 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
   const [micModalShow, setMicModalShow] = useState(false);
 
   const alreadyVisited = localStorage.getItem('alreadyVisited');
+  let parsedAlreadyVisited;
+  if (alreadyVisited === 'true' || alreadyVisited === 'false') {
+    parsedAlreadyVisited = JSON.parse(alreadyVisited);
+  }
 
   useEffect(() => {
     if (!speechSynthesis.speaking) {
@@ -135,7 +139,7 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
   }
 
   function handleMicClick() {
-    if (!alreadyVisited) {
+    if (!parsedAlreadyVisited) {
       setMicModalShow(true);
 
       localStorage.setItem('alreadyVisited', true);
@@ -238,6 +242,7 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
             <li>Retomar</li>
             <li>Parar</li>
           </ul>
+          <p className="warning">Essa janela não será exibida novamente</p>
         </div>
       </div>
     </header>
