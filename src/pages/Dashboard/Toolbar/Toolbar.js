@@ -8,6 +8,7 @@ import {
 } from 'react-icons/md';
 import { isMobile } from 'react-device-detect';
 import useGetVoices from '../../../hooks/useGetVoices';
+import useEvent from '../../../hooks/useEvent';
 
 import './Toolbar.css';
 
@@ -18,6 +19,9 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
   const [selectedVoice, setSelectedVoice] = useState('');
 
   const [speaking, setSpeaking] = useState(false);
+  const [micStatus, setMicStatus] = useState(
+    'Click no ícone ou pressione Ctrl para falar'
+  );
 
   useEffect(() => {
     if (!speechSynthesis.speaking) {
@@ -81,6 +85,57 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
     setSpeaking(false);
   }
 
+  function handleRunVoiceCommand(message) {
+    if (message.includes('iniciar')) {
+      handleSpeak();
+      return;
+    }
+    if (message.includes('pausar') || message.includes('retomar')) {
+      handlePause();
+      return;
+    }
+    if (message.includes('parar')) {
+      handleStopSpeech();
+      return;
+    }
+
+    setMicStatus('Não entendi, tente novamente...');
+  }
+
+  function handleHearVoiceCommand() {
+    if (navigator.userAgent.includes('Edg')) {
+      return alert(
+        'Ooops! Infelizmente seu browser não suporta esta função, use o Chrome!'
+      );
+    }
+
+    const SpeechRecog =
+      window.SpeechRecognition || window.webkitSpeechRecognition || false;
+    const recognition = new SpeechRecog();
+
+    recognition.lang = 'pt-BR';
+
+    recognition.onstart = () => {
+      setMicStatus('Estou ouvindo...');
+    };
+
+    recognition.onresult = (event) => {
+      const current = event.resultIndex;
+      const transcript = event.results[current][0].transcript;
+
+      setMicStatus('Click no ícone ou pressione Ctrl para falar');
+      handleRunVoiceCommand(transcript);
+    };
+
+    recognition.start();
+  }
+
+  useEvent('keydown', (event) => {
+    if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
+      handleHearVoiceCommand();
+    }
+  });
+
   return (
     <header className="toolbar">
       <nav>
@@ -135,14 +190,14 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
         </div>
         <div className="right-buttons">
           <div className="mic-container">
-            <button className="mic" type="button">
+            <button
+              onClick={handleHearVoiceCommand}
+              className="mic"
+              type="button"
+            >
               <MdMic size={18} />
             </button>
-            <span>
-              Click no ícone ou
-              <br />
-              pressione / para falar
-            </span>
+            <span>{micStatus}</span>
           </div>
           <button className="settings" type="button">
             <MdSettings size={24} />

@@ -171,6 +171,7 @@ header.toolbar .right-buttons .mic-container {
 }
 header.toolbar .right-buttons .mic-container span {
   display: none;
+  width: 160px;
   margin-left: 15px;
   color: #cbcbd3;
 }
