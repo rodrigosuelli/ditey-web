@@ -210,6 +210,71 @@ header.toolbar .hamburger-btn .bar:not(:last-child) {
   margin-bottom: 4px;
 }
 
+header.toolbar .settings-overlay {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+header.toolbar .settings-overlay .settings-menu {
+  max-width: 220px;
+  margin-top: 70px;
+  margin-right: 10px;
+  margin-left: auto;
+  padding: 5px 0;
+  background-color: #1d1d1d;
+
+  box-shadow: 0px 2px 4px 1px #00000093;
+}
+
+header.toolbar .settings-overlay .settings-menu button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 15px;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+header.toolbar .settings-overlay .settings-menu button svg {
+  margin-right: 12px;
+}
+
+header.toolbar .speed-container-overlay {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #00000099;
+  padding: 0 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header.toolbar .speed-container-overlay .mobile-speed-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+
+  background-color: #313136;
+  padding: 40px;
+  margin-bottom: 100px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+header.toolbar .speed-container-overlay .mobile-speed-container h1 {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
 header.toolbar .mic-modal {
   position: fixed;
   z-index: 1;

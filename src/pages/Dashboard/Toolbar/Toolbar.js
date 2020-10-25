@@ -7,6 +7,7 @@ import {
   MdSettings,
   MdClose,
 } from 'react-icons/md';
+import { FaTachometerAlt } from 'react-icons/fa';
 import { isMobile } from 'react-device-detect';
 import useGetVoices from '../../../hooks/useGetVoices';
 import useEvent from '../../../hooks/useEvent';
@@ -24,6 +25,8 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
     'Click no ícone ou pressione Ctrl para falar'
   );
   const [micModalShow, setMicModalShow] = useState(false);
+  const [settingsShow, setSettingsShow] = useState(false);
+  const [speedContainerShow, setSpeedContainerShow] = useState(false);
 
   const alreadyVisited = localStorage.getItem('alreadyVisited');
   let parsedAlreadyVisited;
@@ -164,6 +167,23 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
     }
   });
 
+  function handleSettingsOverlayClick(event) {
+    if (event.target.className.toString() === 'settings-overlay') {
+      setSettingsShow(false);
+    }
+  }
+
+  function handleChangeSpeedClick() {
+    setSettingsShow(false);
+    setSpeedContainerShow(true);
+  }
+
+  function handleSpeedContainerOverlayClick(event) {
+    if (event.target.className.toString() === 'speed-container-overlay') {
+      setSpeedContainerShow(false);
+    }
+  }
+
   return (
     <header className="toolbar">
       <nav>
@@ -223,11 +243,47 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
             </button>
             <span>{micStatus}</span>
           </div>
-          <button className="settings" type="button">
+          <button
+            onClick={() => setSettingsShow(true)}
+            className="settings"
+            type="button"
+          >
             <MdSettings size={24} />
           </button>
         </div>
       </nav>
+
+      {settingsShow && (
+        <div onClick={handleSettingsOverlayClick} className="settings-overlay">
+          <div className="settings-menu">
+            <button onClick={handleChangeSpeedClick} type="button">
+              <FaTachometerAlt size={22} />
+              Mudar Velocidade
+            </button>
+          </div>
+        </div>
+      )}
+      {speedContainerShow && (
+        <div
+          onClick={handleSpeedContainerOverlayClick}
+          className="speed-container-overlay"
+        >
+          <div className="mobile-speed-container">
+            <h1>Ajustar velocidade</h1>
+            <label htmlFor="speed">Velocidade: {speed}</label>
+            <input
+              value={speed}
+              onChange={(e) => setSpeed(e.target.value)}
+              min="0.1"
+              max={selectedVoice === 'Google português do Brasil' ? 2 : 5}
+              step="0.1"
+              type="range"
+              name="speed"
+            />
+          </div>
+        </div>
+      )}
+
       <div
         onClick={handleMicModalClick}
         className={micModalShow ? 'mic-modal visible' : 'mic-modal'}
