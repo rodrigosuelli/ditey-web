@@ -238,7 +238,11 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
         </div>
         <div className="right-buttons">
           <div className="mic-container">
-            <button onClick={handleMicClick} className="mic" type="button">
+            <button
+              onClick={handleMicClick}
+              className={micStatus === 'Estou ouvindo...' ? 'mic on' : 'mic'}
+              type="button"
+            >
               <MdMic size={18} />
             </button>
             <span>{micStatus}</span>
