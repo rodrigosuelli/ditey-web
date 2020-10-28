@@ -22,9 +22,9 @@ export default function Sidebar({ menu, setMenu, onMenuToggle }) {
       </div>
       <div className="links">
         <Link to="/">Home</Link>
+        <Link to="/team">Nosso Time</Link>
         <Link to="/register">Cadastro</Link>
         <Link to="/login">Log in</Link>
-        <Link to="/team">Quem somos</Link>
       </div>
     </aside>
   );

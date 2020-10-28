@@ -1,9 +1,5 @@
 import React from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { Link } from 'react-router-dom';
-
-import { FaGithub } from 'react-icons/fa';
-import { MdArrowDropDownCircle } from 'react-icons/md';
+import { HashLink } from 'react-router-hash-link';
 
 import logoImg from '../../../images/svg/ditey-logo.svg';
 
@@ -14,27 +10,75 @@ export default function Footer() {
     <footer>
       <div className="footer-container">
         <div className="logo-container">
-          <Link to="/">
+          <HashLink smooth to="/#root">
             <img src={logoImg} alt="logo" />
-          </Link>
+          </HashLink>
+
+          <span>
+            O leitor de textos mais completo <br /> do mercado.
+          </span>
           <p className="copyright">Copyright © Ditey 2020</p>
         </div>
+
         <div className="links">
-          <AnchorLink href="#header">
-            <div className="link-container">
-              <MdArrowDropDownCircle className="up-icon" size={22} />
-              Ir para o topo
-            </div>
-          </AnchorLink>
+          <h4>Links</h4>
+          <HashLink smooth to="/#root">
+            Home
+          </HashLink>
+          <HashLink smooth to="/team#root">
+            Nosso Time
+          </HashLink>
+          <HashLink smooth to="/register#root">
+            Cadastro
+          </HashLink>
+          <HashLink smooth to="/login#root">
+            Log in
+          </HashLink>
+        </div>
+
+        <div className="links">
+          <h4>Ferramentas utilizadas</h4>
           <a
             href="https://github.com/rodrigosuelli/ditey-web"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="link-container">
-              <FaGithub size={22} />
-              GitHub
-            </div>
+            GitHub
+          </a>
+          <a
+            href="https://vercel.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vercel
+          </a>
+          <a
+            href="https://www.heroku.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Heroku
+          </a>
+          <a
+            href="https://www.figma.com/file/hgQpYoXRdoP9ht9JF1V26N/Ditey?node-id=0%3A1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Figma
+          </a>
+          <a
+            href="https://www.notion.so/Ditey-281be863afaf4b70bce904a9e087888d"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Notion
+          </a>
+          <a
+            href="https://whimsical.com/8xLfNqYQcrkdqKY2SqvpSR"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Whimsical
           </a>
         </div>
       </div>

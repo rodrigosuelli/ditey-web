@@ -1,33 +1,45 @@
 footer {
   background: var(--black);
   font-size: 15px;
-  padding: 20px;
-}
-
-footer .footer-container {
-  max-width: 1120px;
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-.logo-container p.copyright {
+footer .logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .logo-container img {
+  width: 130px;
+}
+
+footer .logo-container span {
+  font-weight: 500;
   margin-top: 10px;
-  text-align: center;
 }
 
-.links a {
+footer .logo-container p.copyright {
+  margin-top: 15px;
+  align-self: flex-start;
+}
+
+footer .links {
+  margin-top: 24px;
+}
+
+footer .links h4 {
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+
+footer .links a {
   display: block;
-  line-height: 2.5;
+  line-height: 2.2;
 }
 
 .links a:hover {
@@ -43,10 +55,28 @@ footer .footer-container {
   align-items: center;
 }
 
-.links a div.link-container svg {
-  margin-right: 10px;
-}
+@media only screen and (min-width: 735px) {
+  footer {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
 
-.links a div.link-container svg.up-icon {
-  transform: rotate(180deg);
+  footer .footer-container {
+    width: 90%;
+    max-width: 1120px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer .logo-container span {
+    text-align: center;
+  }
+
+  footer .logo-container p.copyright {
+    align-self: unset;
+  }
+
+  footer .links {
+    margin-top: 0;
+  }
 }

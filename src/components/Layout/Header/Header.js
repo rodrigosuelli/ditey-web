@@ -17,7 +17,7 @@ export default function Header() {
   if (menu === true) sidebarShadowClass += ' visible';
 
   return (
-    <header id="header" className="menu-container">
+    <header className="menu-container">
       <nav className="links">
         <div onClick={handleToggleMenu} className="hamburger-btn">
           <div className="bar" />

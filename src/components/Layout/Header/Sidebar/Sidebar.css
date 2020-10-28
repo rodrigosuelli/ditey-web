@@ -31,3 +31,8 @@ aside div.brand button.close-btn {
 aside div.links {
   padding: 10px 20px;
 }
+
+aside div.links a {
+  display: block;
+  line-height: 2.5;
+}

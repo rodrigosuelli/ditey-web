@@ -1,39 +1,282 @@
-h1.slogan {
-  margin-top: 20px;
-  margin-bottom: 20px;
+div#home-page {
+  max-width: 1120px;
+  width: 90%;
+  min-height: calc(100vh - 70px - 114px);
+  padding-top: 45px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
 }
 
-h1.slogan,
-p.sub {
-  text-align: center;
+div#home-page h1 {
+  font-size: 34px;
 }
 
-h1.slogan span {
+div#home-page h2 {
+  font-size: 30px;
+}
+
+div#home-page h1 b,
+div#home-page h2 b {
   color: var(--primary);
 }
 
-p.sub {
+div#home-page p {
   font-size: 15px;
+  line-height: 167%;
+  color: #a8a8b3;
 }
 
-.primary {
-  width: 300px;
-  margin-top: 30px;
-  padding: 20px 0;
-  border-radius: 5px;
-  background: var(--primary);
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 15px;
+h1.slogan {
+  margin-bottom: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  line-height: 1.1;
+  font-size: 34px;
+}
+
+h1.slogan,
+div.button-container p.sub {
   text-align: center;
-  transition: all 150ms;
-  color: #fff;
 }
 
-.primary:hover {
-  filter: brightness(90%);
+h1.slogan br {
+  display: none;
 }
 
-.primary:active {
-  filter: brightness(80%);
+div.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div#home-page div.button-container p.sub {
+  line-height: 146%;
+}
+
+div.button-container p.sub + .primary {
+  align-self: center;
+}
+
+img.app-preview {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.promotion {
+  width: 100%;
+  max-width: 350px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 64px;
+}
+
+.promotion .description {
+  margin-bottom: 40px;
+}
+
+.promotion .description .marker {
+  width: 32px;
+  height: 2px;
+  background: var(--primary);
+}
+
+.promotion .description h2 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.promotion img {
+  max-height: 228px;
+  max-width: 100%;
+}
+
+.start-using {
+  display: flex;
+  flex-direction: column;
+  background-color: #313136;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+.start-using .flex-line {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.start-using .flex-line:not(:last-child) {
+  padding-bottom: 24px;
+}
+
+div#home-page .start-using .flex-line p {
+  font-size: 16px;
+  max-width: 430px;
+}
+
+div#home-page .start-using .flex-line h2 br {
+  display: none;
+}
+
+.start-using .flex-line .primary {
+  width: 100%;
+  max-width: 430px;
+  margin-top: 40px;
+}
+
+@media only screen and (min-width: 400px) {
+  h1.slogan br {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  div#home-page .start-using .flex-line h2 br {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 530px) {
+  div#home-page {
+    padding-top: 60px;
+  }
+
+  div#home-page h1 {
+    font-size: 42px;
+  }
+
+  div#home-page h2 {
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
+
+  div#home-page p,
+  div#home-page .start-using .flex-line p {
+    font-size: 18px;
+  }
+
+  div#home-page .start-using .flex-line h2 br {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 735px) {
+  div#home-page {
+    padding-top: 80px;
+  }
+
+  div#home-page h1 {
+    font-size: 60px;
+  }
+
+  div#home-page h2 {
+    margin-bottom: 24px;
+  }
+
+  div#home-page h1.slogan {
+    margin-bottom: 40px;
+  }
+
+  div.button-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 655px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  div.button-container p.sub {
+    text-align: right;
+  }
+
+  div.button-container .primary {
+    margin: 0;
+  }
+
+  img.app-preview {
+    margin-top: 60px;
+    margin-bottom: 74px;
+  }
+
+  .promotion {
+    max-width: unset;
+    flex-direction: row;
+    margin-bottom: 140px;
+  }
+
+  .promotion .description {
+    margin-bottom: 0;
+    max-width: 50%;
+  }
+
+  .promotion .description .marker {
+    width: 40px;
+  }
+
+  .promotion img {
+    margin-left: 40px;
+    max-height: 258px;
+    max-width: 50%;
+  }
+
+  .promotion:nth-child(2n) {
+    flex-direction: row-reverse;
+  }
+
+  .promotion:nth-child(2n) img {
+    margin-right: 40px;
+    margin-left: 0;
+  }
+
+  .start-using {
+    padding: 80px;
+  }
+
+  .start-using .flex-line {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .start-using .flex-line .primary {
+    margin-top: 0;
+    margin-left: 40px;
+    height: 60px;
+    width: 300px;
+  }
+
+  div#home-page .start-using .flex-line h2 br {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  div#home-page h2 {
+    font-size: 48px;
+  }
+
+  .promotion .description {
+    margin-bottom: 0;
+    max-width: 500px;
+  }
+
+  .promotion img {
+    max-height: 298px;
+  }
+}
+
+@media only screen and (min-width: 1120px) {
+  .promotion .description {
+    max-width: 520px;
+  }
+
+  .promotion img {
+    max-height: 298px;
+  }
 }

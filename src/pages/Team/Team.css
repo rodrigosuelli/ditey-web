@@ -1,58 +1,67 @@
+div#team-page {
+  max-width: 1120px;
+  width: 90%;
+  min-height: calc(100vh - 70px - 114px);
+  padding-top: 40px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+div#team-page h1 {
+  font-size: 34px;
+}
+
 h1.title {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
+div#team-page h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+div#team-page h2:not(:first-of-type) {
+  margin-top: 60px;
+}
+
+div#team-page h2 span {
+  margin-right: 5px;
+}
+
+div.cards {
+  display: grid;
+  gap: 15px;
+}
+
 div.card {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-  max-width: 600px;
+  max-width: 520px;
   padding: 20px;
   background: var(--black);
   border-radius: 5px;
   border: 2px solid var(--black);
 }
 
-div.card:hover {
-  border-color: var(--primary);
-}
-
-div.card:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-div.card div.portfolio {
-  display: none;
-  justify-content: space-between;
-  position: absolute;
-  top: 10px;
-  right: 20px;
-}
-
-div.card div.portfolio a:not(:last-child) {
-  margin-right: 10px;
-}
-
-div.card div.portfolio a svg {
-  color: #a8a8b3;
-}
-div.card div.portfolio a:hover svg {
-  color: #fff;
-}
-
 div.card div.wrapper {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 div.card div.wrapper div.info {
   display: block;
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 div.card div.wrapper div.info h3.name {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 div.card div.wrapper div.info p.role {
@@ -64,61 +73,96 @@ div.card div.wrapper div.info p.role {
 
 div.card div.wrapper img.profile-pic {
   border-radius: 50%;
-  border: 2px solid var(--secondary);
-  width: 90px;
-  height: 90px;
+  width: 85px;
+  height: 85px;
 }
 
 div.card p.status {
   color: #a8a8b3;
+  font-size: 15px;
+  line-height: 136%;
 }
 
-@media only screen and (min-width: 400px) {
-  div.card div.portfolio {
-    display: initial;
-  }
+div.card .portfolio {
+  margin-top: 25px;
+  display: flex;
 }
 
-/* @media only screen and (min-width: 700px) {
-  div.card div.wrapper img.profile-pic {
-    width: 100px;
-    height: 100px;
+div.card .portfolio .primary {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+div.card .portfolio .primary:not(:last-child) {
+  margin-right: 20px;
+}
+
+div.card .portfolio .primary svg {
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 530px) {
+  div#team-page h1 {
+    font-size: 42px;
   }
 
-  div.card div.wrapper div.info h3.name {
+  div#team-page h2 {
     font-size: 30px;
   }
 
+  div.card {
+    padding: 25px;
+  }
+
+  div.card div.wrapper div.info h3.name {
+    font-size: 22px;
+  }
+
   div.card div.wrapper div.info p.role {
-    font-size: 24px;
-  }
-
-  div.card p.status {
-    font-size: 18px;
-  }
-} */
-
-/* @media only screen and (min-width: 1120px) {
-  div.cards {
-    display: flex;
-  }
-
-  div.card:not(:last-child) {
-    margin-right: 10px;
-    margin-bottom: 0;
-  }
-
-  div.card div.wrapper {
-    flex-direction: column;
+    font-size: 20px;
   }
 
   div.card div.wrapper img.profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 105px;
+    height: 105px;
   }
 
-  div.card div.wrapper div.info {
-    margin-left: 0;
-    margin-top: 10px;
+  div.card p.status {
+    font-size: 16px;
   }
-} */
+
+  div.card .portfolio .primary:not(:last-child) {
+    margin-right: 25px;
+  }
+}
+
+@media only screen and (min-width: 830px) {
+  div.cards {
+    grid-template-columns: repeat(2, fit-content(540px));
+    justify-content: space-between;
+  }
+
+  div.card {
+    padding: 30px;
+    max-width: 100%;
+  }
+
+  p.status {
+    height: 42px;
+  }
+
+  div.cards:not(:last-child) div.card p.status {
+    height: 84px;
+  }
+
+  div.cards:not(:last-child) div.card .portfolio {
+    margin-top: 15px;
+  }
+
+  div.card .portfolio .primary:not(:last-child) {
+    margin-right: 30px;
+  }
+}
