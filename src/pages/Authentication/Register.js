@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MdMailOutline, MdLockOutline, MdFace } from 'react-icons/md';
 import Layout from '../../components/Layout/Layout';
 
@@ -11,8 +11,6 @@ export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const history = useHistory();
 
   const { createAccount } = useAuth();
 
@@ -26,8 +24,6 @@ export default function Register() {
     };
 
     createAccount(data);
-
-    history.push('/dashboard');
   }
   return (
     <Layout>
