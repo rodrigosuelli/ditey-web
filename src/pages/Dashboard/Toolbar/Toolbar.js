@@ -107,10 +107,7 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
     }
     if (message.includes('parar')) {
       handleStopSpeech();
-      return;
     }
-
-    setMicStatus('Não entendi, tente novamente...');
   }
 
   function handleHearVoiceCommand() {
@@ -134,12 +131,11 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
       const current = event.resultIndex;
       const transcript = event.results[current][0].transcript;
 
-      setMicStatus('Click no ícone ou pressione Ctrl para falar');
       handleRunVoiceCommand(transcript);
     };
 
-    recognition.onerror = () => {
-      setMicStatus('Não entendi, tente novamente...');
+    recognition.onend = () => {
+      setMicStatus('Click no ícone ou pressione Ctrl para falar');
     };
 
     recognition.start();
