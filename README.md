@@ -12,9 +12,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## Sobre esse Projeto
 
 O Ditey é um leitor de textos que visa facilitar a vida das pessoas ao trabalharem com leitura, transcrição e
-anotação de textos. O ditey permite que o usuário mantenha seus textos salvos no banco de dados, e mude a velocidade e a
+anotação de textos. O Ditey permite que o usuário mantenha seus textos salvos no banco de dados, e mude a velocidade e a
 voz da
-fala. Por baixo dos panos, o ditey usa a [Web Speech
+fala. Por baixo dos panos, o Ditey usa a [Web Speech
 API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) para fazer a leitura dos textos.
 
 ## Observações
