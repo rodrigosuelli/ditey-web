@@ -2,6 +2,8 @@
 
 ![Screenshot](./.github/app-preview.png)
 
+Se quiser dar uma olhada em todas as screenshots, click [aqui](https://drive.google.com/drive/folders/1OFGa-egUl9sLSIQo4pFxH44eQcrb74Ev?usp=sharing).
+
 ## 📌 Índice
 
 - [Tecnologias](#-tecnologias)
