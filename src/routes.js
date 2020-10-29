@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useAuth } from './contexts/auth';
 
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Team from './pages/Team/Team';
 import Login from './pages/Authentication/Login';
 import Register from './pages/Authentication/Register';
