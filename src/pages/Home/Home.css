@@ -1,7 +1,7 @@
 div#home-page {
   max-width: 1120px;
   width: 90%;
-  min-height: calc(100vh - 70px - 114px);
+  min-height: calc(100vh - 70px - 639px);
   padding-top: 45px;
   padding-bottom: 80px;
   margin: 0 auto;
@@ -170,6 +170,7 @@ div#home-page .start-using .flex-line h2 br {
 @media only screen and (min-width: 735px) {
   div#home-page {
     padding-top: 80px;
+    min-height: calc(100vh - 70px - 362px);
   }
 
   div#home-page h1 {

@@ -9,7 +9,7 @@ import modernLifeImg from '../../images/svg/undraw_modern_life.svg';
 import speechToTextImg from '../../images/svg/undraw_speech_to_text.svg';
 import webDevicesImg from '../../images/svg/undraw_web_devices.svg';
 
-import './styles.css';
+import './Home.css';
 
 export default function Home() {
   return (
