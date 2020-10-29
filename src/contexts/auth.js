@@ -61,7 +61,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     async function checkAuthenticated() {
       try {
-        const response = await api.post('/auth/verify');
+        const response = await api.get('/auth/verify');
 
         if (response.data === true) {
           setAuthenticated(true);
