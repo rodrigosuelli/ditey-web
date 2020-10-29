@@ -67,7 +67,7 @@ $ yarn
 
 ### Conectando a aplicação com o servidor
 
-Siga as instruções em [**ditey-api**](https://github.com/rodrigosuelli/ditey-web) para iniciar o servidor e deixar ele rodando na sua máquina na porta (3333).
+Siga as instruções em [**ditey-api**](https://github.com/rodrigosuelli/ditey-api) para iniciar o servidor e deixar ele rodando na sua máquina na porta (3333).
 
 ### Executando o projeto
 
