@@ -57,7 +57,7 @@ export default function Home() {
         <section className="promotion">
           <div className="description">
             <div className="marker" />
-            <h2>Economize clicks usando os comandos de voz</h2>
+            <h2>Economize clicks com os comandos de voz</h2>
             <p>
               Articulações cansadas? Aperte Ctrl na nossa plataforma para
               usufruir dos comandos de voz e economizar clicks.
