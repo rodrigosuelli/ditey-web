@@ -79,10 +79,7 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
       return;
     }
 
-    if (
-      (!speaking && selectedVoice === 'Google português do Brasil') ||
-      speechSynthesis.paused
-    ) {
+    if (speechSynthesis.paused || !speaking) {
       speechSynthesis.resume();
       setSpeaking(true);
     } else {
