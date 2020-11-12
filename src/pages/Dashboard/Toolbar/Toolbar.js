@@ -203,20 +203,24 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
             <MdStop size={30} />
           </button>
         </div>
-        <select
-          onChange={(e) => {
-            setSelectedVoice(e.target.value);
-            setSpeed(1);
-          }}
-          className="voice"
-          name="voice"
-        >
-          {voices.map((voice) => (
-            <option key={voice.name} value={voice.name}>
-              {voice.name}
-            </option>
-          ))}
-        </select>
+
+        {voices.length > 0 && (
+          <select
+            onChange={(e) => {
+              setSelectedVoice(e.target.value);
+              setSpeed(1);
+            }}
+            className="voice"
+            name="voice"
+          >
+            {voices.map((voice) => (
+              <option key={voice.name} value={voice.name}>
+                {voice.name}
+              </option>
+            ))}
+          </select>
+        )}
+
         <div className="speed-container">
           <label htmlFor="speed">Velocidade: {speed}</label>
           <input
@@ -229,6 +233,7 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
             name="speed"
           />
         </div>
+
         <div className="right-buttons">
           <div className="mic-container">
             <button
@@ -260,6 +265,7 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
           </div>
         </div>
       )}
+
       {speedContainerShow && (
         <div
           onClick={handleSpeedContainerOverlayClick}
