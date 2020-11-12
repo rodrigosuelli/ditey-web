@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Layout from '../../components/Layout/Layout';
 
@@ -14,6 +15,8 @@ export default function Team() {
   return (
     <Layout>
       <div id="team-page">
+        <Helmet title="Ditey - Nosso Time" />
+
         <h1 className="title">Nosso Time</h1>
 
         <h2>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { MdMailOutline, MdLockOutline, MdFace } from 'react-icons/md';
 import Layout from '../../components/Layout/Layout';
@@ -28,6 +29,8 @@ export default function Register() {
   return (
     <Layout>
       <main>
+        <Helmet title="Ditey - Cadastro" />
+
         <h1 className="slogan">Crie sua conta</h1>
         <form onSubmit={handleRegister}>
           <div className="form-field">

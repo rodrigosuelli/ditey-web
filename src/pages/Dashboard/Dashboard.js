@@ -3,6 +3,7 @@ import TextareaAutosize from 'react-autosize-textarea';
 import { isBrowser } from 'react-device-detect';
 import debounce from 'lodash.debounce';
 import { ImSpinner8 } from 'react-icons/im';
+import { Helmet } from 'react-helmet';
 import { useAuth } from '../../contexts/auth';
 import api from '../../services/api';
 
@@ -122,6 +123,8 @@ export default function Dashboard() {
 
   return (
     <div id="app">
+      <Helmet title="Ditey" />
+
       <TextsMenu
         texts={texts}
         onTextsChange={setTexts}

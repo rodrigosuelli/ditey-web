@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { HashLink } from 'react-router-hash-link';
 
 import Layout from '../../components/Layout/Layout';
@@ -15,6 +16,8 @@ export default function Home() {
   return (
     <Layout>
       <div id="home-page">
+        <Helmet title="Ditey - Trabalhe com textos na velocidade do som." />
+
         <h1 className="slogan">
           Trabalhe com textos na <br /> velocidade do som<b>.</b>
         </h1>

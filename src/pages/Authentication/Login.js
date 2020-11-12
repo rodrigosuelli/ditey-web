@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { MdMailOutline, MdLockOutline } from 'react-icons/md';
 
@@ -27,6 +28,8 @@ export default function Login() {
   return (
     <Layout>
       <main>
+        <Helmet title="Ditey - Log in" />
+
         <h1 className="slogan">Faça login</h1>
         <form onSubmit={handleLogin}>
           <div className="form-field">
