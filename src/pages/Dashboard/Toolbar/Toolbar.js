@@ -28,12 +28,6 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
   const [settingsShow, setSettingsShow] = useState(false);
   const [speedContainerShow, setSpeedContainerShow] = useState(false);
 
-  const alreadyVisited = localStorage.getItem('alreadyVisited');
-  let parsedAlreadyVisited;
-  if (alreadyVisited === 'true' || alreadyVisited === 'false') {
-    parsedAlreadyVisited = JSON.parse(alreadyVisited);
-  }
-
   useEffect(() => {
     if (!speechSynthesis.speaking) {
       return;
@@ -139,6 +133,14 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
   }
 
   function handleMicClick() {
+    const alreadyVisited = localStorage.getItem('alreadyVisited');
+
+    let parsedAlreadyVisited;
+
+    if (alreadyVisited === 'true' || alreadyVisited === 'false') {
+      parsedAlreadyVisited = JSON.parse(alreadyVisited);
+    }
+
     if (!parsedAlreadyVisited) {
       setMicModalShow(true);
 
