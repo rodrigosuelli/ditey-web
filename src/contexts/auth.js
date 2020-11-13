@@ -60,25 +60,25 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     async function checkAuthenticated() {
-      try {
-        const response = await api.get('/auth/verify');
+      const storageToken = localStorage.getItem('token');
 
-        if (response.data === true) {
-          setAuthenticated(true);
-        }
-      } catch (error) {
-        if (error.response.data.msg === 'invalid token') {
-          await refreshToken();
+      if (storageToken) {
+        api.defaults.headers.Authorization = `Bearer ${storageToken}`;
+
+        try {
+          const response = await api.get('/auth/verify');
+
+          if (response.data === true) {
+            setAuthenticated(true);
+          }
+        } catch (error) {
+          if (error.response.data.msg === 'invalid token') {
+            await refreshToken();
+          }
         }
       }
 
       setLoading(false);
-    }
-
-    const storageToken = localStorage.getItem('token');
-
-    if (storageToken) {
-      api.defaults.headers.Authorization = `Bearer ${storageToken}`;
     }
 
     checkAuthenticated();
