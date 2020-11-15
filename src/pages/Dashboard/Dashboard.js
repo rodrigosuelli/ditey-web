@@ -155,7 +155,7 @@ export default function Dashboard() {
             value={activeText.content}
             onChange={(e) => handleTextContentChange(e)}
             className="content"
-            placeholder="Enter your text here"
+            placeholder="Insira seu texto aqui..."
             name="content"
             id="content"
           />

@@ -146,7 +146,7 @@ export default function TextsMenu(props) {
                       <h4>{text.title || 'Sem título'}</h4>
                       <p>
                         {text.content.substring(0, 114) ||
-                          'Enter your text here...'}
+                          'Insira seu texto aqui...'}
                       </p>
                     </div>
                   </div>
