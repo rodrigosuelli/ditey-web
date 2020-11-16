@@ -53,6 +53,16 @@ div.button-container {
   justify-content: space-between;
 }
 
+div.button-container .primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.button-container .primary svg {
+  margin-right: 10px;
+}
+
 div#home-page div.button-container p.sub {
   line-height: 146%;
 }

@@ -156,11 +156,15 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
     }
   }
 
-  useEvent('keydown', (event) => {
-    if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
-      handleHearVoiceCommand();
-    }
-  });
+  useEvent(
+    'keydown',
+    (event) => {
+      if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
+        handleHearVoiceCommand();
+      }
+    },
+    document
+  );
 
   function handleSettingsOverlayClick(event) {
     if (event.target.className.toString() === 'settings-overlay') {
