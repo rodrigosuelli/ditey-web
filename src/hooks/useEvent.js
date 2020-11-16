@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 
-export default function useEvent(event, handler, passive) {
+export default function useEvent(event, handler, element = window) {
   useEffect(() => {
-    document.addEventListener(event, handler, passive);
+    element.addEventListener(event, handler);
 
     // this will clean up the event every time the component is re-rendered
     return function cleanup() {
-      document.removeEventListener(event, handler);
+      element.removeEventListener(event, handler);
     };
   });
 }
