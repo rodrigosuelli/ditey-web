@@ -26,7 +26,7 @@ export default function Home() {
             Chega de se estressar lendo e copiando <br /> textos e artigos
             longos.
           </p>
-          <HashLink smooth to="/dashboard#root" className="primary">
+          <HashLink smooth to="/dashboard#" className="primary">
             Acessar a plataforma
           </HashLink>
         </div>
@@ -92,7 +92,7 @@ export default function Home() {
               Ditey é o leitor de textos mais completo do mercado, possuindo uma
               interface moderna e funcionalidades inovadoras.
             </p>
-            <HashLink smooth to="/register#root" className="primary">
+            <HashLink smooth to="/register#" className="primary">
               Criar conta
             </HashLink>
           </div>

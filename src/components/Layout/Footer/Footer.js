@@ -10,7 +10,7 @@ export default function Footer() {
     <footer>
       <div className="footer-container">
         <div className="logo-container">
-          <HashLink smooth to="/#root">
+          <HashLink smooth to="/#">
             <img src={logoImg} alt="logo" />
           </HashLink>
 
@@ -22,16 +22,16 @@ export default function Footer() {
 
         <div className="links">
           <h4>Links</h4>
-          <HashLink smooth to="/#root">
+          <HashLink smooth to="/#">
             Home
           </HashLink>
-          <HashLink smooth to="/team#root">
+          <HashLink smooth to="/team#">
             Nosso Time
           </HashLink>
-          <HashLink smooth to="/register#root">
+          <HashLink smooth to="/register#">
             Cadastro
           </HashLink>
-          <HashLink smooth to="/login#root">
+          <HashLink smooth to="/login#">
             Log in
           </HashLink>
         </div>
