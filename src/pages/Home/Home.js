@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { HashLink } from 'react-router-hash-link';
-
 import { MdFileDownload } from 'react-icons/md';
+
 import useEvent from '../../hooks/useEvent';
+
 import Layout from '../../components/Layout/Layout';
 
 import appPreviewImg from '../../images/app-preview.png';
