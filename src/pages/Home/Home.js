@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { HashLink } from 'react-router-hash-link';
 
+import { MdFileDownload } from 'react-icons/md';
+import useEvent from '../../hooks/useEvent';
 import Layout from '../../components/Layout/Layout';
 
 import appPreviewImg from '../../images/app-preview.png';
@@ -13,6 +15,18 @@ import webDevicesImg from '../../images/svg/undraw_web_devices.svg';
 import './Home.css';
 
 export default function Home() {
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+
+  function handleResize() {
+    if (matchMedia('(min-width: 801px)').matches) {
+      setIsMobileDevice(true);
+    } else {
+      setIsMobileDevice(false);
+    }
+  }
+
+  useEvent('resize', handleResize);
+
   return (
     <Layout>
       <div id="home-page">
@@ -26,9 +40,21 @@ export default function Home() {
             Chega de se estressar lendo e copiando <br /> textos e artigos
             longos.
           </p>
-          <HashLink smooth to="/dashboard#" className="primary">
-            Acessar a plataforma
-          </HashLink>
+          {isMobileDevice ? (
+            <HashLink smooth to="/dashboard#" className="primary">
+              Acessar a plataforma
+            </HashLink>
+          ) : (
+            <a
+              href="https://drive.google.com/u/0/uc?id=1O4HMmrTwxuCBOP0RmNeVtMB4gcGpCmy9&export=download"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="primary"
+            >
+              <MdFileDownload size={18} />
+              Baixar o app
+            </a>
+          )}
         </div>
         <img className="app-preview" src={appPreviewImg} alt="app-preview" />
 
