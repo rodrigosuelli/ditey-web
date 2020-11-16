@@ -18,7 +18,7 @@ export default function Home() {
   const [isMobileDevice, setIsMobileDevice] = useState(false);
 
   function handleResize() {
-    if (matchMedia('(min-width: 801px)').matches) {
+    if (matchMedia('(max-width: 801px)').matches) {
       setIsMobileDevice(true);
     } else {
       setIsMobileDevice(false);
@@ -41,10 +41,6 @@ export default function Home() {
             longos.
           </p>
           {isMobileDevice ? (
-            <HashLink smooth to="/dashboard#" className="primary">
-              Acessar a plataforma
-            </HashLink>
-          ) : (
             <a
               href="https://drive.google.com/u/0/uc?id=1O4HMmrTwxuCBOP0RmNeVtMB4gcGpCmy9&export=download"
               target="_blank"
@@ -54,6 +50,10 @@ export default function Home() {
               <MdFileDownload size={18} />
               Baixar o app
             </a>
+          ) : (
+            <HashLink smooth to="/dashboard#" className="primary">
+              Acessar a plataforma
+            </HashLink>
           )}
         </div>
         <img className="app-preview" src={appPreviewImg} alt="app-preview" />
