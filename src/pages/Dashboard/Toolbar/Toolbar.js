@@ -29,12 +29,18 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
   const [speedContainerShow, setSpeedContainerShow] = useState(false);
 
   useEffect(() => {
-    if (!speechSynthesis.speaking) {
+    if (!speechSynthesis.speaking || speechSynthesis.paused) {
       return;
     }
 
     const interval = setInterval(() => {
+      if (speechSynthesis.paused) {
+        clearInterval(interval);
+        return;
+      }
+
       speechSynthesis.resume();
+
       if (!speaking) {
         speechSynthesis.pause();
       }
@@ -83,6 +89,10 @@ export default function Toolbar({ handleToggleMenu, activeText }) {
   }
 
   function handleStopSpeech() {
+    if (speechSynthesis.paused) {
+      speechSynthesis.resume();
+    }
+
     speechSynthesis.cancel();
     setSpeaking(false);
   }
