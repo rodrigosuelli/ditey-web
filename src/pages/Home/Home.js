@@ -45,7 +45,7 @@ export default function Home() {
           </p>
           {isMobileDevice ? (
             <a
-              href="https://drive.google.com/u/0/uc?id=1O4HMmrTwxuCBOP0RmNeVtMB4gcGpCmy9&export=download"
+              href="https://drive.google.com/u/0/uc?id=1l8FeCzuNZrDbosa63h8MDnYUuV894qAW&export=download"
               target="_blank"
               rel="noopener noreferrer"
               className="primary"
