@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.21.1",
     "lodash.debounce": "^4.0.8",
-    "object-path": "^0.11.5",
+    "object-path": "^0.11.6",
     "react": "^16.13.0",
     "react-autosize-textarea": "^7.1.0",
     "react-device-detect": "^1.14.0",
