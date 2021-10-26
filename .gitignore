@@ -7,6 +7,17 @@
 /node_modules
 /.pnp
 .pnp.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # testing
 /coverage
@@ -20,9 +31,3 @@
 .env.development.local
 .env.test.local
 .env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-debug.log
