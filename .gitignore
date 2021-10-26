@@ -5,12 +5,8 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-debug.log
+
+# yarn - using zero-install
 .yarn/*
 !.yarn/cache
 !.yarn/patches
@@ -18,6 +14,11 @@ debug.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
 
 # testing
 /coverage
