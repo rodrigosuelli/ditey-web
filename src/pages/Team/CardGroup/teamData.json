@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Rodrigo Suélli",
+    "role": "Web Developer",
+    "status": "Estudante apaixonado por tecnologia e programação. Estudando desenvolvimento web com as tecnologias: Node.js, React e React Native.",
+    "imgName": "rodrigo",
+    "group": "Development",
+    "links": {
+      "github": "https://github.com/rodrigosuelli",
+      "linkedin": "https://www.linkedin.com/in/rodrigosuelli"
+    }
+  },
+  {
+    "name": "Eusébio Leite",
+    "role": "Android Developer",
+    "status": "Estudante de TI, atualmente explorando as tecnologias do ecossistema Java. Tenho experiencia programando em Java e um pouco em Python.",
+    "imgName": "eusebio",
+    "group": "Development",
+    "links": {
+      "github": "https://github.com/eusebioleite",
+      "linkedin": "https://www.linkedin.com/in/eusébio-leite"
+    }
+  },
+  {
+    "name": "Gabriel Santim",
+    "role": "Data Scientist",
+    "status": "Buscando conhecimentos na área de Data Science e Machine Learning.",
+    "imgName": "gabriel",
+    "group": "Documentation",
+    "links": {
+      "github": "https://github.com/GabrielSBova",
+      "linkedin": "https://www.linkedin.com/in/gabriel-bova-44b1b3184"
+    }
+  },
+  {
+    "name": "Lucas Tadeu",
+    "role": "Marketing Specialist",
+    "status": "Líder de equipes e negociante por natureza. Curto games e eletrônica.",
+    "imgName": "lucas",
+    "group": "Documentation",
+    "links": {
+      "github": "https://github.com/lucastmendoncaf",
+      "linkedin": "https://www.linkedin.com/in/lucas-ferreira-076a28197/"
+    }
+  },
+  {
+    "name": "José Murilo",
+    "role": "Coach",
+    "status": "Autônomo apaixonado por hardware, games e música.",
+    "imgName": "jose",
+    "group": "Documentation",
+    "links": {
+      "github": "https://github.com/f1gure",
+      "linkedin": "https://www.linkedin.com/in/jos%C3%A9-murilo-rodrigues-sabalo-351a33185"
+    }
+  }
+]
