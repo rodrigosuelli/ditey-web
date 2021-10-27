@@ -32,6 +32,78 @@ div#team-page h2 span {
   margin-right: 5px;
 }
 
+div.cards {
+  display: grid;
+  gap: 15px;
+}
+
+div.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 520px;
+  padding: 20px;
+  background: var(--black);
+  border-radius: 5px;
+  border: 2px solid var(--black);
+}
+
+div.card div.wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+div.card div.wrapper div.info {
+  display: block;
+  margin-left: 20px;
+}
+
+div.card div.wrapper div.info h3.name {
+  font-size: 20px;
+}
+
+div.card div.wrapper div.info p.role {
+  margin-top: 8px;
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+div.card div.wrapper img.profile-pic {
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+}
+
+div.card p.status {
+  color: #a8a8b3;
+  font-size: 15px;
+  line-height: 136%;
+}
+
+div.card .portfolio {
+  margin-top: 25px;
+  display: flex;
+}
+
+div.card .portfolio .primary {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+div.card .portfolio .primary:not(:last-child) {
+  margin-right: 20px;
+}
+
+div.card .portfolio .primary svg {
+  margin-right: 10px;
+}
+
 @media only screen and (min-width: 530px) {
   div#team-page h1 {
     font-size: 42px;
@@ -40,10 +112,63 @@ div#team-page h2 span {
   div#team-page h2 {
     font-size: 30px;
   }
+
+  div.card {
+    padding: 25px;
+  }
+
+  div.card div.wrapper div.info h3.name {
+    font-size: 22px;
+  }
+
+  div.card div.wrapper div.info p.role {
+    font-size: 20px;
+  }
+
+  div.card div.wrapper img.profile-pic {
+    width: 105px;
+    height: 105px;
+  }
+
+  div.card p.status {
+    font-size: 16px;
+  }
+
+  div.card .portfolio .primary:not(:last-child) {
+    margin-right: 25px;
+  }
 }
 
 @media only screen and (min-width: 735px) {
   div#team-page {
     min-height: calc(100vh - 70px - 362px);
+  }
+}
+
+@media only screen and (min-width: 830px) {
+  div.cards {
+    grid-template-columns: repeat(2, fit-content(540px));
+    justify-content: space-between;
+  }
+
+  div.card {
+    padding: 30px;
+    max-width: 100%;
+  }
+
+  p.status {
+    height: 42px;
+  }
+
+  div.cards:not(:last-child) div.card p.status {
+    height: 84px;
+  }
+
+  div.cards:not(:last-child) div.card .portfolio {
+    margin-top: 15px;
+  }
+
+  div.card .portfolio .primary:not(:last-child) {
+    margin-right: 30px;
   }
 }
