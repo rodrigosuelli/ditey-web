@@ -65,9 +65,10 @@ export default function Dashboard() {
     [activeTextId, refreshToken]
   );
 
-  const debouncedSave = useMemo(() => debounce((data) => saveText(data), 800), [
-    saveText,
-  ]);
+  const debouncedSave = useMemo(
+    () => debounce((data) => saveText(data), 800),
+    [saveText]
+  );
 
   async function handleTextTitleChange(e) {
     if (!saving) {
