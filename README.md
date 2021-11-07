@@ -52,9 +52,9 @@ Você pode visualizar o layout do projeto através desse [link](https://www.figm
 ### Clonando o Repositório
 
 ```bash
-$ git clone https://github.com/rodrigosuelli/ditey-web.git
+git clone https://github.com/rodrigosuelli/ditey-web.git
 
-$ cd ditey-web
+cd ditey-web
 ```
 
 ### Instalando as dependências
