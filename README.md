@@ -2,7 +2,7 @@
 
 ![Screenshot](./.github/app-preview.png)
 
-Se quiser dar uma olhada em todas as screenshots, click [aqui](https://drive.google.com/drive/folders/1OFGa-egUl9sLSIQo4pFxH44eQcrb74Ev?usp=sharing).
+Se quiser dar uma olhada em todas as screenshots, click [aqui](https://drive.google.com/drive/folders/1dv9wnfxW6r1Zs1ITcMrL--h64ydJxg13?usp=sharing).
 
 ## 📌 Índice
 
