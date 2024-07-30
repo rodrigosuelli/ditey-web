@@ -67,7 +67,7 @@ export default function Footer() {
             Figma
           </a>
           <a
-            href="https://www.notion.so/Ditey-281be863afaf4b70bce904a9e087888d"
+            href="https://level-ketchup-8ad.notion.site/Ditey-281be863afaf4b70bce904a9e087888d"
             target="_blank"
             rel="noopener noreferrer"
           >
